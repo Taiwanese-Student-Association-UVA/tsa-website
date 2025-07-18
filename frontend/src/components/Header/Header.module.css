@@ -1,0 +1,69 @@
+.outerHeader {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.logoContainer {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoImage {
+    width: 74px;
+    height: 74px;
+    object-fit: contain;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.opaqueLogo {
+    opacity: 1;
+}
+
+.transparentLogo {
+    opacity: 0.3;
+}
+
+.headerContainer {
+    background-color: #ccccff;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    transition: max-width 0.4s ease, opacity 0.3s ease;
+    max-width: 540px;
+    overflow: hidden;
+    justify-content: flex-end;
+    transform-origin: right;
+}
+
+.headerContainer.hidden {
+    max-width: 0;
+    opacity: 0;
+}
+
+.navGroup {
+    display: flex;
+    gap: 1.2rem;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+.navGroup a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navGroup a:hover {
+    text-decoration: underline;
+}
