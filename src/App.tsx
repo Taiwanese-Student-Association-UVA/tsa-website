@@ -4,7 +4,6 @@ function App() {
   return (
     <>
       <Header />
-      {/* Other routes/pages/components here */}
     </>
   );
 }

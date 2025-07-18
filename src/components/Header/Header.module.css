@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
 .outerHeader {
     position: fixed;
     top: 1rem;
@@ -39,7 +41,7 @@
     align-items: center;
     padding: 0.75rem 1.5rem;
     transition: max-width 0.4s ease, opacity 0.3s ease;
-    max-width: 650px;
+    max-width: 750px;
     overflow: hidden;
     justify-content: flex-end;
     transform-origin: right;
@@ -60,9 +62,10 @@
 }
 
 .navGroup a {
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: inherit;
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 9999px;
     transition:
             background-color 0.3s ease,
