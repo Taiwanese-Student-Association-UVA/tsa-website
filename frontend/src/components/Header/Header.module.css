@@ -1,0 +1,88 @@
+.outerHeader {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.logoContainer {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoImage {
+    width: 74px;
+    height: 74px;
+    object-fit: contain;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.opaqueLogo {
+    opacity: 1;
+}
+
+.transparentLogo {
+    opacity: 0.3;
+}
+
+.headerContainer {
+    background-color: #ccccff;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    transition: max-width 0.4s ease, opacity 0.3s ease;
+    max-width: 650px;
+    overflow: hidden;
+    justify-content: flex-end;
+    transform-origin: right;
+}
+
+.headerContainer.hidden {
+    max-width: 0;
+    opacity: 0;
+}
+
+.navGroup {
+    display: flex;
+    gap: 1.2rem;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+.navGroup a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    transition:
+            background-color 0.3s ease,
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+.navGroup a:hover {
+    background: linear-gradient(135deg, #aeb4ff, #8d94f7);
+    color: #222;
+    transform: scale(1.03);
+    box-shadow: 0 3px 10px rgba(140, 150, 255, 0.55);
+}
+
+
+.navGroup a:active {
+    transform: scale(0.97);
+    filter: brightness(0.9);
+    box-shadow: 0 2px 6px rgba(140, 150, 255, 0.4);
+}
+
+
