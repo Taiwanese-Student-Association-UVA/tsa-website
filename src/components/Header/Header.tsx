@@ -18,7 +18,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setShowNav(e.clientY < 120 && e.clientX > 925);
+      setShowNav(e.clientY < 140 && e.clientX > 930);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
