@@ -6,7 +6,7 @@ const logo = require("../../assets/logo.png");
 const Header = () => {
   const navItems = [
     "about",
-    "events",
+    "event",
     "Resources",
     "partners",
     "sponsors",
