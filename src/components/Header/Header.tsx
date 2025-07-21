@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 const logo = require("../../assets/logo.png");
 
@@ -6,7 +7,7 @@ const Header = () => {
   const navItems = [
     "about",
     "events",
-    "resources",
+    "Resources",
     "partners",
     "sponsors",
     "archive",
@@ -25,29 +26,29 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={styles.outerHeader}>
+      <header className={styles.outerHeader}>
       <div className={styles.logoContainer}>
-        <img
-          src={logo}
-          alt="TSA Logo"
-          className={`${styles.logoImage} ${
-            showNav ? styles.opaqueLogo : styles.transparentLogo
-          }`}
-        />
+        <Link to="/">
+          <img
+            src={logo}
+            alt="TSA Logo"
+            className={`${styles.logoImage} ${
+              showNav ? styles.opaqueLogo : styles.transparentLogo
+            }`}
+          />
+        </Link>
       </div>
 
-      <div
-        className={`${styles.headerContainer} ${!showNav ? styles.hidden : ""}`}
-      >
-        <nav className={styles.navGroup}>
-          {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`}>
-              {item}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </header>
+        <div className={`${styles.headerContainer} ${!showNav ? styles.hidden : ""}`}>
+          <nav className={styles.navGroup}>
+            {navItems.map((item) => (
+                <Link key={item} to={`/${item.toLowerCase()}`}>
+                  {item}
+                </Link>
+            ))}
+          </nav>
+        </div>
+      </header>
   );
 };
 
