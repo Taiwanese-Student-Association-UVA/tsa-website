@@ -1,13 +1,22 @@
+import "./Home.module.css";
+
 const Home = () => {
   return (
     <>
-      <h1>Welcome to the Home Page</h1>
-      <p>Who are we?</p>
+      <div className="beginning">
+        <h1>Welcome to the Home Page</h1>
+        <p>Who are we?</p>
+      </div>
       <div className="about">
         <h2>Who we are...</h2>
         <p>Insert description here...</p>
         <h3>Become a member today!</h3>
+        <button>Returning Member</button>
+        <button>New Member</button>
         <h3>Follow us on our Socials!</h3>
+        <button>Instagram</button>
+        <button>Facebook</button>
+        <button>LinkedIn</button>
       </div>
       <div className="ezcard">
         <h2>How to use our EZCards</h2>
