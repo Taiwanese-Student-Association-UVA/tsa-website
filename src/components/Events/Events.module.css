@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
+/* Shared button base */
+.buttonBase {
+    font-family: 'Poppins', sans-serif;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 0;
+    z-index: 1000;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+.buttonBase:hover {
+    opacity: 1;
+    filter: brightness(1.1);
+}
+
+.buttonBase:active {
+    filter: brightness(0.8);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+    opacity: 0.9;
+}
+
+.caretDown,
+.caretUp {
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.5;
+}
+
+.buttonBase:hover .caretDown,
+.buttonBase:hover .caretUp {
+    opacity: 1;
+}
+
+.caretDown {
+    transform: rotate(-45deg);
+}
+
+.caretUp {
+    transform: rotate(135deg);
+}
+
+/* Past Events Button - Bottom Center */
+.pastEventsButton {
+    composes: buttonBase;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Current Events Button - Top Center */
+.currentEventsButton {
+    composes: buttonBase;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column-reverse; /* places caret above text */
+}
+
+/* Sky Scene Styles */
+.skyScene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0d0d2b, #1e3c72);
+    overflow: hidden;
+}
+
+.moon {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    background: #ffe58a;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ffe58a;
+    z-index: 2;
+}
+
+.mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to top, #111, #444);
+    clip-path: polygon(
+            0% 100%, 10% 30%, 20% 50%, 30% 25%, 40% 45%, 50% 20%,
+            60% 40%, 70% 15%, 80% 50%, 90% 35%, 100% 55%, 100% 100%, 0% 100%
+    );
+    z-index: 1;
+    filter: drop-shadow(0 0 12px rgba(68, 85, 136, 0.7));
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle infinite alternate ease-in-out;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+.lanterns {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.lantern {
+    position: absolute;
+    color: orange;
+    filter: drop-shadow(0 0 8px orange);
+    animation: lanternGlow infinite alternate ease-in-out;
+    opacity: 0.5;
+    user-select: none;
+    will-change: opacity, transform;
+}
+
+.lanternBody {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #ff7f00 30%, #cc5500 70%, transparent 100%);
+    border-radius: 35% / 45%;
+    box-shadow: 0 0 6px 2px rgba(255, 127, 0, 0.4);
+    filter: drop-shadow(0 0 4px rgba(255, 127, 0, 0.3));
+}
+
+@keyframes lanternGlow {
+    from {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.pastEventsButton {
+    composes: buttonBase;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+}
+
+.streetScene {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    position: relative;
+}
+
+.currentEventsButton {
+    composes: buttonBase;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+}
+

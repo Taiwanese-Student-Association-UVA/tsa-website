@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@400;600&display=swap');
+
+.skyScene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #0d0d2b, #1e3c72);
+    overflow: hidden;
+}
+
+.moon {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    background: #ffe58a;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ffe58a;
+    z-index: 2;
+}
+
+.mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px; /* taller */
+    background: linear-gradient(to top, #111, #444);
+    clip-path: polygon(
+            0% 100%, 10% 30%, 20% 50%, 30% 25%, 40% 45%, 50% 20%,
+            60% 40%, 70% 15%, 80% 50%, 90% 35%, 100% 55%, 100% 100%, 0% 100%
+    );
+    z-index: 1;
+    filter: drop-shadow(0 0 12px rgba(68, 85, 136, 0.7));
+}
+
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle infinite alternate ease-in-out;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lanterns {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2; /* below moon but above stars */
+    pointer-events: none;
+}
+
+.lantern {
+    position: absolute;
+    color: orange;
+    filter: drop-shadow(0 0 8px orange);
+    animation: lanternGlow infinite alternate ease-in-out;
+    opacity: 0.5;
+    user-select: none;
+    will-change: opacity, transform;
+}
+
+.lanternBody {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center,
+    #ff7f00 30%,     /* smaller bright center */
+    #cc5500 70%,     /* darker orange edges */
+    transparent 100%);
+    border-radius: 35% / 45%;
+    box-shadow: 0 0 6px 2px rgba(255, 127, 0, 0.4);  /* reduced size and opacity */
+    filter: drop-shadow(0 0 4px rgba(255, 127, 0, 0.3)); /* less bright */
+}
+
+@keyframes lanternGlow {
+    from {
+        opacity: 0.3;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.pastEventsButton {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    color: white; /* changed to white */
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px; /* reduced gap to bring caret closer */
+    padding: 0;
+    z-index: 1000;
+}
+
+.pastEventsButton:hover {
+    color: #ff7f00; /* orange on hover */
+}
+
+.caretDown {
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid white;  /* changed caret color to white */
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    margin-top: 0; /* removed margin to bring caret closer */
+}
