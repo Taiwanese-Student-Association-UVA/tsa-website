@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Events.module.css';
+import SkyBackground from './SkyBackground';
+
 const headBanner = require("../../assets/headplace.jpg");
 const eventBanner = require("../../assets/place.jpg");
 const eventBanner2 = require("../../assets/place2.webp");
@@ -47,11 +49,7 @@ const pastEvents: Event[] = [
 
 const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = false }) => (
     <div className={`${styles.eventCard} ${past ? styles.pastEvent : ''}`}>
-        <img
-            src={event.imageUrl}
-            alt={event.title}
-            className={styles.eventImage}
-        />
+        <img src={event.imageUrl} alt={event.title} className={styles.eventImage} />
         <div className={styles.eventDetails}>
             <h2>{event.title}</h2>
             <p className={styles.eventDateTime}>{event.time}</p>
@@ -66,34 +64,33 @@ const EventsPage: React.FC = () => {
     const [showPastEvents, setShowPastEvents] = useState(false);
 
     return (
-        <div>
-            <div className={styles.bannerWrapper}>
-                <img src={headBanner} alt="Events" className={styles.headBanner} />
-                <h1 className={styles.bannerText}>Events</h1>
-            </div>
-
-            <div className={styles.eventsContainer}>
-                {currentEvents.map((event) => (
-                    <EventCard key={event.id} event={event} />
-                ))}
-
-                <button
-                    className={styles.toggleButton}
-                    onClick={() => setShowPastEvents(!showPastEvents)}
-                >
-                    {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
-                </button>
-
-                {showPastEvents && (
-                    <div className={styles.pastEvents}>
-                        {pastEvents.map((event) => (
-                            <EventCard key={event.id} event={event} past />
-                        ))}
+        <>
+            <SkyBackground />
+                <div className={styles.eventsContainer}>
+                    <div className={styles.bannerWrapper}>
+                        <img src={headBanner} alt="Events" className={styles.headBanner} />
+                        <h1 className={styles.bannerText}>Events</h1>
                     </div>
-                )}
-            </div>
-        </div>
+                    {currentEvents.map((event) => (
+                        <EventCard key={event.id} event={event} />
+                    ))}
 
+                    <button
+                        className={styles.toggleButton}
+                        onClick={() => setShowPastEvents(!showPastEvents)}
+                    >
+                        {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
+                    </button>
+
+                    {showPastEvents && (
+                        <div className={styles.pastEvents}>
+                            {pastEvents.map((event) => (
+                                <EventCard key={event.id} event={event} past />
+                            ))}
+                        </div>
+                    )}
+                </div>
+        </>
     );
 };
 
