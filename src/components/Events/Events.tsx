@@ -47,7 +47,7 @@ const pastEvents: Event[] = [
 const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = false }) => (
     <div className={`${styles.eventCard} ${past ? styles.pastEvent : ''}`}>
         <img
-            src={event.imageUrl || 'https://via.placeholder.com/300x200?text=Event+Image'}
+            src={event.imageUrl}
             alt={event.title}
             className={styles.eventImage}
         />
