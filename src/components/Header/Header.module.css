@@ -55,29 +55,33 @@
     display: flex;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    transition: max-width 0.4s ease, opacity 0.3s ease;
+    transition:
+            max-width 0.3s cubic-bezier(0.65, 0, 0.35, 1),
+            opacity 0.43s cubic-bezier(0.4, 0, 0.2, 1),
+            padding 0.3s ease 0.1s;
     max-width: 750px;
     overflow: hidden;
     justify-content: flex-end;
     transform-origin: right;
+    will-change: max-width, opacity, padding;
 }
 
 .headerContainer.hidden {
     max-width: 0;
     opacity: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .navGroup {
     display: flex;
     gap: 1.2rem;
-    font-family: sans-serif;
     font-size: 0.95rem;
     color: #333;
     white-space: nowrap;
 }
 
 .navGroup a {
-    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: inherit;
     padding: 0.25rem 0.5rem;
