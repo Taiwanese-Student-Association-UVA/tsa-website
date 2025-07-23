@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Events.module.css';
+const headBanner = require("../../assets/headplace.jpg");
 const eventBanner = require("../../assets/place.jpg");
 const eventBanner2 = require("../../assets/place2.webp");
 
@@ -65,27 +66,34 @@ const EventsPage: React.FC = () => {
     const [showPastEvents, setShowPastEvents] = useState(false);
 
     return (
-        <div className={styles.eventsContainer}>
-            <h1>Upcoming Events</h1>
-            {currentEvents.map((event) => (
-                <EventCard key={event.id} event={event} />
-            ))}
+        <div>
+            <div className={styles.bannerWrapper}>
+                <img src={headBanner} alt="Events" className={styles.headBanner} />
+                <h1 className={styles.bannerText}>Events</h1>
+            </div>
 
-            <button
-                className={styles.toggleButton}
-                onClick={() => setShowPastEvents(!showPastEvents)}
-            >
-                {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
-            </button>
+            <div className={styles.eventsContainer}>
+                {currentEvents.map((event) => (
+                    <EventCard key={event.id} event={event} />
+                ))}
 
-            {showPastEvents && (
-                <div className={styles.pastEvents}>
-                    {pastEvents.map((event) => (
-                        <EventCard key={event.id} event={event} past />
-                    ))}
-                </div>
-            )}
+                <button
+                    className={styles.toggleButton}
+                    onClick={() => setShowPastEvents(!showPastEvents)}
+                >
+                    {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
+                </button>
+
+                {showPastEvents && (
+                    <div className={styles.pastEvents}>
+                        {pastEvents.map((event) => (
+                            <EventCard key={event.id} event={event} past />
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
+
     );
 };
 
