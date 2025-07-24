@@ -1,0 +1,11 @@
+export const { default: one } = require("./1.jpg");
+export const { default: two } = require("./2.jpg");
+export const { default: three } = require("./3.jpg");
+export const { default: four } = require("./4.jpg");
+export const { default: five } = require("./5.jpg");
+export const { default: six } = require("./6.jpg");
+export const { default: seven } = require("./7.jpg");
+export const { default: eight } = require("./8.jpg");
+export const { default: nine } = require("./9.jpg");
+export const { default: ten } = require("./10.jpg");
+export const { default: eleven } = require("./11.jpg");
