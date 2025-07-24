@@ -1,6 +1,6 @@
 .bannerWrapper {
     position: relative;
-    width: 900px;
+    width: 1500px;
     height: 300px;
     margin-bottom: 2rem;
 }
@@ -26,9 +26,16 @@
 }
 
 .eventsContainer {
-    max-width: 900px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 2rem;
+}
+
+.eventsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .eventCard {
@@ -36,8 +43,9 @@
     color: #eee;
     border-radius: 21px;
     box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
-    margin-bottom: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    width: calc(33.333% - 13.333px);
 }
 
 .eventCard:hover {
@@ -76,32 +84,41 @@
 
 .viewButton {
     margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #5a6cff;
-    color: white;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #6a5acd, #7b68ee);
+    color: #fff;
+    font-weight: 600;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(106, 90, 205, 0.3);
 }
 
 .viewButton:hover {
-    background-color: #3d4eb8;
+    background: linear-gradient(135deg, #5a4dcf, #6b59f0);
+    box-shadow: 0 6px 16px rgba(106, 90, 205, 0.45);
+    transform: translateY(-2px);
 }
 
 .toggleButton {
     margin: 2rem 0;
-    padding: 0.5rem 1.2rem;
-    background-color: #2e2e4d;
-    border: 1px solid #555;
-    border-radius: 6px;
-    color: #ccc;
+    padding: 0.6rem 1.4rem;
+    background-color: #1e1e3f;
+    border: 1px solid #4a4a7c;
+    color: #ddd;
+    font-weight: 500;
+    border-radius: 12px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(74, 74, 124, 0.25);
 }
 
 .toggleButton:hover {
-    background-color: #444678;
+    background-color: #2e2e5a;
     color: #fff;
+    box-shadow: 0 4px 14px rgba(74, 74, 124, 0.4);
+    transform: translateY(-1px);
 }
 
 .pastEvent {
@@ -202,4 +219,14 @@
     }
 }
 
+@media (max-width: 900px) {
+    .eventCard {
+        width: calc(50% - 10px);
+    }
+}
 
+@media (max-width: 600px) {
+    .eventCard {
+        width: 100%;
+    }
+}
