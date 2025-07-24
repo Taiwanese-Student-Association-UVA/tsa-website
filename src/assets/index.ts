@@ -1,5 +1,7 @@
-export const { default: lightFlower } = require("./lightFlower.png");
-export const { default: darkFlower } = require("./darkFlower.png");
-export const { default: taiwanBG } = require("./taiwanBG.png");
-export const { default: ezCard } = require("./ezCard.png");
-export const { default: EZhover } = require("./EZhover.png");
+const lightFlower = require("./lightFlower.png");
+const darkFlower = require("./darkFlower.png");
+const taiwanBG = require("./taiwanBG.png");
+const ezCard = require("./ezCard.png");
+const EZhover = require("./EZhover.png");
+
+export { lightFlower, darkFlower, taiwanBG, ezCard, EZhover };

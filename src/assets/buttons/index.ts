@@ -1,6 +1,8 @@
-export const { default: IG } = require("./IGflower.png");
-export const { default: IGhover } = require("./IGhover.png");
-export const { default: FB } = require("./FBflower.png");
-export const { default: FBhover } = require("./FBhover.png");
-export const { default: LI } = require("./LIflower.png");
-export const { default: LIhover } = require("./LIhover.png");
+const IG = require("./IGflower.png");
+const IGhover = require("./IGhover.png");
+const FB = require("./FBflower.png");
+const FBhover = require("./FBhover.png");
+const LI = require("./LIflower.png");
+const LIhover = require("./LIhover.png");
+
+export { IG, IGhover, FB, FBhover, LI, LIhover };
