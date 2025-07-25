@@ -54,13 +54,99 @@ const Home = () => {
   return (
     <>
       <div className={styles.beginning}>
-        <h1>
-          Welcome to
-          <br />
-          TSA@UVA
-        </h1>
-        <p>Who are we?</p>
+        <div className={styles.beginningText}>
+          <h1>
+            Welcome to
+            <br />
+            TSA@UVA
+          </h1>
+          <p>Who are we?</p>
+        </div>
         <div className={styles.picturesContainer}>
+          <Marquee speed={40} gradient={false}>
+            <ScrollPhoto
+              src={one}
+              alt="Linda Tol and Kerstin Quach in a boba shop."
+            />
+            <ScrollPhoto src={two} alt="Teddy Bear keychains kissing" />
+            <ScrollPhoto
+              src={three}
+              alt="Elliot Park sticking his tongue out"
+            />
+            <ScrollPhoto
+              src={four}
+              alt="Najiba R Julia Nguyen smiling at Night Market"
+            />
+            <ScrollPhoto src={five} alt="Rachel Yu and Albany Viet smiling" />
+            <ScrollPhoto
+              src={six}
+              alt="Brandon Nesbit and Robert Chen posing after Night Market performance"
+            />
+            <ScrollPhoto
+              src={seven}
+              alt="Nathaly Due posed with her origami flowers"
+            />
+            <ScrollPhoto
+              src={eight}
+              alt="Yellow lantern with cute painted cartoon cat on it"
+            />
+            <ScrollPhoto
+              src={nine}
+              alt="Chloe Ro, Rachel Yu, and Hannah Lin posing"
+            />
+            <ScrollPhoto
+              src={ten}
+              alt="Olivia Jung, Miki Li, Hebba Mohmand, and Albany Viet posing before ASU Semi Formal"
+            />
+            <ScrollPhoto
+              src={eleven}
+              alt="Jonathan Luu and Helen Lin with teacups"
+            />
+          </Marquee>
+        </div>
+        <div className={styles.picturesContainer2}>
+          <Marquee speed={40} gradient={false} direction={"right"}>
+            <ScrollPhoto
+              src={one}
+              alt="Linda Tol and Kerstin Quach in a boba shop."
+            />
+            <ScrollPhoto src={two} alt="Teddy Bear keychains kissing" />
+            <ScrollPhoto
+              src={three}
+              alt="Elliot Park sticking his tongue out"
+            />
+            <ScrollPhoto
+              src={four}
+              alt="Najiba R Julia Nguyen smiling at Night Market"
+            />
+            <ScrollPhoto src={five} alt="Rachel Yu and Albany Viet smiling" />
+            <ScrollPhoto
+              src={six}
+              alt="Brandon Nesbit and Robert Chen posing after Night Market performance"
+            />
+            <ScrollPhoto
+              src={seven}
+              alt="Nathaly Due posed with her origami flowers"
+            />
+            <ScrollPhoto
+              src={eight}
+              alt="Yellow lantern with cute painted cartoon cat on it"
+            />
+            <ScrollPhoto
+              src={nine}
+              alt="Chloe Ro, Rachel Yu, and Hannah Lin posing"
+            />
+            <ScrollPhoto
+              src={ten}
+              alt="Olivia Jung, Miki Li, Hebba Mohmand, and Albany Viet posing before ASU Semi Formal"
+            />
+            <ScrollPhoto
+              src={eleven}
+              alt="Jonathan Luu and Helen Lin with teacups"
+            />
+          </Marquee>
+        </div>
+        <div className={styles.picturesContainer3}>
           <Marquee speed={40} gradient={false}>
             <ScrollPhoto
               src={one}
