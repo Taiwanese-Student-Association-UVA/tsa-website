@@ -39,7 +39,7 @@
 }
 
 .eventCard {
-    background: rgba(26, 26, 46, 0.8);
+    background-color: rgba(26, 26, 46, 1);
     color: #eee;
     border-radius: 21px;
     box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
@@ -52,6 +52,7 @@
     transform: translateY(-4px);
     box-shadow: 0 0 25px 8px rgba(155, 89, 182, 0.7);
 }
+
 
 .eventDateTime,
 .eventDate {
