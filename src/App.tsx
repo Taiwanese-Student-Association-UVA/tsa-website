@@ -10,6 +10,7 @@ import Archive from "./components/Archive/Archive";
 import Merch from "./components/Merch/Merch";
 import Games from "./components/Games/Games";
 
+
 const App = () => {
     return (
         <Router>
