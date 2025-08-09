@@ -49,7 +49,7 @@ font-weight: 400;
   position: absolute;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 .picturesContainer{
   top: 0;
@@ -62,13 +62,14 @@ font-weight: 400;
 }
 .pictures{
   object-fit: contain;
+  overflow: visible;
   cursor: pointer;
   height: 34vh;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.6s ease, z-index 0.5s;
 }
 .pictures:hover{
-  transform:  scale(1.2) translateY(-5%);
+  transform:  scale(1.1) translateY(-5%);
   transform-origin: center center;
   z-index: 25;
 }
@@ -102,12 +103,14 @@ font-weight: 400;
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  transition: transform 0.6s ease, z-index 0.5s;
 }
 .about button:hover {
   background: linear-gradient(135deg, #aeb4ff, #8d94f7);
   color: #4b40c9;
   transform: scale(1.03);
   box-shadow: 0 3px 10px rgba(140, 150, 255, 0.55);
+  transition: transform 0.6s ease, z-index 0.5s;
 }
 
 .description{
@@ -125,13 +128,18 @@ font-weight: 400;
     margin: 0 20px;
     transform: rotate(0);
     object-fit: contain;
+    transition: transform 0.6s ease, z-index 0.5s;
+}
+.aboutSub img:hover{
+  transform: scale(1.25);
+  transition: transform 0.6s ease, z-index 0.5s;
 }
 .aboutSub img {
   color: #222;
   transform: scale(1.03);
 }
 .ezcard{
-    position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -148,15 +156,21 @@ font-weight: 400;
     z-index: 1;
     width: 950px;
     object-fit: contain;
-    transform: rotate3d(-1, 1, 1, 45deg) translateX(15%);
+    transform: rotate3d(-.5, .5, .5, 45deg) translateX(5%);
 }
 .EZCard img{
     z-index: 2;
     width: 700px;
     border-radius: 25px;
     margin-left: -800px;
-    margin-top: -50px;
-    transform: rotate3d(-8, 1, 1, 45deg) translateX(15%);
+    margin-bottom: -80px;
+    transform: rotate3d(-4, .5, .5, 45deg);
+    transition: transform 0.6s ease, z-index 0.5s;
+}
+.EZCard img:hover{
+    transform: rotate3d(-5, .5, .5, 30deg) scale(1.25);
+    transform-origin: center center;
+    transition: transform 0.6s ease, z-index 0.5s;
 }
 .newsletter{
     text-align: center;
@@ -182,4 +196,9 @@ font-weight: 400;
 .footer img {
   width: 80px;
   object-fit: contain;
+  transition: transform 0.6s ease, z-index 0.5s;
+}
+.footer img:hover{
+  transform: scale(1.25);
+  transition: transform 0.6s ease, z-index 0.5s;
 }

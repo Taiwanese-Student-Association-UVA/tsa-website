@@ -23,19 +23,12 @@ import {
   ten,
   eleven,
 } from "../../assets/homepage/index";
-import {
-  lightFlower,
-  darkFlower,
-  taiwanBG,
-  ezCard,
-  EZhover,
-} from "../../assets/index";
+import { lightFlower, darkFlower, taiwanBG, ezCard } from "../../assets/index";
 
 const Home = () => {
   const [instagramImg, setInstagramImg] = useState(IG);
   const [facebookImg, setFacebookImg] = useState(FB);
   const [linkedinImg, setLinkedinImg] = useState(LI);
-  const [ezImg, setEzImg] = useState(ezCard);
 
   const ScrollPhoto = ({ src, alt }: { src: string; alt: string }) => (
     <motion.img
@@ -43,7 +36,7 @@ const Home = () => {
       alt={alt}
       className={styles.pictures}
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 0.4 }}
+      whileInView={{ opacity: 0.125 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
       whileHover={{ opacity: 1 }}
@@ -261,12 +254,8 @@ const Home = () => {
             <img src={darkFlower} alt="Ezcard background layer" />
           </div>
           <div className={styles.EZCard}>
-            <a
-              href="partners"
-              onMouseOver={() => setEzImg(EZhover)}
-              onMouseOut={() => setEzImg(ezCard)}
-            >
-              <img src={ezImg} alt="TSA EzCard" />
+            <a href="partners">
+              <img src={ezCard} alt="TSA EzCard" />
             </a>
           </div>
         </div>
