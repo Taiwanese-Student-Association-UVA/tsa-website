@@ -36,7 +36,7 @@ const Home = () => {
       alt={alt}
       className={styles.pictures}
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 0.125 }}
+      whileInView={{ opacity: 0.5 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
       whileHover={{ opacity: 1 }}
@@ -44,16 +44,39 @@ const Home = () => {
     />
   );
 
+  const SignUpBox = () => {
+    return (
+      <div className={styles.signupBox}>
+        <form
+          className={styles.signupForm}
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <input
+            type="email"
+            placeholder="Your Email"
+            className={styles.signupInput}
+            required
+          />
+          <button type="submit" className={styles.signupButton}>
+            Sign Up!
+          </button>
+        </form>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className={styles.beginning}>
-        <div className={styles.beginningText}>
-          <h1>
-            Welcome to
-            <br />
-            TSA@UVA
-          </h1>
-          <p>Who are we?</p>
+        <div className={styles.glass}>
+          <div className={styles.beginningText}>
+            <h1>
+              Welcome to
+              <br />
+              TSA@UVA
+            </h1>
+            <p>Who are we?</p>
+          </div>
         </div>
         <div className={styles.picturesContainer}>
           <Marquee speed={40} gradient={false}>
@@ -250,7 +273,7 @@ const Home = () => {
               mauris. Maecenas quis placerat sapien.
             </p>
           </div>
-          <div className={styles.ezcardImage}>
+          <div className={styles.ezcardBG}>
             <img src={darkFlower} alt="Ezcard background layer" />
           </div>
           <div className={styles.EZCard}>
@@ -261,20 +284,60 @@ const Home = () => {
         </div>
 
         <div className={styles.newsletter}>
-          <h2>Previous Newsletters</h2>
-          <p>Blurb...</p>
-          <p>Caption..</p>
-          <p>TSA News...</p>
+          <h2>Previous Newsletter</h2>
+          <hr />
+          <div className={styles.newsDate}>Month, Week ## Edition</div>
+          <hr />
+          <div className={styles.newsBlocks}>
+            <span>
+              <h3>TSA News...</h3>
+              <p>Blah blah blah here is some tsa news</p>
+            </span>
+            <span>
+              <h3>Dish of the Week</h3>
+              <p>here is da dish of the week</p>
+            </span>
+          </div>
+          <div className={styles.newsBlocks}>
+            <span>
+              <img src={ezCard} />
+            </span>
+            <span>
+              <h3>EasyCard Eats</h3>
+              <p>here r the eats</p>
+            </span>
+          </div>
+          <hr />
+          <p>To read more, sign up for our newsletter!</p>
+          <SignUpBox />
         </div>
 
         <div className={styles.current}>
           <h2>Current Events</h2>
-          <p>Big news..</p>
-          <p>More news..</p>
-          <img
-            src={taiwanBG}
-            alt="Background for current events section in the shape of Taiwan."
-          />
+          <div className={styles.news}>
+            <div className={styles.article}>
+              <img src={ezCard} alt="..." />
+              <div>
+                <h3>Article title</h3>
+                <p>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card’s content.
+                </p>
+                <a href="#">Click here for more</a>
+              </div>
+            </div>
+            <div className={styles.article}>
+              <img src={ezCard} alt="..." />
+              <div>
+                <h3>Article title</h3>
+                <p>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card’s content.
+                </p>
+                <a href="#">Click here for more</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
