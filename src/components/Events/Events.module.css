@@ -1,8 +1,9 @@
 .bannerWrapper {
     position: relative;
-    width: 1500px;
-    height: 300px;
-    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1500px;
+    height: clamp(200px, 20vw, 400px);
+    margin: 0 auto 2rem;
 }
 
 .headBanner {
@@ -19,23 +20,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     pointer-events: none;
 }
 
 .eventsContainer {
+    width: 90%;
     max-width: 1500px;
     margin: 0 auto;
     padding: 2rem;
 }
 
 .eventsGrid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    justify-content: space-between;
 }
 
 .eventCard {
@@ -45,18 +46,12 @@
     box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
-    width: calc(33.333% - 13.333px);
+    width: 100%;
 }
 
 .eventCard:hover {
     transform: translateY(-4px);
     box-shadow: 0 0 25px 8px rgba(155, 89, 182, 0.7);
-}
-
-
-.eventDateTime,
-.eventDate {
-    color: #bbb;
 }
 
 .eventImage {
@@ -73,7 +68,7 @@
 
 .eventDetails h2 {
     margin: 0 0 0.5rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
 }
 
 .eventDateTime,
@@ -170,12 +165,8 @@
 }
 
 @keyframes twinkle {
-    from {
-        opacity: 0.3;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0.3; }
+    to { opacity: 1; }
 }
 
 .lanterns {
@@ -201,8 +192,8 @@
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at center,
-    #ff7f00 30%,     /* bright center */
-    #cc5500 70%,     /* darker edges */
+    #ff7f00 30%,
+    #cc5500 70%,
     transparent 100%);
     border-radius: 35% / 45%;
     box-shadow: 0 0 6px 2px rgba(255, 127, 0, 0.4);
@@ -210,24 +201,6 @@
 }
 
 @keyframes lanternGlow {
-    from {
-        opacity: 0.3;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-@media (max-width: 900px) {
-    .eventCard {
-        width: calc(50% - 10px);
-    }
-}
-
-@media (max-width: 600px) {
-    .eventCard {
-        width: 100%;
-    }
+    from { opacity: 0.3; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1.1); }
 }
