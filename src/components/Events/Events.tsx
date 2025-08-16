@@ -61,6 +61,14 @@ const pastEvents: Event[] = [
         description: 'This was an example of a past event.',
         imageUrl: eventBanner2,
     },
+    {
+        id: 4,
+        title: 'Past Event Example',
+        date: 'October 12, 2024',
+        time: '6:00PM – 9:00PM',
+        description: 'This was an example of a past event.',
+        imageUrl: eventBanner2,
+    },
 ];
 
 const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = false }) => (
