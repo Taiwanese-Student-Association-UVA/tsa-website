@@ -10,7 +10,7 @@ const newsletters = [
 const Newsletters: React.FC = () => {
   return (
     <main className={styles.page}>
-      <h1 className={styles.title}>(replace)</h1>
+      <h1 className={styles.title}>Newsletters</h1>
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>(replace)</h2>
