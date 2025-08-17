@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./Archive.module.css";
 import FacebookPageEmbed from "./FacebookPageEmbed";
 import StaticImageGrid from "./StaticImageGrid";
+import FacebookPageEmbed from "./FacebookPageEmbed";
+import StaticImageGrid from "./StaticImageGrid";
 
 const heroSlides = [
   {
@@ -157,7 +159,21 @@ const Archive: React.FC = () => {
           <a className={styles.viewAll} href="https://www.facebook.com/tsauvagallery" target="_blank" rel="noreferrer">
             View on Facebook
           </a>
+          <a className={styles.viewAll} href="https://www.facebook.com/tsauvagallery" target="_blank" rel="noreferrer">
+            View on Facebook
+          </a>
         </div>
+        <div className={styles.fbGalleryRow}>
+          <div className={styles.fbCol} style={{ width: FB_WIDTH, height: FB_HEIGHT }}>
+            <FacebookPageEmbed
+              pageUrl="https://www.facebook.com/tsauvagallery"
+              tabs="timeline"
+              height={FB_HEIGHT}
+            />
+          </div>
+          <div className={styles.staticCol} style={{ width: FB_WIDTH, height: FB_HEIGHT }}>
+            <StaticImageGrid width={FB_WIDTH} height={FB_HEIGHT} />
+          </div>
         <div className={styles.fbGalleryRow}>
           <div className={styles.fbCol} style={{ width: FB_WIDTH, height: FB_HEIGHT }}>
             <FacebookPageEmbed
