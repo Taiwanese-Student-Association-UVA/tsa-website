@@ -6,24 +6,24 @@ import StaticImageGrid from "./StaticImageGrid";
 
 const heroSlides = [
   {
-    src: require("../../assets/place.jpg"),
-    title: "(replace)",
-    href: "/archive/gallery/(replace)",
+    src: require("../../assets/Photos/NM1.jpg"),
+    title: "TSA 24-25 Exec with TECRO at Night Market",
+    tag: "Like Taiwan's Night Markets!",
   },
   {
-    src: require("../../assets/place2.webp"),
-    title: "(replace)",
-    href: "/archive/gallery/(replace)",
+    src: require("../../assets/Photos/L1.jpg"),
+    title: "Lantern Painting",
+    tag: "Arts & Crafts!",
   },
   {
-    src: require("../../assets/headplace.jpg"),
-    title: "(replace)",
-    href: "/archive/gallery/(replace)",
+    src: require("../../assets/Photos/D1.jpg"),
+    title: "Dumpling Making",
+    tag: "Free Food Events!",
   },
   {
-    src: require("../../assets/logo.png"),
-    title: "(replace)",
-    href: "/(replace)",
+    src: require("../../assets/Photos/M1.jpg"),
+    title: "Mid-Autumn Festival",
+    tag: "Cultural Celebrations!",
   },
 ];
 
@@ -93,12 +93,6 @@ const Archive: React.FC = () => {
 
   const FB_WIDTH = 500;
   const FB_HEIGHT = 750;
-  const staticImages = [
-    "/assets/gallery/1.jpg",
-    "/assets/gallery/2.jpg",
-    "/assets/gallery/3.jpg",
-    "/assets/gallery/4.jpg",
-  ];
 
   return (
     <main className={styles.page}>
@@ -116,13 +110,13 @@ const Archive: React.FC = () => {
           <div className={styles.heroTrack} style={trackStyle}>
             {heroSlides.map((s, i) => (
               <article className={styles.slide} key={i}>
-                <Link to={s.href} className={styles.slideLink} aria-label="(replace)">
-                  <img className={styles.slideImg} src={s.src} alt="(replace)" />
+                <div className={styles.slideImgWrapper}>
+                  <img className={styles.slideImg} src={s.src} alt={s.title} />
                   <div className={styles.slideOverlay}>
-                    <div className={styles.slideTag}>(replace)</div>
-                    <h3 className={styles.slideTitle}>(replace)</h3>
+                    <div className={styles.slideTag}>{s.tag}</div>
+                    <h3 className={styles.slideTitle}>{s.title}</h3>
                   </div>
-                </Link>
+                </div>
               </article>
             ))}
           </div>

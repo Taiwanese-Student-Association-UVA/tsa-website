@@ -14,22 +14,22 @@ type Item = {
 const StaticImageGrid: React.FC<Props> = ({ width, height }) => {
   const items: Item[] = [
     {
-      img: require("../../assets/place.jpg"),
-      title: "Title",
+      img: require("../../assets/Photos/P1.jpg"),
+      title: "Pumpkin Painting",
       desc:
-        "Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed lectus lacus. Nam ac nulla nisl. Suspendisse eget justo elementum, euismod tortor ut, tempordui er magna viverra. Sed quis augue mauris. Maecenas quis placerat sapien.",
+        "Fall is creeping in… 🍁🍂 Join us for TSA’s annual PUMPKIN PAINTING!! 🎃🎨🖌️Start out the spooky season right by making some cute decor at the Lawn! It's also a great opportunity to meet new people :)",
     },
     {
-      img: require("../../assets/place2.webp"),
-      title: "Title",
+      img: require("../../assets/Photos/T1.png"),
+      title: "Taste of Taiwan",
       desc:
-        "Description m ac nulla nisl. Suspendisse eget justo elementum, euismod tortor ut, tempor neque. Nam suscipit elit quis dui pulvinar, ac semper magna viverra. Sed quis augue mauris. Maecenas quis placerat sapien.",
+        "TSA will be serving some popular Taiwanese cuisine 🤭🍽️ come and treat yourselves to some delicious restaurant style cooking for FREE! 🐻💯💯",
     },
     {
-      img: require("../../assets/headplace.jpg"),
-      title: "Title",
+      img: require("../../assets/Photos/NM2.jpg"),
+      title: "Night Market",
       desc:
-        "Description Lorem ipsuamet se. Nam ac nulla nisl. Suspendisse eget justo elementum, euismod tortor ut, tempor neque. Nam suscipit elit quis dui pulvinar, ac semper magna viverra. Sed quis augue mauris. Maecenas quis placerat sapien.",
+        "Live, Laugh, Love.🌙Imagine a gentle breeze carrying the sweet scent of Taiwanese street food your way🧋🍲Lanterns and street lights glow brightly🏮🌟, illuminating the market booths while the crowd cheers on the lively performances under the bright stars🎶💃✨",
     },
   ];
 
