@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Archive.module.css";
+import FacebookPageEmbed from "./FacebookPageEmbed";
+import StaticImageGrid from "./StaticImageGrid";
 
-// swap w/ real images
 const heroSlides = [
   {
     src: require("../../assets/place.jpg"),
@@ -24,12 +25,6 @@ const heroSlides = [
     title: "(replace)",
     href: "/(replace)",
   },
-];
-
-const galleryTeasers = [
-  { src: require("../../assets/place.jpg"), title: "(replace)", href: "/archive/gallery/(replace)" },
-  { src: require("../../assets/place2.webp"), title: "(replace)", href: "/archive/gallery/(replace)" },
-  { src: require("../../assets/headplace.jpg"), title: "(replace)", href: "/archive/gallery/(replace)" },
 ];
 
 const newsletterList = [
@@ -56,7 +51,6 @@ const newsletterList = [
   },
 ];
 
-/** ——— helpers ——— */
 function useAutoplay(count: number, delay = 5000) {
   const [i, setI] = useState(0);
   const paused = useRef(false);
@@ -97,11 +91,19 @@ const Archive: React.FC = () => {
     [index]
   );
 
+  const FB_WIDTH = 500;
+  const FB_HEIGHT = 750;
+  const staticImages = [
+    "/assets/gallery/1.jpg",
+    "/assets/gallery/2.jpg",
+    "/assets/gallery/3.jpg",
+    "/assets/gallery/4.jpg",
+  ];
+
   return (
     <main className={styles.page}>
       <h1 className={styles.title}>Archive</h1>
 
-      {/* ——— Highlight Carousel ——— */}
       <section
         className={styles.hero}
         aria-label="Highlights"
@@ -155,26 +157,27 @@ const Archive: React.FC = () => {
         </div>
       </section>
 
-      {/* ——— Gallery ——— */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Gallery</h2>
-          <Link className={styles.viewAll} to="/archive/gallery">
-            View All
-          </Link>
+          <a className={styles.viewAll} href="https://www.facebook.com/tsauvagallery" target="_blank" rel="noreferrer">
+            View on Facebook
+          </a>
         </div>
-
-        <div className={styles.galleryRow}>
-          {galleryTeasers.map((g, i) => (
-            <Link to={g.href} key={i} className={styles.galleryCard}>
-              <img className={styles.galleryImg} src={g.src} alt="(replace)" />
-              <span className={styles.galleryLabel}>(replace)</span>
-            </Link>
-          ))}
+        <div className={styles.fbGalleryRow}>
+          <div className={styles.fbCol} style={{ width: FB_WIDTH, height: FB_HEIGHT }}>
+            <FacebookPageEmbed
+              pageUrl="https://www.facebook.com/tsauvagallery"
+              tabs="timeline"
+              height={FB_HEIGHT}
+            />
+          </div>
+          <div className={styles.staticCol} style={{ width: FB_WIDTH, height: FB_HEIGHT }}>
+            <StaticImageGrid width={FB_WIDTH} height={FB_HEIGHT} />
+          </div>
         </div>
       </section>
 
-      {/* ——— Newsletters ——— */}
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Newsletters</h2>
