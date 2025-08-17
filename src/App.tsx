@@ -7,6 +7,8 @@ import Resources from "./components/Resources/Resources";
 import Partners from "./components/Partners/Partners";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Archive from "./components/Archive/Archive";
+import Newsletters from "./components/Archive/Newsletters/Newsletters";
+import Gallery from "./components/Archive/Gallery/Gallery";
 import Merch from "./components/Merch/Merch";
 import Games from "./components/Games/Games";
 
@@ -22,6 +24,8 @@ const App = () => {
                 <Route path="/partners" element={<Partners />} />
                 <Route path="/sponsors" element={<Sponsors />} />
                 <Route path="/archive" element={<Archive />} />
+                <Route path="/archive/newsletters" element={<Newsletters />} />
+                <Route path="/archive/gallery" element={<Gallery />} />
                 <Route path="/merch" element={<Merch />} />
                 <Route path="/games" element={<Games />} />
             </Routes>
