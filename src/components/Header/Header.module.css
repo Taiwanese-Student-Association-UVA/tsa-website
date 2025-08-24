@@ -90,6 +90,26 @@
     padding-right: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    .headerContainer {
+        max-width: clamp(200px, 80vw, 750px);
+        opacity: 1;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .headerContainer.hidden {
+        max-width: clamp(200px, 80vw, 750px);
+        opacity: 1;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .logoImage {
+        opacity: 1;
+    }
+}
+
 .navGroup {
     display: flex;
     gap: clamp(0.6rem, 2vw, 1.2rem);

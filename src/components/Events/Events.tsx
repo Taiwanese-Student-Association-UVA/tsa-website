@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './Events.module.css';
 import SkyBackground from './SkyBackground';
 
-const headBanner = require("../../assets/headplace.jpg");
 const eventBanner = require("../../assets/place.jpg");
 const eventBanner2 = require("../../assets/place2.webp");
 
@@ -91,14 +90,14 @@ const EventsPage: React.FC = () => {
         <>
             <SkyBackground />
             <div className={styles.eventsContainer}>
-                <div className={styles.bannerWrapper}>
-                    <img src={headBanner} alt="Events" className={styles.headBanner} />
-                    <h1 className={styles.bannerText}>Events</h1>
+                <div className={styles.eventsHeader}>
+                    <h1 className={styles.eventsTitle}>Events</h1>
+                    <div className={styles.divider}></div>
                 </div>
 
                 <div className={styles.eventsGrid}>
                     {currentEvents.map((event) => (
-                        <EventCard key={event.id + '-current'} event={event} />
+                        <EventCard key={event.id + '-current'} event={event}/>
                     ))}
                 </div>
 
@@ -112,7 +111,7 @@ const EventsPage: React.FC = () => {
                 {showPastEvents && (
                     <div className={styles.eventsGrid}>
                         {pastEvents.map((event) => (
-                            <EventCard key={event.id + '-past'} event={event} past />
+                            <EventCard key={event.id + '-past'} event={event} past/>
                         ))}
                     </div>
                 )}
