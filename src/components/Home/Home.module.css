@@ -307,8 +307,8 @@ font-weight: 400;
 .signupButton {
   font-size: 1.3rem;
   width: 150px;
-  background-color: #9a95d6;
-  color: black;
+  background-color: #b1abf8;
+  color: #050a55;
   border: none;
   border-radius: 15px;
   cursor: pointer;
@@ -329,8 +329,9 @@ font-weight: 400;
   align-content: center;
 }
 .article{
-  background-color: #d4d7ff;
+  background-color: #050a55;
   box-shadow: 0 0 5px 9px rgba(229, 226, 255, 0.2);
+  color: white;
   border-radius: 15px;
   width: 70vw;
   margin: 20px;
@@ -360,4 +361,5 @@ font-weight: 400;
   margin: 15px;
   width: 600px;
   object-fit: contain;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.336);
 }

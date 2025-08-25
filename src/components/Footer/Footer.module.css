@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 80px auto 0;
+  padding: 15px 50px;
+  background: #4b40c9;
+  color: #262626;
+}
+.footer img {
+  width: 80px;
+  object-fit: contain;
+  transition: transform 0.6s ease, z-index 0.5s;
+}
+.footer img:hover{
+  transform: scale(1.25);
+  transition: transform 0.6s ease, z-index 0.5s;
+}
