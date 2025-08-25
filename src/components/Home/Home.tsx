@@ -23,7 +23,13 @@ import {
   ten,
   eleven,
 } from "../../assets/homepage/index";
-import { lightFlower, darkFlower, taiwanBG, ezCard } from "../../assets/index";
+import {
+  lightFlower,
+  darkFlower,
+  taiwanBG,
+  ezCard,
+  about,
+} from "../../assets/index";
 
 const Home = () => {
   const [instagramImg, setInstagramImg] = useState(IG);
@@ -207,9 +213,15 @@ const Home = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.about}>
-          <h2>Who we are...</h2>
+          <div className={styles.who}>
+            <h2>
+              <strong>Who we are...</strong>
+            </h2>
+          </div>
+          <div className={styles.pic}>
+            <img src={about} alt="Picture in flower container" />
+          </div>
           <div className={styles.description}>
-            <img src={lightFlower} alt="Picture in flower container" />
             <p>
               Description Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Donec sed lectus lacus. Nam ac nulla nisl. Suspendisse eget
@@ -218,53 +230,55 @@ const Home = () => {
               mauris. Maecenas quis placerat sapien.
             </p>
           </div>
-          <div className={styles.description}>
-            <div className={styles.aboutSub}>
-              <h3>Become a member today!</h3>
-              <button>Returning Member</button>
-              <button>New Member</button>
-            </div>
-            <div className={styles.aboutSub}>
-              <h3>Follow us on our Socials!</h3>
-              <a
-                href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                target="blank"
-                onMouseOver={() => setInstagramImg(IGhover)}
-                onMouseOut={() => setInstagramImg(IG)}
-              >
-                <img
-                  src={instagramImg}
-                  alt="Button for the TSA Instagram account"
-                />
-              </a>
-              <a
-                href="https://www.facebook.com/groups/tsaatuva"
-                target="blank"
-                onMouseOver={() => setFacebookImg(FBhover)}
-                onMouseOut={() => setFacebookImg(FB)}
-              >
-                <img
-                  src={facebookImg}
-                  alt="Button for the TSA Facebook account"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/tsaatuva/"
-                target="blank"
-                onMouseOver={() => setLinkedinImg(LIhover)}
-                onMouseOut={() => setLinkedinImg(LI)}
-              >
-                <img
-                  src={linkedinImg}
-                  alt="Button for the TSA LinkedIn account"
-                />
-              </a>
-            </div>
+          <div className={styles.social}>
+            <h3>Follow us on our Socials!</h3>
+            <a
+              href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="blank"
+              onMouseOver={() => setInstagramImg(IGhover)}
+              onMouseOut={() => setInstagramImg(IG)}
+            >
+              <img
+                src={instagramImg}
+                alt="Button for the TSA Instagram account"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/groups/tsaatuva"
+              target="blank"
+              onMouseOver={() => setFacebookImg(FBhover)}
+              onMouseOut={() => setFacebookImg(FB)}
+            >
+              <img
+                src={facebookImg}
+                alt="Button for the TSA Facebook account"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/tsaatuva/"
+              target="blank"
+              onMouseOver={() => setLinkedinImg(LIhover)}
+              onMouseOut={() => setLinkedinImg(LI)}
+            >
+              <img
+                src={linkedinImg}
+                alt="Button for the TSA LinkedIn account"
+              />
+            </a>
+          </div>
+          <div className={styles.forms}>
+            <h3>Become a member today!</h3>
+            <button>Returning Member</button>
+            <button>New Member</button>
           </div>
         </div>
-        <h2>How to Use our EZCards</h2>
         <div className={styles.ezcard}>
-          <div className={styles.ezcardText}>
+          <div className={styles.header}>
+            <h2>
+              <strong>How to Use our EZCards</strong>
+            </h2>
+          </div>
+          <div className={styles.description}>
             <p>
               Description Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Donec sed lectus lacus. Nam ac nulla nisl. Suspendisse eget
@@ -273,10 +287,7 @@ const Home = () => {
               mauris. Maecenas quis placerat sapien.
             </p>
           </div>
-          <div className={styles.ezcardBG}>
-            <img src={darkFlower} alt="Ezcard background layer" />
-          </div>
-          <div className={styles.EZCard}>
+          <div className={styles.pic}>
             <a href="partners">
               <img src={ezCard} alt="TSA EzCard" />
             </a>
@@ -284,41 +295,50 @@ const Home = () => {
         </div>
 
         <div className={styles.newsletter}>
-          <h2>Previous Newsletter</h2>
-          <hr />
-          <div className={styles.newsDate}>Month, Week ## Edition</div>
-          <hr />
-          <div className={styles.newsBlocks}>
-            <span>
-              <h3>TSA News...</h3>
-              <p>Blah blah blah here is some tsa news</p>
-            </span>
-            <span>
-              <h3>Dish of the Week</h3>
-              <p>here is da dish of the week</p>
-            </span>
+          <div className={styles.header}>
+            <h2>
+              <strong>Previous Newsletter</strong>
+            </h2>
+            <p>Month, Week ## Edition</p>
           </div>
-          <div className={styles.newsBlocks}>
-            <span>
-              <img src={ezCard} />
-            </span>
-            <span>
-              <h3>EasyCard Eats</h3>
-              <p>here r the eats</p>
-            </span>
+          <div className={styles.news}>
+            <h3>
+              <strong>TSA News...</strong>
+            </h3>
+            <p>Blah blah blah here is some tsa news</p>
           </div>
-          <hr />
-          <p>To read more, sign up for our newsletter!</p>
-          <SignUpBox />
+          <div className={styles.dish}>
+            <h3>
+              <strong>Dish of the Week</strong>
+            </h3>
+            <p>here is da dish of the week</p>
+          </div>
+          <div className={styles.pic}>
+            <img src={ezCard} />
+          </div>
+          <div className={styles.ez}>
+            <h3>
+              <strong>Easycard Eats</strong>
+            </h3>
+            <p>here r the eats</p>
+          </div>
+          <div className={styles.signup}>
+            <p>To read more, sign up for our newsletter!</p>
+            <SignUpBox />
+          </div>
         </div>
 
         <div className={styles.current}>
-          <h2>Current Events</h2>
+          <h2>
+            <strong>Current Events</strong>
+          </h2>
           <div className={styles.news}>
             <div className={styles.article}>
               <img src={ezCard} alt="..." />
               <div>
-                <h3>Article title</h3>
+                <h3>
+                  <em>Article title</em>
+                </h3>
                 <p>
                   Some quick example text to build on the card title and make up
                   the bulk of the card’s content.
@@ -339,33 +359,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className={styles.footer}>
-        <a
-          href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-          target="blank"
-          onMouseOver={() => setInstagramImg(IGhover)}
-          onMouseOut={() => setInstagramImg(IG)}
-        >
-          <img src={instagramImg} alt="Button for the TSA Instagram account" />
-        </a>
-        <a
-          href="https://www.facebook.com/groups/tsaatuva"
-          target="blank"
-          onMouseOver={() => setFacebookImg(FBhover)}
-          onMouseOut={() => setFacebookImg(FB)}
-        >
-          <img src={facebookImg} alt="Button for the TSA Facebook account" />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/tsaatuva/"
-          target="blank"
-          onMouseOver={() => setLinkedinImg(LIhover)}
-          onMouseOut={() => setLinkedinImg(LI)}
-        >
-          <img src={linkedinImg} alt="Button for the TSA LinkedIn account" />
-        </a>
       </div>
     </>
   );
