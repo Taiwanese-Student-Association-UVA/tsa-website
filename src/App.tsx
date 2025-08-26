@@ -11,11 +11,13 @@ import Archive from "./components/Archive/Archive";
 import Newsletters from "./components/Archive/Newsletters/Newsletters";
 import Merch from "./components/Merch/Merch";
 import Games from "./components/Games/Games";
+import MobileHeader from "./components/Header/MobileHeader";
 
 const App = () => {
     return (
         <Router>
             <Header />
+            <MobileHeader />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
