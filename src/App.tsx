@@ -28,6 +28,7 @@ const App = () => {
                 <Route path="/merch" element={<Merch />} />
                 <Route path="/games" element={<Games />} />
             </Routes>
+            <Footer />
         </Router>
     );
 };
