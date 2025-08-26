@@ -12,12 +12,16 @@ import Newsletters from "./components/Archive/Newsletters/Newsletters";
 import Merch from "./components/Merch/Merch";
 import Games from "./components/Games/Games";
 import MobileHeader from "./components/Header/MobileHeader";
+import useIsMobile from "./components/Header/useIsMobile";
+
 
 const App = () => {
+    const isMobile = useIsMobile();
+
     return (
         <Router>
-            <Header />
-            <MobileHeader />
+            {!isMobile && <Header />}
+            {isMobile && <MobileHeader />}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />

@@ -19,6 +19,7 @@ const MobileHeader = () => {
 
     return (
         <>
+            {/* Top fixed header */}
             <header className={styles.mobileHeader}>
                 <div className={styles.logoContainer}>
                     <Link to="/">
@@ -34,6 +35,7 @@ const MobileHeader = () => {
                 </button>
             </header>
 
+            {/* Fullscreen menu */}
             <div
                 className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}
                 onClick={() => setMenuOpen(false)}

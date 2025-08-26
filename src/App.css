@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+  main {
+    padding-top: 4.5rem; /* Adjust this based on your mobile header height */
+  }
+}
+
 .App {
   text-align: center;
 }
