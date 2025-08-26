@@ -3,6 +3,12 @@
     margin-bottom: 2rem;
 }
 
+@media (max-width: 768px) {
+    .eventsHeader {
+        padding-top: 2rem;
+    }
+}
+
 .eventsTitle {
     font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: bold;
@@ -28,14 +34,11 @@
     to { box-shadow: 0 4px 14px rgba(106, 90, 205, 0.8); }
 }
 
-/* Responsive rule for mobile */
 @media (max-width: 768px) {
     .divider {
         max-width: 100%;
     }
 }
-
-
 
 .eventsContainer {
     width: 85%;

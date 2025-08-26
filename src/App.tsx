@@ -12,7 +12,7 @@ import Newsletters from "./components/Archive/Newsletters/Newsletters";
 import Merch from "./components/Merch/Merch";
 import Games from "./components/Games/Games";
 import MobileHeader from "./components/Header/MobileHeader";
-import useIsMobile from "./components/Header/useIsMobile";
+import useIsMobile from "./utils/useIsMobile";
 
 
 const App = () => {
