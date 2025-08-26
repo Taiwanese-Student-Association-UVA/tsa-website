@@ -30,19 +30,6 @@
     100% { opacity: 0.6; }
 }
 
-.fadeIn {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.6s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .eventsHeader {
     text-align: center;
     margin-bottom: 2rem;
@@ -120,6 +107,17 @@
     flex-direction: column;
     overflow: hidden;
     text-align: left;
+    opacity: 0;
+}
+
+.eventCard.fadeIn {
+    animation: fadeInOpacity .8s forwards;
+}
+
+@keyframes fadeInOpacity {
+    to {
+        opacity: 1;
+    }
 }
 
 .eventCard:hover {
@@ -137,21 +135,15 @@
     transition: transform 0.3s ease;
 }
 
-.eventCard:hover .eventImage {
-    transform: scale(1.05);
-}
-
 .eventDetails {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     flex-grow: 1;
     text-align: left;
 }
 
 .eventDetails h2 {
-    margin: 0 0 0.5rem;
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 700;
     color: #fff;
@@ -163,15 +155,17 @@
 .eventDate {
     color: #aaa;
     font-size: 0.8rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0;
     text-align: left;
+    line-height: .5;
+
 }
 
 .eventDescription {
     color: #ddd;
     font-size: 0.9rem;
     line-height: 1.4;
-    margin-bottom: auto;
+    margin-bottom: .5rem;
     text-align: left;
 }
 

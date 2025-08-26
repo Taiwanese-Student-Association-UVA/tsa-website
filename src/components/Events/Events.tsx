@@ -43,9 +43,9 @@ const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({
         />
         <div className={styles.eventDetails}>
             <h2>{event.title}</h2>
-            <p className={styles.eventDateTime}>{event.time}</p>
-            <p className={styles.eventDate}>{event.date}</p>
-            <p className={styles.eventDescription}>{event.description}</p>
+            <h3 className={styles.eventDateTime}>{event.time}</h3>
+            <h3 className={styles.eventDate}>{event.date}</h3>
+            <h3 className={styles.eventDescription}>{event.description}</h3>
             <button className={styles.viewButton}>View Event →</button>
         </div>
     </div>
