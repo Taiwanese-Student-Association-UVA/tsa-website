@@ -22,7 +22,6 @@ interface Event {
 const GOOGLE_SHEET_URL =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQe3K5xq858FpFjKYjA1-FTYpjvw6LsUzrPw93aQUp023vIPDtIxbKrquLIR0BnOrSYZ1XJzEXdl_3s/pub?output=csv";
 
-// ---------------- Skeleton Placeholder ----------------
 const SkeletonCard: React.FC = () => (
     <div className={`${styles.eventCard} ${styles.skeletonCard}`}>
         <div className={styles.skeletonImage}></div>
@@ -32,7 +31,6 @@ const SkeletonCard: React.FC = () => (
     </div>
 );
 
-// ---------------- EventCard with fade-in ----------------
 const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({ event, past = false, delay = 0 }) => (
     <div
         className={`${styles.eventCard} ${past ? styles.pastEvent : ''} ${styles.fadeIn}`}
