@@ -7,8 +7,6 @@ import styles from './Events.module.css';
 import SkyBackground from './SkyBackground';
 import defaultEventImage from '../../assets/logo.png';
 
-
-
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
 
@@ -24,8 +22,22 @@ interface Event {
 const GOOGLE_SHEET_URL =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQe3K5xq858FpFjKYjA1-FTYpjvw6LsUzrPw93aQUp023vIPDtIxbKrquLIR0BnOrSYZ1XJzEXdl_3s/pub?output=csv";
 
-const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = false }) => (
-    <div className={`${styles.eventCard} ${past ? styles.pastEvent : ''}`}>
+// ---------------- Skeleton Placeholder ----------------
+const SkeletonCard: React.FC = () => (
+    <div className={`${styles.eventCard} ${styles.skeletonCard}`}>
+        <div className={styles.skeletonImage}></div>
+        <div className={styles.skeletonText}></div>
+        <div className={styles.skeletonText}></div>
+        <div className={styles.skeletonText}></div>
+    </div>
+);
+
+// ---------------- EventCard with fade-in ----------------
+const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({ event, past = false, delay = 0 }) => (
+    <div
+        className={`${styles.eventCard} ${past ? styles.pastEvent : ''} ${styles.fadeIn}`}
+        style={{ animationDelay: `${delay}ms` }}
+    >
         <img
             src={event.imageUrl || defaultEventImage}
             alt={event.title}
@@ -35,7 +47,7 @@ const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = f
             <h2>{event.title}</h2>
             <p className={styles.eventDateTime}>{event.time}</p>
             <p className={styles.eventDate}>{event.date}</p>
-            <p>{event.description}</p>
+            <p className={styles.eventDescription}>{event.description}</p>
             <button className={styles.viewButton}>View Event →</button>
         </div>
     </div>
@@ -45,6 +57,7 @@ const EventsPage: React.FC = () => {
     const [currentEvents, setCurrentEvents] = useState<Event[]>([]);
     const [pastEvents, setPastEvents] = useState<Event[]>([]);
     const [showPastEvents, setShowPastEvents] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         Papa.parse(GOOGLE_SHEET_URL, {
@@ -52,9 +65,6 @@ const EventsPage: React.FC = () => {
             header: true,
             complete: (results: { data: Event[] }) => {
                 const events = results.data as Event[];
-
-                console.log("Raw Events from CSV:", events);
-
                 const today = dayjs();
 
                 const current = events.filter(e =>
@@ -65,14 +75,13 @@ const EventsPage: React.FC = () => {
                     dayjs(e.date, 'MM/DD/YYYY').isBefore(today, 'day')
                 );
 
-                console.log("Current Events:", current);
-                console.log("Past Events:", past);
-
                 setCurrentEvents(current);
                 setPastEvents(past);
+                setLoading(false);
             },
             error: (err) => {
                 console.error("Error fetching CSV:", err);
+                setLoading(false);
             }
         });
     }, []);
@@ -87,13 +96,14 @@ const EventsPage: React.FC = () => {
                 </div>
 
                 <div className={styles.eventsGrid}>
-                    {currentEvents.length > 0 ? (
-                        currentEvents.map((event) => (
-                            <EventCard key={event.id + '-current'} event={event} />
-                        ))
-                    ) : (
-                        <p>No current events found.</p>
-                    )}
+                    {loading
+                        ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
+                        : currentEvents.length > 0
+                            ? currentEvents.map((event, index) => (
+                                <EventCard key={event.id + '-current'} event={event} delay={index * 150} />
+                            ))
+                            : <p>No current events found.</p>
+                    }
                 </div>
 
                 <button
@@ -105,13 +115,14 @@ const EventsPage: React.FC = () => {
 
                 {showPastEvents && (
                     <div className={styles.eventsGrid}>
-                        {pastEvents.length > 0 ? (
-                            pastEvents.map((event) => (
-                                <EventCard key={event.id + '-past'} event={event} past />
-                            ))
-                        ) : (
-                            <p>No past events found.</p>
-                        )}
+                        {loading
+                            ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
+                            : pastEvents.length > 0
+                                ? pastEvents.map((event, index) => (
+                                    <EventCard key={event.id + '-past'} event={event} past delay={index * 150} />
+                                ))
+                                : <p>No past events found.</p>
+                        }
                     </div>
                 )}
             </div>
