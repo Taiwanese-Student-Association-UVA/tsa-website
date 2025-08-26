@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@400;600&display=swap');
-
 .outerHeader {
     position: fixed;
     top: 1rem;
@@ -11,6 +9,14 @@
     z-index: 1000;
 }
 
+.hoverWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
 .logoContainer {
     flex-shrink: 0;
     display: flex;
@@ -19,21 +25,24 @@
 }
 
 .logoImage {
-    width: 74px;
-    height: 74px;
+    width: clamp(40px, 7vw, 74px);
+    height: clamp(40px, 7vw, 74px);
     object-fit: contain;
     opacity: 0.4;
     transition:
             opacity 0.3s ease,
-            transform 0.3s ease,
-            filter 0.3s ease;
+            transform 0.25s ease,
+            filter 0.15s ease;
     cursor: pointer;
 }
 
-.logoImage:hover {
+.hoverWrapper:hover .logoImage {
     opacity: 1;
-    transform: scale(1.1) rotate(3deg);
     filter: brightness(1.1);
+}
+
+.logoImage:hover {
+    transform: scale(1.1) rotate(3deg);
 }
 
 .logoImage:active {
@@ -41,25 +50,26 @@
     filter: brightness(0.85);
 }
 
-.opaqueLogo {
-    opacity: 1;
+.hoverWrapper:hover .logoImage:active {
+    filter: brightness(0.85) !important;
+    transform: scale(0.95) rotate(-3deg);
 }
 
-.transparentLogo {
-    opacity: 0.3;
-}
+.opaqueLogo { opacity: 1; }
+.transparentLogo { opacity: 0.3; }
 
 .headerContainer {
-    background-color: #ccccff;
+    background-color: rgba(204, 204, 255, 0.6);
+    backdrop-filter: blur(4px);
     border-radius: 9999px;
     display: flex;
     align-items: center;
     padding: 0.75rem 1.5rem;
     transition:
-            max-width 0.3s cubic-bezier(0.65, 0, 0.35, 1),
+            max-width 0.4s cubic-bezier(0.65, 0, 0.35, 1),
             opacity 0.43s cubic-bezier(0.4, 0, 0.2, 1),
             padding 0.3s ease 0.1s;
-    max-width: 750px;
+    max-width: clamp(200px, 80vw, 750px);
     overflow: hidden;
     justify-content: flex-end;
     transform-origin: right;
@@ -73,10 +83,37 @@
     padding-right: 0;
 }
 
+.hoverWrapper:hover .headerContainer {
+    max-width: clamp(200px, 80vw, 750px);
+    opacity: 1;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .headerContainer {
+        max-width: clamp(200px, 80vw, 750px);
+        opacity: 1;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .headerContainer.hidden {
+        max-width: clamp(200px, 80vw, 750px);
+        opacity: 1;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .logoImage {
+        opacity: 1;
+    }
+}
+
 .navGroup {
     display: flex;
-    gap: 1.2rem;
-    font-size: 0.95rem;
+    gap: clamp(0.6rem, 2vw, 1.2rem);
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
     color: #333;
     white-space: nowrap;
 }
@@ -100,11 +137,8 @@
     box-shadow: 0 3px 10px rgba(140, 150, 255, 0.55);
 }
 
-
 .navGroup a:active {
     transform: scale(0.97);
     filter: brightness(0.9);
     box-shadow: 0 2px 6px rgba(140, 150, 255, 0.4);
 }
-
-

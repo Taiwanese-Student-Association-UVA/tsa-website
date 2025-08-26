@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styles from './Events.module.css';
+import SkyBackground from './SkyBackground';
+
 const eventBanner = require("../../assets/place.jpg");
 const eventBanner2 = require("../../assets/place2.webp");
 
+
+// Placeholder jsons for events -> gonna make functionality to pull from google sheets prob
 interface Event {
     id: number;
     title: string;
@@ -15,27 +19,49 @@ interface Event {
 const currentEvents: Event[] = [
     {
         id: 1,
-        title: 'Title',
+        title: 'Title 1',
         date: 'December 7, 2025',
         time: '5:30PM – 11:00PM',
-        description:
-            'Description',
+        description: 'Description for Event 1',
         imageUrl: eventBanner,
     },
     {
-        id: 1,
-        title: 'Title',
-        date: 'December 7, 2025',
-        time: '5:30PM – 11:00PM',
-        description:
-            'Description',
+        id: 2,
+        title: 'Title 2',
+        date: 'December 8, 2025',
+        time: '6:00PM – 10:00PM',
+        description: 'Description for Event 2',
         imageUrl: eventBanner2,
+    },
+    {
+        id: 3,
+        title: 'Title 3',
+        date: 'December 9, 2025',
+        time: '4:00PM – 9:00PM',
+        description: 'Description for Event 3',
+        imageUrl: eventBanner,
+    },
+    {
+        id: 4,
+        title: 'Title 4',
+        date: 'December 9, 2025',
+        time: '4:00PM – 9:00PM',
+        description: 'Description for Event 3',
+        imageUrl: eventBanner,
     },
 ];
 
 const pastEvents: Event[] = [
     {
-        id: 2,
+        id: 4,
+        title: 'Past Event Example',
+        date: 'October 12, 2024',
+        time: '6:00PM – 9:00PM',
+        description: 'This was an example of a past event.',
+        imageUrl: eventBanner2,
+    },
+    {
+        id: 4,
         title: 'Past Event Example',
         date: 'October 12, 2024',
         time: '6:00PM – 9:00PM',
@@ -46,11 +72,7 @@ const pastEvents: Event[] = [
 
 const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = false }) => (
     <div className={`${styles.eventCard} ${past ? styles.pastEvent : ''}`}>
-        <img
-            src={event.imageUrl || 'https://via.placeholder.com/300x200?text=Event+Image'}
-            alt={event.title}
-            className={styles.eventImage}
-        />
+        <img src={event.imageUrl} alt={event.title} className={styles.eventImage} />
         <div className={styles.eventDetails}>
             <h2>{event.title}</h2>
             <p className={styles.eventDateTime}>{event.time}</p>
@@ -65,27 +87,36 @@ const EventsPage: React.FC = () => {
     const [showPastEvents, setShowPastEvents] = useState(false);
 
     return (
-        <div className={styles.eventsContainer}>
-            <h1>Upcoming Events</h1>
-            {currentEvents.map((event) => (
-                <EventCard key={event.id} event={event} />
-            ))}
+        <>
+            <SkyBackground />
+            <div className={styles.eventsContainer}>
+                <div className={styles.eventsHeader}>
+                    <h1 className={styles.eventsTitle}>Events</h1>
+                    <div className={styles.divider}></div>
+                </div>
 
-            <button
-                className={styles.toggleButton}
-                onClick={() => setShowPastEvents(!showPastEvents)}
-            >
-                {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
-            </button>
-
-            {showPastEvents && (
-                <div className={styles.pastEvents}>
-                    {pastEvents.map((event) => (
-                        <EventCard key={event.id} event={event} past />
+                <div className={styles.eventsGrid}>
+                    {currentEvents.map((event) => (
+                        <EventCard key={event.id + '-current'} event={event}/>
                     ))}
                 </div>
-            )}
-        </div>
+
+                <button
+                    className={styles.toggleButton}
+                    onClick={() => setShowPastEvents(!showPastEvents)}
+                >
+                    {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
+                </button>
+
+                {showPastEvents && (
+                    <div className={styles.eventsGrid}>
+                        {pastEvents.map((event) => (
+                            <EventCard key={event.id + '-past'} event={event} past/>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </>
     );
 };
 
