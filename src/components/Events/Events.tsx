@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Papa from 'papaparse';
+import dayjs from 'dayjs';
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 import styles from './Events.module.css';
 import SkyBackground from './SkyBackground';
-
-const eventBanner = require("../../assets/place.jpg");
-const eventBanner2 = require("../../assets/place2.webp");
+import defaultEventImage from '../../assets/logo.png';
 
 
-// Placeholder jsons for events -> gonna make functionality to pull from google sheets prob
+
+dayjs.extend(isSameOrAfter);
+dayjs.extend(isSameOrBefore);
+
 interface Event {
     id: number;
     title: string;
@@ -16,63 +21,16 @@ interface Event {
     imageUrl?: string;
 }
 
-const currentEvents: Event[] = [
-    {
-        id: 1,
-        title: 'Title 1',
-        date: 'December 7, 2025',
-        time: '5:30PM – 11:00PM',
-        description: 'Description for Event 1',
-        imageUrl: eventBanner,
-    },
-    {
-        id: 2,
-        title: 'Title 2',
-        date: 'December 8, 2025',
-        time: '6:00PM – 10:00PM',
-        description: 'Description for Event 2',
-        imageUrl: eventBanner2,
-    },
-    {
-        id: 3,
-        title: 'Title 3',
-        date: 'December 9, 2025',
-        time: '4:00PM – 9:00PM',
-        description: 'Description for Event 3',
-        imageUrl: eventBanner,
-    },
-    {
-        id: 4,
-        title: 'Title 4',
-        date: 'December 9, 2025',
-        time: '4:00PM – 9:00PM',
-        description: 'Description for Event 3',
-        imageUrl: eventBanner,
-    },
-];
-
-const pastEvents: Event[] = [
-    {
-        id: 4,
-        title: 'Past Event Example',
-        date: 'October 12, 2024',
-        time: '6:00PM – 9:00PM',
-        description: 'This was an example of a past event.',
-        imageUrl: eventBanner2,
-    },
-    {
-        id: 4,
-        title: 'Past Event Example',
-        date: 'October 12, 2024',
-        time: '6:00PM – 9:00PM',
-        description: 'This was an example of a past event.',
-        imageUrl: eventBanner2,
-    },
-];
+const GOOGLE_SHEET_URL =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQe3K5xq858FpFjKYjA1-FTYpjvw6LsUzrPw93aQUp023vIPDtIxbKrquLIR0BnOrSYZ1XJzEXdl_3s/pub?output=csv";
 
 const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = false }) => (
     <div className={`${styles.eventCard} ${past ? styles.pastEvent : ''}`}>
-        <img src={event.imageUrl} alt={event.title} className={styles.eventImage} />
+        <img
+            src={event.imageUrl || defaultEventImage}
+            alt={event.title}
+            className={styles.eventImage}
+        />
         <div className={styles.eventDetails}>
             <h2>{event.title}</h2>
             <p className={styles.eventDateTime}>{event.time}</p>
@@ -84,7 +42,40 @@ const EventCard: React.FC<{ event: Event; past?: boolean }> = ({ event, past = f
 );
 
 const EventsPage: React.FC = () => {
+    const [currentEvents, setCurrentEvents] = useState<Event[]>([]);
+    const [pastEvents, setPastEvents] = useState<Event[]>([]);
     const [showPastEvents, setShowPastEvents] = useState(false);
+
+    useEffect(() => {
+        Papa.parse(GOOGLE_SHEET_URL, {
+            download: true,
+            header: true,
+            complete: (results: { data: Event[] }) => {
+                const events = results.data as Event[];
+
+                console.log("Raw Events from CSV:", events);
+
+                const today = dayjs();
+
+                const current = events.filter(e =>
+                    dayjs(e.date, 'MM/DD/YYYY').isSameOrAfter(today, 'day')
+                );
+
+                const past = events.filter(e =>
+                    dayjs(e.date, 'MM/DD/YYYY').isBefore(today, 'day')
+                );
+
+                console.log("Current Events:", current);
+                console.log("Past Events:", past);
+
+                setCurrentEvents(current);
+                setPastEvents(past);
+            },
+            error: (err) => {
+                console.error("Error fetching CSV:", err);
+            }
+        });
+    }, []);
 
     return (
         <>
@@ -96,9 +87,13 @@ const EventsPage: React.FC = () => {
                 </div>
 
                 <div className={styles.eventsGrid}>
-                    {currentEvents.map((event) => (
-                        <EventCard key={event.id + '-current'} event={event}/>
-                    ))}
+                    {currentEvents.length > 0 ? (
+                        currentEvents.map((event) => (
+                            <EventCard key={event.id + '-current'} event={event} />
+                        ))
+                    ) : (
+                        <p>No current events found.</p>
+                    )}
                 </div>
 
                 <button
@@ -110,9 +105,13 @@ const EventsPage: React.FC = () => {
 
                 {showPastEvents && (
                     <div className={styles.eventsGrid}>
-                        {pastEvents.map((event) => (
-                            <EventCard key={event.id + '-past'} event={event} past/>
-                        ))}
+                        {pastEvents.length > 0 ? (
+                            pastEvents.map((event) => (
+                                <EventCard key={event.id + '-past'} event={event} past />
+                            ))
+                        ) : (
+                            <p>No past events found.</p>
+                        )}
                     </div>
                 )}
             </div>

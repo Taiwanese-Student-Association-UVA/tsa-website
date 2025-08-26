@@ -49,52 +49,90 @@
 
 .eventsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
+@media (max-width: 992px) {
+    .eventsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .eventsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .eventCard {
-    background-color: rgba(26, 26, 46, 1);
+    background-color: rgba(26, 26, 46, 0.95);
     color: #eee;
     border-radius: 21px;
     box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: left;
 }
 
 .eventCard:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: 0 0 25px 8px rgba(155, 89, 182, 0.7);
 }
 
 .eventImage {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    max-height: 220px;
+    object-fit: contain;
     border-top-left-radius: 21px;
     border-top-right-radius: 21px;
+    transition: transform 0.3s ease;
+}
+
+.eventCard:hover .eventImage {
+    transform: scale(1.05);
 }
 
 .eventDetails {
-    padding: 1.25rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .eventDetails h2 {
     margin: 0 0 0.5rem;
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+
 }
 
 .eventDateTime,
 .eventDate {
-    color: #777;
-    font-size: 0.9rem;
+    color: #aaa;
+    font-size: 0.8rem;
     margin-bottom: 0.3rem;
+    text-align: left;
+}
+
+.eventDescription {
+    color: #ddd;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: auto;
+    text-align: left;
 }
 
 .viewButton {
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
+    margin-top: auto;
+    padding: 0.6rem 1.4rem;
     background: linear-gradient(135deg, #6a5acd, #7b68ee);
     color: #fff;
     font-weight: 600;
@@ -133,7 +171,7 @@
 
 .pastEvent {
     opacity: 0.7;
-    filter: grayscale(.8);
+    filter: grayscale(0.8);
 }
 
 .skyScene {
