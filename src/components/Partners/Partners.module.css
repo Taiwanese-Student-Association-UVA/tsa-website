@@ -1,8 +1,53 @@
 .Header {
     align-items: center;
     text-align: center;
+    justify-content: center;
+    width: 70vw;
+    margin: auto;
+}
+.Header h1{
+    font-size: 128px;
+font-weight: 500;
+line-height: 100%;
+margin: 40px auto;
+}
+.Header p{
+    margin-top: 0;
+    width: 70vw;
+}
+.pictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.pictures img {
+    width: 15vw;
+    object-fit: contain;
+    margin: auto 20px;
+    transition: transform 0.6s ease, z-index 0.5s;
+}
+.pictures img:hover {
+    transform: scale(1.25);
+    transition: transform 0.6s ease, z-index 0.5s;
+}
+.howto {
+    align-items: center;
+    justify-content: center;
+}
+.howto p{
+    font-size: medium;
 }
 .Package{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;
+    width: 50vw;
+}
+.Package iframe, embed{
+    margin: 2rem auto;
+    width: 100%;
+    height: 600px;
+    border: none;
 }
