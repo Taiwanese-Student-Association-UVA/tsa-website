@@ -17,6 +17,7 @@ interface Event {
     time: string;
     description: string;
     imageUrl?: string;
+    instagramLink?: string;
 }
 
 const GOOGLE_SHEET_URL =
@@ -31,25 +32,43 @@ const SkeletonCard: React.FC = () => (
     </div>
 );
 
-const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({ event, past = false, delay = 0 }) => (
-    <div
-        className={`${styles.eventCard} ${past ? styles.pastEvent : ''} ${styles.fadeIn}`}
-        style={{ animationDelay: `${delay}ms` }}
-    >
-        <img
-            src={event.imageUrl || defaultEventImage}
-            alt={event.title}
-            className={styles.eventImage}
-        />
-        <div className={styles.eventDetails}>
-            <h2>{event.title}</h2>
-            <h3 className={styles.eventDateTime}>{event.time}</h3>
-            <h3 className={styles.eventDate}>{event.date}</h3>
-            <h3 className={styles.eventDescription}>{event.description}</h3>
-            <button className={styles.viewButton}>View Event →</button>
+const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({ event, past = false, delay = 0 }) => {
+    console.log('Event Link:', event.instagramLink);
+
+    return (
+        <div
+            className={`${styles.eventCard} ${past ? styles.pastEvent : ''} ${styles.fadeIn}`}
+            style={{ animationDelay: `${delay}ms` }}
+        >
+            <img
+                src={event.imageUrl || defaultEventImage}
+                alt={event.title}
+                className={styles.eventImage}
+            />
+            <div className={styles.eventDetails}>
+                <h2>{event.title}</h2>
+                <h3 className={styles.eventDateTime}>{event.time}</h3>
+                <h3 className={styles.eventDate}>{event.date}</h3>
+                <h3 className={styles.eventDescription}>{event.description}</h3>
+                {event.instagramLink ? (
+                    <a
+                        href={event.instagramLink.trim()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.viewButton}
+                    >
+                        View Event →
+                    </a>
+                ) : (
+                    <button className={styles.viewButton} disabled>
+                        No Link Available
+                    </button>
+                )}
+            </div>
         </div>
-    </div>
-);
+    );
+};
+
 
 const EventsPage: React.FC = () => {
     const [currentEvents, setCurrentEvents] = useState<Event[]>([]);

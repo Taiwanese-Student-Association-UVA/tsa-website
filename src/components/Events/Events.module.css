@@ -171,6 +171,8 @@
 
 .viewButton {
     margin-top: auto;
+    display: inline-block;
+    text-decoration: none;
     padding: 0.6rem 1.4rem;
     background: linear-gradient(135deg, #6a5acd, #7b68ee);
     color: #fff;

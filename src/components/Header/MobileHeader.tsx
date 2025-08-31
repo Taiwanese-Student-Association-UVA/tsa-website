@@ -9,7 +9,6 @@ const MobileHeader = () => {
     const navItems = [
         "about",
         "events",
-        "resources",
         "partners",
         "sponsors",
         "archive",

@@ -6,7 +6,6 @@ const Header = () => {
   const navItems = [
     "about",
     "events",
-    "resources",
     "partners",
     "sponsors",
     "archive",
