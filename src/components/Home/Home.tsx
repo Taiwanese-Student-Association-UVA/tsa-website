@@ -22,6 +22,28 @@ import {
   nine,
   ten,
   eleven,
+  twelve,
+  thirteen,
+  fourteen,
+  fifteen,
+  sixteen,
+  seventeen,
+  eighteen,
+  nineteen,
+  twenty,
+  twenty1,
+  twenty2,
+  twenty3,
+  twenty4,
+  twenty5,
+  twenty6,
+  twenty7,
+  twenty8,
+  twenty9,
+  thirty,
+  thirty1,
+  thirty2,
+  thirty3,
 } from "../../assets/homepage/index";
 import {
   lightFlower,
@@ -30,6 +52,7 @@ import {
   ezCard,
   about,
 } from "../../assets/index";
+import { NONAME } from "dns";
 
 const Home = () => {
   const [instagramImg, setInstagramImg] = useState(IG);
@@ -97,7 +120,7 @@ const Home = () => {
             />
             <ScrollPhoto
               src={four}
-              alt="Najiba R Julia Nguyen smiling at Night Market"
+              alt="Najiba Rushmila abd Julia Nguyen smiling at Night Market"
             />
             <ScrollPhoto src={five} alt="Rachel Yu and Albany Viet smiling" />
             <ScrollPhoto
@@ -114,7 +137,7 @@ const Home = () => {
             />
             <ScrollPhoto
               src={nine}
-              alt="Chloe Ro, Rachel Yu, and Hannah Lin posing"
+              alt="Chloe Ro, Rachel Yu, and Hannah Lin in kitchen during Taste of Taiwan event"
             />
             <ScrollPhoto
               src={ten}
@@ -122,91 +145,103 @@ const Home = () => {
             />
             <ScrollPhoto
               src={eleven}
-              alt="Jonathan Luu and Helen Lin with teacups"
+              alt="Jonathan Luu and Helen Lin with teacups during Mid-Autumn Festival event"
             />
           </Marquee>
         </div>
         <div className={styles.picturesContainer2}>
           <Marquee speed={40} gradient={false} direction={"right"}>
             <ScrollPhoto
-              src={one}
-              alt="Linda Tol and Kerstin Quach in a boba shop."
-            />
-            <ScrollPhoto src={two} alt="Teddy Bear keychains kissing" />
-            <ScrollPhoto
-              src={three}
-              alt="Elliot Park sticking his tongue out"
+              src={twelve}
+              alt="Alanda Guan holding up paper lantern she painted during Lanterns on the Lawn event"
             />
             <ScrollPhoto
-              src={four}
-              alt="Najiba R Julia Nguyen smiling at Night Market"
-            />
-            <ScrollPhoto src={five} alt="Rachel Yu and Albany Viet smiling" />
-            <ScrollPhoto
-              src={six}
-              alt="Brandon Nesbit and Robert Chen posing after Night Market performance"
+              src={thirteen}
+              alt="Kavis Subenja, Jonathan Luu, and Chloe Ro with pumpkin they painted during Pumpkin Painting event"
             />
             <ScrollPhoto
-              src={seven}
-              alt="Nathaly Due posed with her origami flowers"
+              src={fourteen}
+              alt="Merchandise table during the summer TeasNYou Fundraiser"
             />
             <ScrollPhoto
-              src={eight}
-              alt="Yellow lantern with cute painted cartoon cat on it"
+              src={fifteen}
+              alt="Dorothy Philips and Sujin Gahng during Night Market"
             />
             <ScrollPhoto
-              src={nine}
-              alt="Chloe Ro, Rachel Yu, and Hannah Lin posing"
+              src={sixteen}
+              alt="Shooting game stand at Night Market"
             />
             <ScrollPhoto
-              src={ten}
-              alt="Olivia Jung, Miki Li, Hebba Mohmand, and Albany Viet posing before ASU Semi Formal"
+              src={seventeen}
+              alt="Heewon Lim, Franklin Li, Jonathan Luu, and Jordan Ho smiling during Night Market"
             />
             <ScrollPhoto
-              src={eleven}
-              alt="Jonathan Luu and Helen Lin with teacups"
+              src={eighteen}
+              alt="Lily Lai, Kristy Lau, and Harshika Challa posing with food during Night Market"
+            />
+            <ScrollPhoto
+              src={nineteen}
+              alt="Jason Phi , Raymond Wen, and Nolan Nguyen posing at Night Market"
+            />
+            <ScrollPhoto
+              src={twenty}
+              alt="Aerial view of the Ampitheatre during Night Market"
+            />
+            <ScrollPhoto
+              src={twenty1}
+              alt="Lawson Pham and Victoria Hua giving a thumbs up at Night Market"
+            />
+            <ScrollPhoto
+              src={twenty2}
+              alt="Ring toss game station at Night Market"
             />
           </Marquee>
         </div>
         <div className={styles.picturesContainer3}>
           <Marquee speed={40} gradient={false}>
             <ScrollPhoto
-              src={one}
-              alt="Linda Tol and Kerstin Quach in a boba shop."
-            />
-            <ScrollPhoto src={two} alt="Teddy Bear keychains kissing" />
-            <ScrollPhoto
-              src={three}
-              alt="Elliot Park sticking his tongue out"
+              src={twenty3}
+              alt="Fishing game station at Night Market"
             />
             <ScrollPhoto
-              src={four}
-              alt="Najiba R Julia Nguyen smiling at Night Market"
-            />
-            <ScrollPhoto src={five} alt="Rachel Yu and Albany Viet smiling" />
-            <ScrollPhoto
-              src={six}
-              alt="Brandon Nesbit and Robert Chen posing after Night Market performance"
+              src={twenty4}
+              alt="Bowl of Beef Noodle Soup handed out during Taste of Taiwan event"
             />
             <ScrollPhoto
-              src={seven}
-              alt="Nathaly Due posed with her origami flowers"
+              src={twenty5}
+              alt="Helen Lin and Joyce Yang holding up introduction stickers"
             />
             <ScrollPhoto
-              src={eight}
-              alt="Yellow lantern with cute painted cartoon cat on it"
+              src={twenty6}
+              alt="Victoria Hua and Dolly Venkadatasari outside of Newcomb Ballroom"
             />
             <ScrollPhoto
-              src={nine}
-              alt="Chloe Ro, Rachel Yu, and Hannah Lin posing"
+              src={twenty7}
+              alt="--, Tracy Ha, Bryan Yuk, and Albany Viet posing for popsicles event"
             />
             <ScrollPhoto
-              src={ten}
-              alt="Olivia Jung, Miki Li, Hebba Mohmand, and Albany Viet posing before ASU Semi Formal"
+              src={twenty8}
+              alt="Carly Ochgerel and Maggie Nguyen posing with the pumpkins they painted during Pumpkin Painting event"
             />
             <ScrollPhoto
-              src={eleven}
-              alt="Jonathan Luu and Helen Lin with teacups"
+              src={twenty9}
+              alt="Hebba Mohmand posing behind rice paddy hat for ASU SemiFormal"
+            />
+            <ScrollPhoto
+              src={thirty}
+              alt="Kerstin Quach, Natalie Nguyen, and Stephanie Chu drinking boba during the summer Teas N You fundraiser"
+            />
+            <ScrollPhoto
+              src={thirty1}
+              alt="Catherine Cheng and Anya Chang during Night Market"
+            />
+            <ScrollPhoto
+              src={thirty2}
+              alt="Caroline Ding, Victoria Hua, Hannah Tse, and Raymond Huang posing with representatives from TECRO during Night Market"
+            />
+            <ScrollPhoto
+              src={thirty3}
+              alt="Natalie Nguyen and Sophie Chen posing with their origami flowers during Flower Shower event"
             />
           </Marquee>
         </div>
@@ -223,11 +258,12 @@ const Home = () => {
           </div>
           <div className={styles.description}>
             <p>
-              Description Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Donec sed lectus lacus. Nam ac nulla nisl. Suspendisse eget
-              justo elementum, euismod tortor ut, tempor neque. Nam suscipit
-              elit quis dui pulvinar, ac semper magna viverra. Sed quis augue
-              mauris. Maecenas quis placerat sapien.
+              UVA’s Taiwanese Student Association (TSA) is a student-run,
+              undergraduate community celebrating Taiwanese culture on Grounds.
+              Through cultural showcases, friendly socials, and service
+              projects—including Night Market and Taste of Taiwan—we deepen
+              appreciation for Taiwan and create a welcoming home for students
+              of every background.
             </p>
           </div>
           <div className={styles.social}>
@@ -268,23 +304,28 @@ const Home = () => {
           </div>
           <div className={styles.forms}>
             <h3>Become a member today!</h3>
-            <button>Returning Member</button>
-            <button>New Member</button>
+            <a href="https://forms.office.com/r/4G44DqZ5qD" target="_blank">
+              <button>Member Form</button>
+            </a>
           </div>
         </div>
         <div className={styles.ezcard}>
           <div className={styles.header}>
             <h2>
-              <strong>How to Use our EZCards</strong>
+              <strong>Our EZCards</strong>
             </h2>
           </div>
           <div className={styles.description}>
             <p>
-              Description Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Donec sed lectus lacus. Nam ac nulla nisl. Suspendisse eget
-              justo elementum, euismod tortor ut, tempor neque. Nam suscipit
-              elit quis dui pulvinar, ac semper magna viverra. Sed quis augue
-              mauris. Maecenas quis placerat sapien.
+              This year we are introducing our brand new TSA EasyCard! This card
+              is your passport to exclusive perks, discounts, and EasyCard only
+              benefits all year long. For just $12, you’ll unlock over $50 in
+              value through savings at local businesses, priority access at TSA
+              events, and free extras made just for you!
+            </p>
+            <p>
+              To learn how to use our EZCards or read up on all of the perks you
+              can get, click on the EZCard to the right!
             </p>
           </div>
           <div className={styles.pic}>
@@ -293,7 +334,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-
+        {/*
         <div className={styles.newsletter}>
           <div className={styles.header}>
             <h2>
@@ -327,7 +368,6 @@ const Home = () => {
             <SignUpBox />
           </div>
         </div>
-
         <div className={styles.current}>
           <h2>
             <strong>Current Events</strong>
@@ -359,6 +399,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        */}
       </div>
     </>
   );
