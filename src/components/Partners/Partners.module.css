@@ -189,7 +189,7 @@
   .howto {
     width: 40%;
     margin: 20px;
-    padding: 15px 15px;
+    padding: 15px 20px;
   }
   .howto h2 {
     font-size: 2.4rem;
@@ -197,6 +197,7 @@
 
   .Package {
     width: 80%;
+    margin-top: 40px;
   }
   .Package h2 {
     font-size: 2.5rem;
