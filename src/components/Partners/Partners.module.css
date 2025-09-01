@@ -164,7 +164,7 @@
   box-shadow: 0 0 15px 5px #c5c9f765;
 }
 
-/* ===== TABLET STYLES ===== */
+/* tablet styles */
 @media (min-width: 768px) {
   .floatingImage {
     width: 60%;
@@ -225,7 +225,7 @@
   }
 }
 
-/* ===== DESKTOP STYLES ===== */
+/* desktop styles */
 @media (min-width: 1024px) {
   .floatingImage {
     width: 500px;
@@ -309,7 +309,7 @@
   }
 }
 
-/* ===== LARGE DESKTOP STYLES ===== */
+/* large desktop styles */
 @media (min-width: 1440px) {
   .Header {
     width: 60vw;
