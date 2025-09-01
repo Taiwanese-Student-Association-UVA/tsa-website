@@ -3,7 +3,6 @@ import "./about.css";
 
 type Person = { name: string; role: string; photo: string };
 
-// ——— Exec
 const execBoard: Person[] = [
   { name: "Ashley Wu", role: "President", photo: "/assets/board/ashley.jpg" },
   { name: "Albany Viet", role: "Vice President", photo: "/assets/board/albany.jpg" },
@@ -11,7 +10,6 @@ const execBoard: Person[] = [
   { name: "Hebba Mohmand", role: "Treasurer", photo: "/assets/board/hebba.jpg" },
 ];
 
-// ——— Non-exec
 const groupedBoard: Record<string, Person[]> = {
   Membership: [
     { name: "Linda Tol", role: "Membership", photo: "/assets/board/linda.jpg" },
@@ -42,7 +40,7 @@ const groupedBoard: Record<string, Person[]> = {
   ],
   Culture: [
     { name: "Jenny Zhang", role: "Culture", photo: "/assets/board/jenny.jpg" },
-    { name: "Catherine Cheng", role: "Culture", photo: "/assets/board/catherine.jpg" }
+    { name: "Catherine Cheng", role: "Culture", photo: "/assets/board/catherine.jpg" },
   ],
   Fundraising: [
     { name: "Kerstin Quach", role: "Fundraising", photo: "/assets/board/kerstin.jpg" },
@@ -59,7 +57,6 @@ const groupedBoard: Record<string, Person[]> = {
     { name: "Victoria Hua", role: "Advisor", photo: "/assets/board/victoria.jpg" },
     { name: "Caroline Ding", role: "Advisor", photo: "/assets/board/caroline.jpg" },
   ],
-  // add more groups as needed…
 };
 
 const BoardSection: React.FC = () => {
@@ -70,7 +67,6 @@ const BoardSection: React.FC = () => {
       <div className="galleryRow">
         {execBoard.map((m) => (
           <article key={m.name} className="galleryCard personCard">
-            <img className="galleryImg personImg" src={m.photo} alt={m.name} />
             <div className="personText">
               <div className="personName">{m.name}</div>
               <div className="personRole">{m.role}</div>
@@ -98,7 +94,6 @@ const BoardSection: React.FC = () => {
               <div className="galleryRow">
                 {people.map((p) => (
                   <article key={p.name} className="galleryCard personCard">
-                    <img className="galleryImg personImg" src={p.photo} alt={p.name} />
                     <div className="personText">
                       <div className="personName">{p.name}</div>
                       <div className="personRole">{p.role}</div>
