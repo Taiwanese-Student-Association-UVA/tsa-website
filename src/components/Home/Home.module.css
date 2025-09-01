@@ -22,8 +22,9 @@ body{
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin: 6rem auto 4rem;
-  padding: 20px;
+  margin-top: 6rem;
+    margin-bottom: 4rem;
+  padding: 20px 15px;
   color: black;
 }
 .beginning h1{
@@ -77,7 +78,7 @@ body{
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  margin: 10px 0;
+  margin: 0;
 }
 .picturesContainer{
   top: 0;
@@ -96,7 +97,7 @@ body{
   cursor: pointer;
   height: 22vh;
   width: auto;
-  margin: 0 10px;
+  margin: 0;
   box-shadow: var(--shadow-medium);
   transition: var(--transition);
   scroll-snap-align: start;
@@ -124,7 +125,7 @@ body{
   line-height: 1.6;
 }
 .content h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -176,7 +177,7 @@ body{
   gap: 15px;
 }
 .about > div.social img {
-  width: 80px;
+  width: 90px;
   margin: 0;
   object-fit: contain;
   transition: var(--transition);
@@ -212,31 +213,26 @@ body{
   margin: 40px 0;
   width: 100%;
   background-color: var(--dark-blue);
-  padding: 30px 20px;
+  padding: 30px -20px;
   text-align: left;
   justify-content: center;
   align-items: center;
 }
-
 .ezcard > div {
   margin: 15px 0;
   width: 100%;
 }
-
 .ezcard > div.header {
   text-align: center;
 }
-
 .ezcard > div.description {
   width: 100%;
   text-align: center;
 }
-
 .ezcard > div.pic {
   display: flex;
   justify-content: center;
 }
-
 .ezcard > div.pic img {
   margin: 0;
   width: 100%;
@@ -245,7 +241,6 @@ body{
   transform: none;
   transition: var(--transition);
 }
-
 .ezcard > div.pic img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 30px 8px rgb(255, 244, 184);
@@ -261,7 +256,6 @@ body{
   justify-content: center;
   align-items: center;
 }
-
 .newsletter > div {
   padding: 15px;
   margin: 10px 0;
@@ -269,27 +263,23 @@ body{
   box-shadow: 0 0 15px 5px rgb(243, 243, 243);
   width: 90%;
 }
-
 .newsletter > div.header {
   box-shadow: none;
   margin: 0;
   text-align: center;
 }
-
 .newsletter > div.signup {
   text-align: center;
   align-content: center;
   justify-content: center;
   box-shadow: none;
 }
-
 .newsletter img {
   margin: 10px 0;
   padding: 10px 0;
   width: 100%;
   object-fit: contain;
 }
-
 .signupBox {
   align-items: center;
   font-size: 15px;
@@ -300,13 +290,11 @@ body{
   margin: 10px auto;
   text-align: center;
 }
-
 .signupForm {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
-
 .signupInput {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -315,13 +303,11 @@ body{
   font-size: 1rem;
   box-sizing: border-box;
 }
-
 .signupInput:focus {
   outline: none;
   border-color: #8d94f7;
   box-shadow: 0 0 5px 3px rgb(186, 182, 211);
 }
-
 .signupButton {
   font-size: 1.1rem;
   width: 100%;
@@ -333,7 +319,6 @@ body{
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
 .signupButton:hover {
   background-color: var(--dark-blue);
   color: white;
@@ -343,12 +328,10 @@ body{
 .current {
   text-align: center;
 }
-
 .news {
   display: block;
   align-content: center;
 }
-
 .article {
   background-color: var(--dark-blue);
   box-shadow: 0 0 5px 9px rgba(229, 226, 255, 0.2);
@@ -361,19 +344,16 @@ body{
   justify-content: center;
   padding: 15px;
 }
-
 .article h3 {
   font-size: 1.5rem;
   font-weight: 400;
 }
-
 .article p {
   font-size: 1rem;
   margin: 15px;
   text-align: left;
   line-height: 1.6;
 }
-
 .article a {
   font-size: 0.9rem;
   margin: 15px;
@@ -387,7 +367,6 @@ body{
   color: var(--dark-blue);
   font-weight: bold;
 }
-
 .article img {
   border-radius: 10px;
   margin: 15px 0;
