@@ -84,18 +84,16 @@ body{
   top: 0;
 }
 .picturesContainer2{
-  top: 0;
-  margin-top: 20px;
+  top: 26vh;
 }
 .picturesContainer3{
-  top: 0;
-  margin-top: 20px;
+  top: 51vh;
 }
 .pictures{
   object-fit: cover;
   overflow: visible;
   cursor: pointer;
-  height: 22vh;
+  height: 25vh;
   width: auto;
   margin: 0;
   box-shadow: var(--shadow-medium);
@@ -126,7 +124,7 @@ body{
 }
 .content h2 {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 0;
 }
 .content h3 {
@@ -210,10 +208,10 @@ body{
   color: white;
   display: flex;
   flex-direction: column;
-  margin: 40px 0;
-  width: 100%;
+  margin: 40px 20px;
+  width: 100vw;
   background-color: var(--dark-blue);
-  padding: 30px -20px;
+  padding: 15px;
   text-align: left;
   justify-content: center;
   align-items: center;
@@ -378,18 +376,19 @@ body{
 /* tablet styles */
 @media (min-width: 768px) {
   .beginning {
-    margin: 8rem auto 6rem;
+    margin-top: 6rem;
+    margin-bottom: 4rem;;
     padding: 30px;
   }
   .beginning h1 {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
   .beginningText {
     width: 80%;
   }
 
   .content {
-    width: 80%;
+    width: 85%;
     padding: 40px;
   }
   .content p {
@@ -404,7 +403,7 @@ body{
   }
   
   .about {
-    width: 80%;
+    width: 85%;
     display: grid;
     grid-template-areas:
       "who who"
@@ -420,6 +419,9 @@ body{
   .about > div.pic {
     grid-area: pic;
   }
+  .about > div.pic img {
+    width: 20vw;
+  }
   .about > div.description {
     grid-area: description;
   }
@@ -431,11 +433,15 @@ body{
   }
   
   .ezcard {
+    width: 85%;
     padding: 40px;
   }
   .ezcard > div.description {
     width: 80%;
     text-align: left;
+  }
+  .ezcard > div.ezcard img {
+    width: 10vw;
   }
 
   .signupForm {
