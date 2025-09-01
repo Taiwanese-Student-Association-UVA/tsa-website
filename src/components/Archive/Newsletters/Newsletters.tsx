@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../Archive.module.css";
 
 const newsletters = [
-  { slug: "(replace)", title: "(replace)", date: "(replace)", excerpt: "(replace)", href: "/archive/newsletters/(replace)" },
-  { slug: "(replace)", title: "(replace)", date: "(replace)", excerpt: "(replace)", href: "/archive/newsletters/(replace)" },
+  { slug: "coming-soon", title: "Coming Soon", date: "Coming Soon", excerpt: "Coming Soon", href: "/archive/newsletters/coming-soon" },
 ];
 
 const Newsletters: React.FC = () => {
@@ -13,7 +12,6 @@ const Newsletters: React.FC = () => {
       <h1 className={styles.title}>Newsletters</h1>
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>(replace)</h2>
         </div>
         <ul className={styles.newsList}>
           {newsletters.map((n) => (
@@ -26,7 +24,7 @@ const Newsletters: React.FC = () => {
                     <time className={styles.newsDate}>{n.date}</time>
                   </div>
                   <p className={styles.newsExcerpt}>{n.excerpt}</p>
-                  <span className={styles.newsCTA}>(replace)</span>
+                  <span className={styles.newsCTA}>Read More</span>
                 </div>
               </Link>
             </li>

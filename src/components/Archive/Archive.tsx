@@ -29,26 +29,13 @@ const heroSlides = [
 
 const newsletterList = [
   {
-    slug: "(replace)",
-    title: "(replace)",
-    excerpt: "(replace)",
-    date: "(replace)",
-    href: "/archive/newsletters/(replace)",
+    slug: "coming-soon",
+    title: "Coming Soon",
+    excerpt: "Coming Soon",
+    date: "Coming Soon",
+    href: "/archive/newsletters/coming-soon",
   },
-  {
-    slug: "(replace)",
-    title: "(replace)",
-    excerpt: "(replace)",
-    date: "(replace)",
-    href: "/archive/newsletters/(replace)",
-  },
-  {
-    slug: "(replace)",
-    title: "(replace)",
-    excerpt: "(replace)",
-    date: "(replace)",
-    href: "/archive/newsletters/(replace)",
-  },
+  
 ];
 
 function useAutoplay(count: number, delay = 5000) {
@@ -172,7 +159,7 @@ const Archive: React.FC = () => {
         </div>
       </section>
 
-      <section className={styles.section}>
+            <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Newsletters</h2>
           <Link className={styles.viewAll} to="/archive/newsletters">
@@ -181,17 +168,21 @@ const Archive: React.FC = () => {
         </div>
 
         <ul className={styles.newsList}>
-          {newsletterList.map((n) => (
-            <li key={n.slug} className={styles.newsItem}>
-              <Link to={n.href} className={styles.newsCard} aria-label="(replace)">
+          {newsletterList.map((n, i) => (
+            <li key={`${n.slug}-${i}`} className={styles.newsItem}>
+              <Link
+                to={n.href ?? "/archive/newsletters"}
+                className={styles.newsCard}
+                aria-label={`${n.title ?? "Coming Soon"} — ${n.date ?? ""}`}
+              >
                 <div className={styles.newsThumb} />
                 <div className={styles.newsBody}>
                   <div className={styles.newsMeta}>
-                    <span className={styles.newsTitle}>(replace)</span>
-                    <time className={styles.newsDate}>(replace)</time>
+                    <span className={styles.newsTitle}>{n.title ?? "Coming Soon"}</span>
+                    <time className={styles.newsDate}>{n.date ?? "Coming Soon"}</time>
                   </div>
-                  <p className={styles.newsExcerpt}>(replace)</p>
-                  <span className={styles.newsCTA}>(replace)</span>
+                  <p className={styles.newsExcerpt}>{n.excerpt ?? "Coming Soon"}</p>
+                  <span className={styles.newsCTA}>Read More</span>
                 </div>
               </Link>
             </li>
