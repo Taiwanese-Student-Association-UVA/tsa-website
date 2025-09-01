@@ -40,24 +40,20 @@
   width: 90%;
   margin: 40px auto;
 }
-
 .Header h1 {
   font-size: 2.7rem;
   font-weight: 500;
   line-height: 100%;
   margin: 10px auto;
 }
-
 .Header h2 {
   font-size: 2rem;
 }
-
 .Header p {
   width: 100%;
   margin: 15px auto;
   line-height: 1.6;
 }
-
 .Header hr {
   width: 50%;
   height: 3px;
@@ -65,7 +61,6 @@
   border: none;
   margin: 0 auto;
 }
-
 .pictures {
   display: flex;
   flex-direction: column;
@@ -74,15 +69,13 @@
   flex-wrap: wrap;
   gap: 30px;
 }
-
 .pictures img {
-  width: 70%;
+  width: 100%;
   max-width: 250px;
   object-fit: contain;
   margin: 10px;
   transition: var(--transition);
 }
-
 .pictures img:hover {
   transform: scale(1.15);
 }
@@ -101,7 +94,7 @@
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: 20px 0;
+  margin: 20px auto;
   padding: 25px 15px;
   border-radius: 10px;
   box-shadow: 0 0 15px 5px rgb(243, 243, 243);
@@ -138,17 +131,14 @@
   width: 90%;
   margin: 30px auto;
 }
-
 .Package h2 {
   font-size: 2rem;
   margin: auto;
 }
-
 .Package p {
   font-size: 1rem;
   line-height: 1.6;
 }
-
 .Package iframe, 
 .Package embed {
   margin: 1.5rem auto;
@@ -186,7 +176,8 @@
     gap: 40px;
   }
   .pictures img {
-    width: 35%;
+    width: 70%;
+    max-width: 15vw;
     margin: 30px 20px;
   }
   
@@ -212,7 +203,7 @@
   }
   .Package iframe, 
   .Package embed {
-    height: 400px;
+    height: auto;
   }
 }
 
@@ -222,37 +213,31 @@
     width: 500px;
     max-width: none;
   }
-  
   .Header {
     width: 70vw;
     margin: 80px auto;
   }
-  
   .Header h1 {
     font-size: 80px;
   }
-  
   .Header h2 {
     font-size: 40px;
   }
-  
   .Header p {
     width: 45vw;
+    font-size: large;
   }
-  
   .Header hr {
     width: 15vw;
   }
-  
   .pictures {
     flex-direction: row;
   }
-  
   .pictures img {
-    width: 15vw;
+    width: 100%;
+    max-width: 15vw;
     margin: 60px 20px;
   }
-  
   .pictures img:hover {
     transform: scale(1.25);
   }
@@ -262,21 +247,17 @@
     height: 800px;
     margin: 70px auto;
   }
-  
   .howto {
     width: 25vw;
     margin: 30px;
     padding: 30px 15px;
   }
-  
   .howto p {
     font-size: medium;
   }
-  
   .howto h2 {
     font-size: 45px;
   }
-  
   .howto:hover {
     transform: scale(1.05);
   }
@@ -285,15 +266,12 @@
     width: 60vw;
     margin: 50px auto;
   }
-  
   .Package h2 {
     font-size: 50px;
   }
-  
   .Package p {
     font-size: 1.2rem;
   }
-  
   .Package iframe, 
   .Package embed {
     height: 600px;
