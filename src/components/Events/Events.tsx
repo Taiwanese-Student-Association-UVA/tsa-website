@@ -105,7 +105,7 @@ const EventsPage: React.FC = () => {
 
     return (
         <>
-            <SkyBackground />
+            <SkyBackground/>
             <div className={styles.eventsContainer}>
                 <div className={styles.eventsHeader}>
                     <h1 className={styles.eventsTitle}>Events</h1>
@@ -114,10 +114,10 @@ const EventsPage: React.FC = () => {
 
                 <div className={styles.eventsGrid}>
                     {loading
-                        ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
+                        ? Array.from({length: 6}).map((_, i) => <SkeletonCard key={i}/>)
                         : currentEvents.length > 0
                             ? currentEvents.map((event, index) => (
-                                <EventCard key={event.id + '-current'} event={event} delay={index * 150} />
+                                <EventCard key={event.id + '-current'} event={event} delay={index * 150}/>
                             ))
                             : <p>No current events found.</p>
                     }
@@ -133,10 +133,10 @@ const EventsPage: React.FC = () => {
                 {showPastEvents && (
                     <div className={styles.eventsGrid}>
                         {loading
-                            ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
+                            ? Array.from({length: 6}).map((_, i) => <SkeletonCard key={i}/>)
                             : pastEvents.length > 0
                                 ? pastEvents.map((event, index) => (
-                                    <EventCard key={event.id + '-past'} event={event} past delay={index * 150} />
+                                    <EventCard key={event.id + '-past'} event={event} past delay={index * 150}/>
                                 ))
                                 : <p>No past events found.</p>
                         }
