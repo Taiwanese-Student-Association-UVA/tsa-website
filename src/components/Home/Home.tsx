@@ -103,11 +103,12 @@ const Home = () => {
         <div className={styles.glass}>
           <div className={styles.beginningText}>
             <h1>
-              Welcome to
-              <br />
-              TSA@UVA
+              <strong>
+                Welcome to
+                <br />
+                TSA@UVA
+              </strong>
             </h1>
-            <p>Who are we?</p>
           </div>
         </div>
         <div className={styles.picturesContainer}>
@@ -309,7 +310,9 @@ const Home = () => {
             </p>
           </div>
           <div className={styles.social}>
-            <h3>Follow us on our Socials!</h3>
+            <h3>
+              <strong>Follow us on our Socials!</strong>
+            </h3>
             <a
               href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="blank"
@@ -345,7 +348,9 @@ const Home = () => {
             </a>
           </div>
           <div className={styles.forms}>
-            <h3>Become a member today!</h3>
+            <h3>
+              <strong>Become a member today!</strong>
+            </h3>
             <a href="https://forms.office.com/r/4G44DqZ5qD" target="_blank">
               <button>Member Form</button>
             </a>
