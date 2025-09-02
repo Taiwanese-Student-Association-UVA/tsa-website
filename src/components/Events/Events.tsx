@@ -41,9 +41,12 @@ const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({
             style={{ animationDelay: `${delay}ms` }}
         >
             <img
-                src={event.imageUrl || defaultEventImage}
+                src={`/EventsImages/${event.id}.jpg` || defaultEventImage}
                 alt={event.title}
                 className={styles.eventImage}
+                onError={(e) => {
+                    (e.target as HTMLImageElement).src = defaultEventImage;
+                }}
             />
             <div className={styles.eventDetails}>
                 <h2>{event.title}</h2>
