@@ -22,7 +22,7 @@ const MobileHeader = () => {
             <header className={styles.mobileHeader}>
                 <div className={styles.logoContainer}>
                     <Link to="/">
-                        <img src={logo} alt="TSA Logo" className={styles.logoImage} />
+                        <img src={logo} alt="TSA Logo" className={styles.logoImage}/>
                     </Link>
                 </div>
                 <button
