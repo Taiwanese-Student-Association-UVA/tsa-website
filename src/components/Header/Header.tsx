@@ -4,13 +4,14 @@ const logo = require("../../assets/logo.png");
 
 const Header = () => {
   const navItems = [
+    "home",
     "about",
     "events",
     "partners",
-    "sponsors",
+    // "sponsors",
     "archive",
-    "merch",
-    "games",
+    // "merch",
+    // "games",
   ];
 
   return (
@@ -25,7 +26,10 @@ const Header = () => {
           <div className={`${styles.headerContainer} ${styles.hidden}`}>
             <nav className={styles.navGroup}>
               {navItems.map((item) => (
-                  <Link key={item} to={`/${item.toLowerCase()}`}>
+                  <Link
+                      key={item}
+                      to={item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`}
+                  >
                     {item}
                   </Link>
               ))}
