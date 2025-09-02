@@ -5,7 +5,6 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import Events from "./components/Events/Events";
-import Resources from "./components/Resources/Resources";
 import Partners from "./components/Partners/Partners";
 import MobilePartners from "./components/Partners/MobilePartners";
 import Sponsors from "./components/Sponsors/Sponsors";
@@ -15,6 +14,7 @@ import Merch from "./components/Merch/Merch";
 import Games from "./components/Games/Games";
 import MobileHeader from "./components/Header/MobileHeader";
 import useIsMobile from "./utils/useIsMobile";
+import "./App.css";
 
 const App = () => {
   const isMobile = useIsMobile();
@@ -23,20 +23,24 @@ const App = () => {
     <Router>
       {!isMobile && <Header />}
       {isMobile && <MobileHeader />}
-      <Routes>
-        <Route path="/" element={isMobile ? <MobileHome /> : <Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/events" element={<Events />} />
-        <Route
-          path="/partners"
-          element={isMobile ? <MobilePartners /> : <Partners />}
-        />
-        <Route path="/sponsors" element={<Sponsors />} />
-        <Route path="/archive" element={<Archive />} />
-        <Route path="/archive/newsletters" element={<Newsletters />} />
-        <Route path="/merch" element={<Merch />} />
-        <Route path="/games" element={<Games />} />
-      </Routes>
+
+      <div className={isMobile ? "contentWithMobileHeader" : "content"}>
+        <Routes>
+          <Route path="/" element={isMobile ? <MobileHome /> : <Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/events" element={<Events />} />
+          <Route
+            path="/partners"
+            element={isMobile ? <MobilePartners /> : <Partners />}
+          />
+          <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/archive" element={<Archive />} />
+          <Route path="/archive/newsletters" element={<Newsletters />} />
+          <Route path="/merch" element={<Merch />} />
+          <Route path="/games" element={<Games />} />
+        </Routes>
+      </div>
+
       <Footer />
     </Router>
   );

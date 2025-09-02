@@ -7,6 +7,20 @@
   pointer-events: none;
 }
 
+:root {
+  --mobile-header-height: 50px;
+}
+
+.content {
+  padding-top: 0;
+}
+
+
+.contentWithMobileHeader {
+  padding-top: var(--mobile-header-height);
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -6,6 +6,9 @@
 }
 
 @media (max-width: 768px) {
+    .spacer {
+        padding-bottom: 50px;
+    }
     .mobileHeader {
         position: fixed;
         top: 0;

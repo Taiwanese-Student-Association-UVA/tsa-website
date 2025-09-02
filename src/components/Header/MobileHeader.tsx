@@ -7,13 +7,14 @@ const MobileHeader = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const navItems = [
+        "home",
         "about",
         "events",
         "partners",
-        "sponsors",
+        // "sponsors",
         "archive",
-        "merch",
-        "games",
+        // "merch",
+        // "games",
     ];
 
     return (
@@ -21,7 +22,7 @@ const MobileHeader = () => {
             <header className={styles.mobileHeader}>
                 <div className={styles.logoContainer}>
                     <Link to="/">
-                        <img src={logo} alt="TSA Logo" className={styles.logoImage} />
+                        <img src={logo} alt="TSA Logo" className={styles.logoImage}/>
                     </Link>
                 </div>
                 <button
@@ -55,7 +56,7 @@ const MobileHeader = () => {
                     {navItems.map((item) => (
                         <Link
                             key={item}
-                            to={`/${item.toLowerCase()}`}
+                            to={item.toLowerCase() === "home" ? "/" : `/${item.toLowerCase()}`}
                             onClick={() => setMenuOpen(false)}
                         >
                             {item}
