@@ -100,9 +100,13 @@
     align-items: center;
     justify-content: center;
 }
+.howto ol{
+    margin: auto 10px;
+}
 .howto p{
     font-size: medium;
     margin: 10px;
+    padding: 10px;
 }
 .howto h2{
     font-size: 30px;
