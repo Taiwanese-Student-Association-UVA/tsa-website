@@ -1,0 +1,193 @@
+/* variables */
+:root {
+  --primary: #4b40c9;
+  --dark-blue: #050a55;
+  --light-purple: #b1abf8;
+  --glass-bg: rgba(255, 255, 255, 0.247);
+  --glass-border: rgba(255, 255, 255, 0.404);
+  --text-dark: #262626;
+  --transition: transform 0.6s ease, z-index 0.5s;
+  --shadow-soft: 0 8px 32px rgba(31, 38, 135, 0.2);
+  --shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* for picture section (no horizontal scrolling) */
+body{
+  overflow-x: hidden;
+}
+
+/* Top of page content */
+.beginning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15rem auto;
+  padding: 40px 50px;
+  color: black;
+}
+.beginning h1{
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 100%;
+  margin: auto;
+}
+.beginningText{
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  padding: 30px 50px;
+  z-index: 31;
+  text-align: center;
+}
+/* glass effect component */
+.glass {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(2px) saturate(150%);
+  border: 4px solid var(--glass-border);
+  border-radius: 2rem;
+  box-shadow: var(--shadow-soft), 
+              inset 0 4px 20px rgba(255, 255, 255, 0.3);
+  z-index: 30;
+}
+.glass::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  backdrop-filter: blur(2px);
+  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+              inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+  opacity: .6;
+  z-index: inherit;
+  filter: blur(2px) brightness(115%);
+}
+/* picture containers */
+.picturesContainer{
+  width: 150vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+.picturesContainer{
+  top: 0;
+}
+.pictures{
+  object-fit: contain;
+  overflow: visible;
+  cursor: pointer;
+  height: 100vh;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+}
+.pictures:hover{
+  transform: scale(1.1) translateY(-5%);
+  transform-origin: center center;
+  z-index: 25;
+}
+
+/* Body */
+.content {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-dark);
+}
+.content p {
+  font-size: 1.5rem;
+  text-indent: 40px;
+}
+.content h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.content h3 {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+/* About section */
+.about{
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.about img {
+  width: 70vw;
+  object-fit: contain;
+}
+.social {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.social img{
+    width: 27vw;
+    margin: 0 10px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+.social img:hover{
+  transform: scale(1.25);
+}
+.about button {
+  width: 300px;
+  height: 90px;
+  font-size: 25px;
+  margin: 0 20px;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.about button:hover {
+  background: linear-gradient(135deg, #aeb4ff, #8d94f7);
+  color: var(--primary-color);
+  transform: scale(1.03);
+  box-shadow: 0 3px 10px rgba(140, 150, 255, 0.55);
+}
+
+/* EZCard section */
+.ezcardBG {
+  width: 100vw;
+  background-color: var(--dark-blue);
+  margin: 100px auto;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+.ezcard{
+  color: white;
+  display: block;
+  flex-direction: column;
+  margin: 60px auto;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+.ezcard img{
+  margin: auto 40px;
+  width: 70vw;
+  border-radius: 15px;
+  justify-content: center;
+  transition: var(--transition);
+}
+.ezcard img:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 50px 10px rgb(255, 244, 184);
+  transform-origin: center center;
+}

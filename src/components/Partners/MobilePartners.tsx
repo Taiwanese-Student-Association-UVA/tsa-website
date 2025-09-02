@@ -1,4 +1,4 @@
-import styles from "./Partners.module.css";
+import styles from "./MobilePartners.module.css";
 import {
   Chaps,
   Extreme,
@@ -13,7 +13,7 @@ const FloatingLogo = () => {
   );
 };
 
-const Partners = () => {
+const MobilePartners = () => {
   return (
     <>
       <div className={styles.partnerBG}>
@@ -146,4 +146,4 @@ const Partners = () => {
   );
 };
 
-export default Partners;
+export default MobilePartners;
