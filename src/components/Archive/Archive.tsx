@@ -30,10 +30,10 @@ const heroSlides = [
 const newsletterList = [
   {
     slug: "coming-soon",
-    title: "Coming Soon",
-    excerpt: "Coming Soon",
-    date: "Coming Soon",
-    href: "/archive/newsletters/coming-soon",
+    title: "Newsletter Archive",
+    excerpt: "View all of our past newsletters here!",
+    date: "2025-2026",
+    href: "https://us14.campaign-archive.com/home/?u=45792a76bc10b7924d7ccb62e&id=53139167b0",
   },
   
 ];
@@ -162,7 +162,7 @@ const Archive: React.FC = () => {
             <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Newsletters</h2>
-          <Link className={styles.viewAll} to="/archive/newsletters">
+          <Link className={styles.viewAll} to="https://us14.campaign-archive.com/home/?u=45792a76bc10b7924d7ccb62e&id=53139167b0">
             View All
           </Link>
         </div>
@@ -171,17 +171,17 @@ const Archive: React.FC = () => {
           {newsletterList.map((n, i) => (
             <li key={`${n.slug}-${i}`} className={styles.newsItem}>
               <Link
-                to={n.href ?? "/archive/newsletters"}
+                to={n.href ?? "https://us14.campaign-archive.com/home/?u=45792a76bc10b7924d7ccb62e&id=53139167b0"}
                 className={styles.newsCard}
                 aria-label={`${n.title ?? "Coming Soon"} — ${n.date ?? ""}`}
               >
                 <div className={styles.newsThumb} />
                 <div className={styles.newsBody}>
                   <div className={styles.newsMeta}>
-                    <span className={styles.newsTitle}>{n.title ?? "Coming Soon"}</span>
-                    <time className={styles.newsDate}>{n.date ?? "Coming Soon"}</time>
+                    <span className={styles.newsTitle}>{n.title ?? "Newsletter Archive"}</span>
+                    <time className={styles.newsDate}>{n.date ?? "2025-2026"}</time>
                   </div>
-                  <p className={styles.newsExcerpt}>{n.excerpt ?? "Coming Soon"}</p>
+                  <p className={styles.newsExcerpt}>{n.excerpt ?? "View all of our past newsletters here!"}</p>
                   <span className={styles.newsCTA}>Read More</span>
                 </div>
               </Link>
