@@ -8,7 +8,7 @@ const Header = () => {
     "about",
     "events",
     "partners",
-    // "sponsors",
+    "sponsors",
     "archive",
     // "merch",
     // "games",
