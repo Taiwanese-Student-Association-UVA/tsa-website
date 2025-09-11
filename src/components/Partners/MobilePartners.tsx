@@ -49,7 +49,7 @@ const MobilePartners = () => {
             <h2>How it works:</h2>
             <p>You can enjoy the perks in just three simple steps!</p>
             <p>
-              <ol>
+              <ul>
                 <li>
                   <strong>Get Your Card</strong> - Purchase your EasyCard at TSA
                   GBMs, exec office hours (TBD), or at our major events with
@@ -65,7 +65,7 @@ const MobilePartners = () => {
                   <strong>Enjoy the Perks</strong> - Discounts, raffle tickets,
                   express lines, and more - your card pays for itself fast,
                 </li>
-              </ol>
+              </ul>
             </p>
           </div>
           <div className={styles.howto}>
