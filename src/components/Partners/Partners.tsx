@@ -49,7 +49,7 @@ const Partners = () => {
             <h2>How it works:</h2>
             <p>You can enjoy the perks in just three simple steps!</p>
             <p>
-              <ol>
+              <ul>
                 <li>
                   <strong>Get Your Card</strong> - Purchase your EasyCard at TSA
                   GBMs, exec office hours (TBD), or at our major events with
@@ -65,7 +65,7 @@ const Partners = () => {
                   <strong>Enjoy the Perks</strong> - Discounts, raffle tickets,
                   express lines, and more - your card pays for itself fast,
                 </li>
-              </ol>
+              </ul>
             </p>
           </div>
           <div className={styles.howto}>
@@ -111,6 +111,15 @@ const Partners = () => {
           <div className={styles.howto}>
             <h2>Where to buy:</h2>
             <p>
+              Use{" "}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdus5kf130mc1cx7cntWze_9kLwXQc-exCCTYRY58_nLtwHoA/viewform"
+                target="_blank"
+              >
+                this order form
+              </a>{" "}
+              to purchase your EasyCard! <br />
+              Pickup your EasyCards at these events:
               <ul>
                 <li>General Body Meetings</li>
                 <li>Exec Office Hours (coming soon!)</li>
