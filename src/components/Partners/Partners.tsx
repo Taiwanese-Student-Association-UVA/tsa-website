@@ -116,7 +116,9 @@ const Partners = () => {
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdus5kf130mc1cx7cntWze_9kLwXQc-exCCTYRY58_nLtwHoA/viewform"
                 target="_blank"
               >
-                this order form
+                <strong>
+                  <em>this order form</em>
+                </strong>
               </a>{" "}
               to purchase your EasyCard! <br />
               Pickup your EasyCards at these events:

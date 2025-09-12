@@ -111,6 +111,17 @@ const MobilePartners = () => {
           <div className={styles.howto}>
             <h2>Where to buy:</h2>
             <p>
+              Use{" "}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdus5kf130mc1cx7cntWze_9kLwXQc-exCCTYRY58_nLtwHoA/viewform"
+                target="_blank"
+              >
+                <strong>
+                  <em>this order form</em>
+                </strong>
+              </a>{" "}
+              to purchase your EasyCard! <br />
+              Pickup your EasyCards at these events:
               <ul>
                 <li>General Body Meetings</li>
                 <li>Exec Office Hours (coming soon!)</li>
