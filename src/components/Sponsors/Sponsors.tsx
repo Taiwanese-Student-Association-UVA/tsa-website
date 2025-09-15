@@ -21,6 +21,23 @@ const Sponsors: React.FC = () => {
                 </div>
             </section>
 
+            {/* Metrics Section */}
+            <section className={styles.metricsSection}>
+                <div className={styles.metrics}>
+                    <div className={styles.metric}>
+                        <span className={styles.metricNum}>500+</span>
+                        <span>Attendees</span>
+                    </div>
+                    <div className={styles.metric}>
+                        <span className={styles.metricNum}>10+</span>
+                        <span>Cultural Groups</span>
+                    </div>
+                    <div className={styles.metric}>
+                        <span className={styles.metricNum}>1</span>
+                        <span>Unforgettable Night</span>
+                    </div>
+                </div>
+            </section>
 
             {/* Why Sponsor */}
             <section className={styles.section}>
@@ -32,20 +49,6 @@ const Sponsors: React.FC = () => {
                             over 500 attendees, while celebrating Taiwanese culture through
                             food, games, and live performances.
                         </p>
-                    </div>
-                    <div className={styles.metrics}>
-                        <div className={styles.metric}>
-                            <span className={styles.metricNum}>500+</span>
-                            <span>Attendees</span>
-                        </div>
-                        <div className={styles.metric}>
-                            <span className={styles.metricNum}>10+</span>
-                            <span>Cultural Groups</span>
-                        </div>
-                        <div className={styles.metric}>
-                            <span className={styles.metricNum}>1</span>
-                            <span>Unforgettable Night</span>
-                        </div>
                     </div>
                 </div>
             </section>
