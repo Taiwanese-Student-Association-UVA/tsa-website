@@ -47,10 +47,6 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.title .accent {
-    color: #e63946;
-}
-
 .highlight {
     color: #B499D0;
     text-shadow: 1px 1px 3px rgba(180, 153, 208, 0.8);
@@ -73,8 +69,6 @@
 .subtitle {
     animation: fadeInUp 1s ease-out forwards;
 }
-
-
 
 .buttons {
     display: flex;
@@ -135,8 +129,8 @@
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
-    filter: grayscale(100%);
-    opacity: .7;
+    filter: grayscale(100%) !important;
+    opacity: 0.7 !important;
 }
 
 .logos img {

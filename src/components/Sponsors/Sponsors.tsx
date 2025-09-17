@@ -28,7 +28,7 @@ const Sponsors: React.FC = () => {
                        target="_blank"
                        rel="noopener noreferrer"
                     >
-                        Sponsorship Packet
+                        View Sponsorship Packet
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
