@@ -16,7 +16,7 @@ const Sponsors: React.FC = () => {
                 </h1>
 
                 <p className={styles.subtitle} style={{'--order': 3 } as React.CSSProperties}>
-                    Partner with us to reach a vibrant community, showcase your brand, and support student creativity.
+                    Sponsor us to reach a vibrant community, showcase your brand, and support student creativity.
                 </p>
 
                 <div className={styles.buttons} style={{ '--order': 4 } as React.CSSProperties}>
