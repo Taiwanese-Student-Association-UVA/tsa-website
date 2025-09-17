@@ -12,6 +12,7 @@
 }
 
 .container * {
+    position: relative;
     opacity: 0;
     animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
     animation-delay: calc(var(--order) * 0.12s);
