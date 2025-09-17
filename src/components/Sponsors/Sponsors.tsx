@@ -10,11 +10,12 @@ const Sponsors: React.FC = () => {
             <div className={styles.hero}>
                 <img src={logo} alt="Logo" className={styles.logo} style={{ '--order': 1 } as React.CSSProperties} />
 
-                <h1 className={styles.title} style={{ '--order': 2 } as React.CSSProperties}>
-                    Empowering Students, Celebrating Culture: <br /> TSA Night Market
+                <h1 className={styles.title} style={{'--order': 2} as React.CSSProperties}>
+                    Empowering Students, Celebrating Culture: <br />
+                    <span className={styles.highlight} style={{'--order': 0} as React.CSSProperties}>TSA Night Market</span>
                 </h1>
 
-                <p className={styles.subtitle} style={{ '--order': 3 } as React.CSSProperties}>
+                <p className={styles.subtitle} style={{'--order': 3 } as React.CSSProperties}>
                     Partner with us to reach a vibrant community, showcase your brand, and support student creativity.
                 </p>
 
