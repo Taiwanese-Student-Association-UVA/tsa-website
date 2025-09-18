@@ -19,8 +19,8 @@ const Sponsors: React.FC = () => {
                     Sponsor us to reach a vibrant community, showcase your brand, and support student creativity.
                 </p>
 
-                <div className={styles.buttons} style={{ '--order': 4 } as React.CSSProperties}>
-                    <a href="/contact" className={styles.primaryBtn}>
+                <div className={styles.buttons} style={{'--order': 4} as React.CSSProperties}>
+                    <a href="mailto:gxu6vn@virginia.edu?subject=Become%20a%20Sponsor" className={styles.primaryBtn}>
                         Become a Sponsor
                     </a>
                     <a href="/SponsorsAssets/TSA%20NM%202026%20Sponsorship%20Packet.pdf"
