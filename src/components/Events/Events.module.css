@@ -75,17 +75,11 @@
 
 .eventsGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 @media (max-width: 992px) {
-    .eventsGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
     .eventsGrid {
         grid-template-columns: 1fr;
     }
@@ -98,11 +92,32 @@
     box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* default mobile view */
     overflow: hidden;
     text-align: left;
     opacity: 0;
 }
+
+@media (min-width: 992px) {
+    .eventCard {
+        flex-direction: row; /* desktop = horizontal */
+        align-items: stretch;
+    }
+
+    .eventImage {
+        width: 45%;         /* take up left portion */
+        height: auto;
+        max-height: none;   /* remove vertical squeeze */
+        object-fit: cover;  /* crop nicely */
+        border-radius: 21px 0 0 21px; /* round only left side */
+    }
+
+    .eventDetails {
+        width: 60%;         /* text takes remaining space */
+        padding: 2rem;
+    }
+}
+
 
 .eventCard.fadeIn {
     animation: fadeInOpacity .8s forwards;
@@ -117,24 +132,6 @@
 .eventCard:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 25px 8px rgba(155, 89, 182, 0.7);
-}
-
-.eventImage {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: contain;
-    border-top-left-radius: 21px;
-    border-top-right-radius: 21px;
-    transition: transform 0.3s ease;
-}
-
-.eventDetails {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    text-align: left;
 }
 
 .eventDetails h2 {
@@ -162,6 +159,70 @@
     margin-bottom: .5rem;
     text-align: left;
 }
+
+.eventDetails {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.eventDivider {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.instagramButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;           /* fixed width */
+    height: 40px;          /* fixed height */
+    background: linear-gradient(135deg, #6a5acd 0%, #7b68ee 50%, #836fff 100%);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;   /* rounded square */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(106, 90, 205, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.instagramButton i {
+    transition: transform 0.3s ease;
+}
+
+.instagramButton:hover {
+    background: linear-gradient(135deg, #5a4dcf, #6b59f0, #836fff);
+    box-shadow: 0 6px 16px rgba(106, 90, 205, 0.35), 0 0 8px rgba(106, 90, 205, 0.2);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.instagramButton:hover i {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.instagramButton:disabled {
+    width: 40px;           /* same fixed width */
+    height: 40px;          /* same fixed height */
+    border-radius: 16px;   /* same rounded-square */
+    background: linear-gradient(135deg, #bbb, #999, #888); /* gray gradient */
+    color: #eee;
+    cursor: not-allowed;
+    box-shadow: 0 4px 10px rgba(170, 170, 170, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    transform: none;
+}
+
+.instagramButton:disabled i {
+    transform: none;
+}
+
+
+
 
 .viewButton {
     align-self: flex-start;

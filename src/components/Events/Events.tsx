@@ -6,7 +6,10 @@ import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 import styles from './Events.module.css';
 import SkyBackground from './SkyBackground';
 import defaultEventImage from '../../assets/logo.png';
+import { FaInstagram } from 'react-icons/fa';
 
+
+const InstagramIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = FaInstagram as any;
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
 
@@ -52,21 +55,30 @@ const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({
                 <h2>{event.title}</h2>
                 <h3 className={styles.eventDateTime}>{event.time}</h3>
                 <h3 className={styles.eventDate}>{event.date}</h3>
-                <h3 className={styles.eventDescription}>{event.description}</h3>
-                {event.instagramLink ? (
-                    <a
-                        href={event.instagramLink.trim()}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.viewButton}
-                    >
-                        View Event →
-                    </a>
-                ) : (
-                    <button className={styles.viewButton} disabled>
-                        No Link Available
-                    </button>
-                )}
+                <h3 className={styles.eventDescription}>
+                    {event.description.length > 275
+                        ? event.description.slice(0, 275) + "..."
+                        : event.description}
+                </h3>
+                <div style={{ marginTop: "auto" }}>
+                    <div className={styles.eventDivider}></div>
+
+
+                    {event.instagramLink ? (
+                        <a
+                            href={event.instagramLink.trim()}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.instagramButton}
+                        >
+                            <InstagramIcon size={24} />
+                        </a>
+                    ) : (
+                        <button className={styles.instagramButton} disabled>
+                            <InstagramIcon size={24} style={{ opacity: 0.3 }} />
+                        </button>
+                    )}
+                </div>
             </div>
         </div>
     );
