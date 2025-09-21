@@ -21,6 +21,8 @@ interface Event {
     description: string;
     imageUrl?: string;
     instagramLink?: string;
+    prCredit?: string;
+
 }
 
 const GOOGLE_SHEET_URL =
@@ -56,28 +58,33 @@ const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({
                 <h3 className={styles.eventDateTime}>{event.time}</h3>
                 <h3 className={styles.eventDate}>{event.date}</h3>
                 <h3 className={styles.eventDescription}>
-                    {event.description.length > 275
-                        ? event.description.slice(0, 275) + "..."
+                    {event.description.length > 350
+                        ? event.description.slice(0, 350) + "..."
                         : event.description}
                 </h3>
-                <div style={{ marginTop: "auto" }}>
+                <div style={{marginTop: "auto"}}>
                     <div className={styles.eventDivider}></div>
 
+                    <div className={styles.eventFooter}>
+                        {event.instagramLink ? (
+                            <a
+                                href={event.instagramLink.trim()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.instagramButton}
+                            >
+                                <InstagramIcon size={24}/>
+                            </a>
+                        ) : (
+                            <button className={styles.instagramButton} disabled>
+                                <InstagramIcon size={24} style={{opacity: 0.3}}/>
+                            </button>
+                        )}
 
-                    {event.instagramLink ? (
-                        <a
-                            href={event.instagramLink.trim()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.instagramButton}
-                        >
-                            <InstagramIcon size={24} />
-                        </a>
-                    ) : (
-                        <button className={styles.instagramButton} disabled>
-                            <InstagramIcon size={24} style={{ opacity: 0.3 }} />
-                        </button>
-                    )}
+                        {event.prCredit && (
+                             <span className={styles.prCredit}>Credit: {event.prCredit}</span>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

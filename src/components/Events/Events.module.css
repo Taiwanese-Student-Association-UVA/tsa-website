@@ -86,13 +86,14 @@
 }
 
 .eventCard {
+    max-height: 400px;
     background-color: rgba(26, 26, 46, 0.95);
     color: #eee;
     border-radius: 21px;
     box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column; /* default mobile view */
+    flex-direction: column;
     overflow: hidden;
     text-align: left;
     opacity: 0;
@@ -100,20 +101,20 @@
 
 @media (min-width: 992px) {
     .eventCard {
-        flex-direction: row; /* desktop = horizontal */
+        flex-direction: row;
         align-items: stretch;
     }
 
     .eventImage {
-        width: 45%;         /* take up left portion */
+        width: 45%;
         height: auto;
-        max-height: none;   /* remove vertical squeeze */
-        object-fit: cover;  /* crop nicely */
-        border-radius: 21px 0 0 21px; /* round only left side */
+        max-height: none;
+        object-fit: cover;
+        border-radius: 21px 0 0 21px;
     }
 
     .eventDetails {
-        width: 60%;         /* text takes remaining space */
+        width: 55%;
         padding: 2rem;
     }
 }
@@ -180,13 +181,13 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 40px;           /* fixed width */
-    height: 40px;          /* fixed height */
+    width: 40px;
+    height: 40px;
     background: linear-gradient(135deg, #6a5acd 0%, #7b68ee 50%, #836fff 100%);
     color: #fff;
     font-weight: 600;
     border: none;
-    border-radius: 16px;   /* rounded square */
+    border-radius: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(106, 90, 205, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
@@ -207,9 +208,9 @@
 }
 
 .instagramButton:disabled {
-    width: 40px;           /* same fixed width */
-    height: 40px;          /* same fixed height */
-    border-radius: 16px;   /* same rounded-square */
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
     background: linear-gradient(135deg, #bbb, #999, #888); /* gray gradient */
     color: #eee;
     cursor: not-allowed;
@@ -221,31 +222,42 @@
     transform: none;
 }
 
-
-
-
-.viewButton {
-    align-self: flex-start;
-    margin-top: auto;
-    display: inline-block;
-    text-decoration: none;
-    padding: .6rem 0.8rem;
-    width: auto;
-    height: auto;    background: linear-gradient(135deg, #6a5acd, #7b68ee);
-    color: #fff;
-    font-weight: 600;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(106, 90, 205, 0.3);
+.eventFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
 }
 
-.viewButton:hover {
-    background: linear-gradient(135deg, #5a4dcf, #6b59f0);
-    box-shadow: 0 6px 16px rgba(106, 90, 205, 0.45);
-    transform: translateY(-2px);
+.prCredit {
+    font-size: 1rem;
+    font-style: italic;
+    color: #666;
 }
+
+
+/*.viewButton {*/
+/*    align-self: flex-start;*/
+/*    margin-top: auto;*/
+/*    display: inline-block;*/
+/*    text-decoration: none;*/
+/*    padding: .6rem 0.8rem;*/
+/*    width: auto;*/
+/*    height: auto;    background: linear-gradient(135deg, #6a5acd, #7b68ee);*/
+/*    color: #fff;*/
+/*    font-weight: 600;*/
+/*    border: none;*/
+/*    border-radius: 12px;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s ease;*/
+/*    box-shadow: 0 4px 12px rgba(106, 90, 205, 0.3);*/
+/*}*/
+
+/*.viewButton:hover {*/
+/*    background: linear-gradient(135deg, #5a4dcf, #6b59f0);*/
+/*    box-shadow: 0 6px 16px rgba(106, 90, 205, 0.45);*/
+/*    transform: translateY(-2px);*/
+/*}*/
 
 .toggleButton {
     margin: 2rem 0;
