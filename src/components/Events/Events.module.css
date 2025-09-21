@@ -86,7 +86,6 @@
 }
 
 .eventCard {
-    max-height: 400px;
     background-color: rgba(26, 26, 46, 0.95);
     color: #eee;
     border-radius: 21px;
@@ -101,6 +100,7 @@
 
 @media (min-width: 992px) {
     .eventCard {
+        max-height: 400px;
         flex-direction: row;
         align-items: stretch;
     }
