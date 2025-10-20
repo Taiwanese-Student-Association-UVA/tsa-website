@@ -76,7 +76,7 @@
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
 }
 
 .primaryBtn {
@@ -126,6 +126,7 @@
 
 .logos {
     margin-top: 1rem;
+    margin-bottom: 2.5rem;
     display: flex;
     gap: 1.5rem;
     justify-content: center;
@@ -135,6 +136,6 @@
 }
 
 .logos img {
-    height: 20px;
+    height: 100px;
     object-fit: contain;
 }

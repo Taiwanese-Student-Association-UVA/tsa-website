@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "./Sponsors.module.css";
-import sponsor1 from "../../assets/sponsors/Meta-Logo.jpg";
+import sponsor1 from "../../assets/sponsors/yunhai.png";
+import sponsor2 from "../../assets/sponsors/run.png";
+import sponsor3 from "../../assets/sponsors/teas.png";
+import sponsor4 from "../../assets/sponsors/mochiko.png";
+import sponsor5 from "../../assets/sponsors/boylan.png";
+
 import logo from "../../assets/logo.png";
 
 const Sponsors: React.FC = () => {
@@ -47,11 +52,11 @@ const Sponsors: React.FC = () => {
             <div className={styles.trusted} style={{ '--order': 5 } as React.CSSProperties}>
                 <p>Trusted by sponsors such as</p>
                 <div className={styles.logos}>
-                    <img src={sponsor1} alt="Sponsor Example"/>
-                    <img src={sponsor1} alt="Sponsor Example"/>
-                    <img src={sponsor1} alt="Sponsor Example"/>
-                    <img src={sponsor1} alt="Sponsor Example"/>
-                    <img src={sponsor1} alt="Sponsor Example"/>
+                    <img src={sponsor1} alt="yunhai"/>
+                    <img src={sponsor2} alt="ragged mountain running shop"/>
+                    <img src={sponsor3} alt="teas n you"/>
+                    <img src={sponsor4} alt="mochiko"/>
+                    <img src={sponsor5} alt="boylan heights"/>
                 </div>
             </div>
         </div>
