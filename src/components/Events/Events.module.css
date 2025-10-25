@@ -75,17 +75,11 @@
 
 .eventsGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 @media (max-width: 992px) {
-    .eventsGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
     .eventsGrid {
         grid-template-columns: 1fr;
     }
@@ -104,6 +98,28 @@
     opacity: 0;
 }
 
+@media (min-width: 992px) {
+    .eventCard {
+        max-height: 400px;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .eventImage {
+        width: 45%;
+        height: auto;
+        max-height: none;
+        object-fit: cover;
+        border-radius: 21px 0 0 21px;
+    }
+
+    .eventDetails {
+        width: 55%;
+        padding: 2rem;
+    }
+}
+
+
 .eventCard.fadeIn {
     animation: fadeInOpacity .8s forwards;
 }
@@ -117,24 +133,6 @@
 .eventCard:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 25px 8px rgba(155, 89, 182, 0.7);
-}
-
-.eventImage {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    object-fit: contain;
-    border-top-left-radius: 21px;
-    border-top-right-radius: 21px;
-    transition: transform 0.3s ease;
-}
-
-.eventDetails {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    text-align: left;
 }
 
 .eventDetails h2 {
@@ -163,28 +161,103 @@
     text-align: left;
 }
 
-.viewButton {
-    align-self: flex-start;
-    margin-top: auto;
-    display: inline-block;
+.eventDetails {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.eventDivider {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.instagramButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    padding: .6rem 0.8rem;
-    width: auto;
-    height: auto;    background: linear-gradient(135deg, #6a5acd, #7b68ee);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6a5acd 0%, #7b68ee 50%, #836fff 100%);
     color: #fff;
     font-weight: 600;
     border: none;
-    border-radius: 12px;
+    border-radius: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(106, 90, 205, 0.3);
+    box-shadow: 0 4px 10px rgba(106, 90, 205, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
-.viewButton:hover {
-    background: linear-gradient(135deg, #5a4dcf, #6b59f0);
-    box-shadow: 0 6px 16px rgba(106, 90, 205, 0.45);
-    transform: translateY(-2px);
+.instagramButton i {
+    transition: transform 0.3s ease;
 }
+
+.instagramButton:hover {
+    background: linear-gradient(135deg, #5a4dcf, #6b59f0, #836fff);
+    box-shadow: 0 6px 16px rgba(106, 90, 205, 0.35), 0 0 8px rgba(106, 90, 205, 0.2);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.instagramButton:hover i {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.instagramButton:disabled {
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #bbb, #999, #888); /* gray gradient */
+    color: #eee;
+    cursor: not-allowed;
+    box-shadow: 0 4px 10px rgba(170, 170, 170, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    transform: none;
+}
+
+.instagramButton:disabled i {
+    transform: none;
+}
+
+.eventFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.prCredit {
+    font-size: 1rem;
+    font-style: italic;
+    color: #666;
+}
+
+
+/*.viewButton {*/
+/*    align-self: flex-start;*/
+/*    margin-top: auto;*/
+/*    display: inline-block;*/
+/*    text-decoration: none;*/
+/*    padding: .6rem 0.8rem;*/
+/*    width: auto;*/
+/*    height: auto;    background: linear-gradient(135deg, #6a5acd, #7b68ee);*/
+/*    color: #fff;*/
+/*    font-weight: 600;*/
+/*    border: none;*/
+/*    border-radius: 12px;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s ease;*/
+/*    box-shadow: 0 4px 12px rgba(106, 90, 205, 0.3);*/
+/*}*/
+
+/*.viewButton:hover {*/
+/*    background: linear-gradient(135deg, #5a4dcf, #6b59f0);*/
+/*    box-shadow: 0 6px 16px rgba(106, 90, 205, 0.45);*/
+/*    transform: translateY(-2px);*/
+/*}*/
 
 .toggleButton {
     margin: 2rem 0;
