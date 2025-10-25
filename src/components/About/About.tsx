@@ -140,43 +140,43 @@ const About: React.FC = () => {
 
         <ul className="list">
           <li>
-            <a className="listCard" href="#event-feedback">
+            <a className="listCard" href="https://docs.google.com/forms/d/e/1FAIpQLSftSERM8_jiPzLZRzk6YRDPmnori-rrAtH-p7Octp12DV666Q/viewform?usp=dialog" target="_blank" rel="noreferrer">
               <div className="listThumb" />
               <div className="listBody">
                 <div className="listMeta">
-                  <span className="listTitle">Event Feedback</span>
-                  <span className="listDate">Closed</span>
+                  <span className="listTitle">Anonymous Feedback/Reporting Form</span>
+                  <span className="listDate">Open</span>
                 </div>
-                <p className="listExcerpt">Tell us what you liked and what we can improve.</p>
-                <span className="listCTA">Fill out form →</span>
+                <p className="listExcerpt">Give us feedback on events and report misconduct anonymously here.</p>
+                <span className="listCTA">→</span>
               </div>
             </a>
           </li>
 
           <li>
-            <a className="listCard" href="#suggestions">
+            <a className="listCard" href="https://docs.google.com/forms/d/1Es_WPwxx0FnvEDfbVy6pwEMEBuU39NpTwWwzkUNMaFA/edit?usp=drivesdk" target="_blank" rel="noreferrer">
               <div className="listThumb" />
               <div className="listBody">
                 <div className="listMeta">
-                  <span className="listTitle">Suggestion Box</span>
-                  <span className="listDate">Closed</span>
+                  <span className="listTitle">EasyCard Eats Form</span>
+                  <span className="listDate">Open</span>
                 </div>
-                <p className="listExcerpt">We’re all ears—share any ideas.</p>
-                <span className="listCTA">Submit a suggestion →</span>
+                <p className="listExcerpt">Got a fun moment you want to share in our newsletter? Fill out this quick form! We’d love to feature you!</p>
+                <span className="listCTA">→</span>
               </div>
             </a>
           </li>
 
           <li>
-            <a className="listCard" href="#general-feedback">
+            <a className="listCard" href="https://docs.google.com/forms/d/1uouf15PCENhuFF1DsOefIZFNq8-z2reEWTXgt0gUeYk/edit?usp=drivesdk" target="_blank" rel="noreferrer">
               <div className="listThumb" />
               <div className="listBody">
                 <div className="listMeta">
-                  <span className="listTitle">General Feedback</span>
-                  <span className="listDate">Closed</span>
+                  <span className="listTitle">Newsletter External Announcement Request Form</span>
+                  <span className="listDate">Open</span>
                 </div>
-                <p className="listExcerpt">Help us build a better TSA.</p>
-                <span className="listCTA">Share feedback →</span>
+                <p className="listExcerpt">Fill out this form if you have any announcements/events/other fun items you'd like to share in the TSA newsletter!</p>
+                <span className="listCTA">→</span>
               </div>
             </a>
           </li>
