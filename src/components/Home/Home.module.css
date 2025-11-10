@@ -18,12 +18,11 @@ body{
 
 /* Top of page content */
 .beginning {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: 15rem auto;
-  padding: 40px 50px;
-  color: black;
+  justify-content: center;
+  position: relative;
 }
 .beginning h1{
   font-size: 128px;
@@ -37,7 +36,7 @@ body{
   align-items: center;
   display: block;
   padding: 50px 80px;
-  z-index: 31;
+  z-index: 60;
   text-align: center;
 }
 /* glass effect component */
@@ -49,7 +48,7 @@ body{
   border-radius: 2rem;
   box-shadow: var(--shadow-soft), 
               inset 0 4px 20px rgba(255, 255, 255, 0.3);
-  z-index: 30;
+  z-index: 60;
 }
 .glass::after {
   content: '';
@@ -67,40 +66,39 @@ body{
   filter: blur(2px) brightness(115%);
 }
 /* picture containers */
-.picturesContainer, .picturesContainer2, .picturesContainer3{
-  width: 150vw;
-  height: 34vh;
+.marqueeWrapper {
   position: absolute;
-  display: flex;
-  align-items: center;
-  overflow: visible;
-}
-.picturesContainer{
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
 }
-.picturesContainer2{
-  top: 34vh;
-}
-.picturesContainer3{
-  top: 68vh;
+.marqueeSection{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 .pictures{
   object-fit: contain;
   overflow: visible;
   cursor: pointer;
-  height: 34vh;
+  height: 33vh;
+  margin: 0;
+  padding: 0;
   box-shadow: var(--shadow-medium);
   transition: var(--transition);
 }
 .pictures:hover{
   transform: scale(1.1) translateY(-5%);
   transform-origin: center center;
-  z-index: 25;
+  z-index: 49;
 }
 
 /* Body */
 .content {
-  width: 100%;
+  width: 60vw;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -122,57 +120,45 @@ body{
 
 /* About section */
 .about{
-  width: 75vw;
-  display: grid;
-  grid-template-areas:
-    "who who who who"
-    "pic description description description"
-    "social social forms forms";
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 100px auto;
-  text-align: left;
-  justify-content: center;
-  align-items: center;
-}
-.about > div {
-  margin: 10px;
-}
-.about > div.who{
-  grid-area: who;
-  margin: auto 20px;
-}
-.about > div.pic {
-  grid-area: pic;
-  margin: auto 20px;
-  justify-content: center;
-}
-.about > div.description {
-  grid-area: description;
-  text-align: left;
-}
-.about > div.forms {
-  grid-area: forms;
-  text-align: center;
+  width: auto;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: auto;
+  margin-top: 10rem;
 }
-.about > div.social {
-  grid-area: social;
-  text-align: center;
+.rotatingImages {
+  width: 100%;
+  height: 100%;
 }
-.about > div.pic img {
+.rotatingImages img {
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+  object-fit: contain;
+  border-radius: 20px;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+.rotatingImages img.fadeOut {
+  opacity: 0;
+}
+.social {
+  display: inline;
   width: 40vw;
-  max-width: 500px;
-  object-fit: contain;
+  height: auto;
 }
-.about > div.social img {
-  width: 200px;
-  margin: 0 20px;
-  object-fit: contain;
+.social img {
+  text-align: left;
+  width: 175px;
+  margin: 1rem;
   transition: var(--transition);
 }
-.about > div.social img:hover{
+.social img:hover{
   transform: scale(1.25);
+}
+.forms {
+  text-align: right;
 }
 .about button {
   width: 300px;
@@ -184,7 +170,7 @@ body{
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: var(--transition);
+  
 }
 .about button:hover {
   background: linear-gradient(135deg, #aeb4ff, #8d94f7);
@@ -194,46 +180,22 @@ body{
 }
 
 /* EZCard section */
-.ezcardBG {
-  width: 100vw;
-  background-color: var(--dark-blue);
-  margin: 100px auto;
-  text-align: left;
+.ezcard{
+  color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.ezcard{
-  color: white;
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "description pic";
-  grid-template-columns: 3fr 1fr;
-  justify-content: center;
   margin: 60px auto;
 }
-.ezcard > div{
-  margin: 10px;
-}
-.ezcard > div.header{
-  grid-area: header;
-  margin-left: 10vw;
-}
-.ezcard > div.description{
-  grid-area: description;
-  margin-left: 40px;
-}
-.ezcard > div.pic{
-  grid-area: pic;
-}
-.ezcard > div.pic img{
-  margin: auto 50px;
+.ezcard img{
+  margin: auto;
   width: 450px;
   border-radius: 15px;
   transform: rotate3d(15, -6, -4, -45deg);
   transition: var(--transition);
 }
-.ezcard > div.pic img:hover{
+.ezcard .pic img:hover{
   transform: rotate3d(-5, .5, .5, 30deg) scale(1.25);
   box-shadow: 0 0 50px 10px rgb(255, 244, 184);
   transform-origin: center center;
@@ -253,7 +215,7 @@ body{
   justify-content: center;
   align-items: center;
 }
-.newsletter > div {
+.newsletter  {
   padding: 0 20px;
   margin: 20px;
   border-radius: 10px;

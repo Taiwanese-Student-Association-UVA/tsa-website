@@ -67,16 +67,19 @@ body{
   filter: blur(2px) brightness(115%);
 }
 /* picture containers */
-.picturesContainer{
-  width: 150vw;
-  height: 100vh;
+.marqueeWrapper {
   position: absolute;
-  display: flex;
-  align-items: center;
-  overflow: visible;
-}
-.picturesContainer{
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+.marqueeSection{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 .pictures{
   object-fit: contain;
