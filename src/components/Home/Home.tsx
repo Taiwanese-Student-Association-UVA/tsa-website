@@ -41,92 +41,79 @@ const Home = () => {
     return () => clearInterval(id);
   }, [images]);
 
-  const SignUpBox = () => {
-    return (
-      <div className={styles.signupBox}>
-        <form
-          className={styles.signupForm}
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <input
-            type="email"
-            placeholder="Your Email"
-            className={styles.signupInput}
-            required
-          />
-          <button type="submit" className={styles.signupButton}>
-            Sign Up!
-          </button>
-        </form>
-      </div>
-    );
-  };
-
   return (
     <>
-      <div className={styles.beginning}>
-        <div className={styles.marqueeWrapper}>
-          <div className={styles.marqueeSection}>
-            {marqueePics.map((row, index) => (
-              <Marquee
-                key={index}
-                speed={40}
-                gradient={false}
-                direction={index % 2 === 1 ? "right" : "left"}
-              >
-                {row.map((photo, i) => (
-                  <a key={i} href={photo.link} target="_blank">
-                    <motion.img
-                      src={photo.src}
-                      alt={photo.alt}
-                      className={styles.pictures}
-                      initial={{ opacity: 0.5 }}
-                      whileInView={{ opacity: 0.5 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                      viewport={{ once: true, amount: 0.3 }}
-                      whileHover={{ opacity: 1 }}
-                      animate={{}}
-                    />
-                  </a>
-                ))}
-              </Marquee>
-            ))}
-          </div>
-        </div>
-        <div className={styles.glass}>
-          <div className={styles.beginningText}>
-            <h1>
-              Welcome to
-              <br />
-              TSA@UVA
-            </h1>
-          </div>
-        </div>
-      </div>
       <div className={styles.content}>
-        <div className={styles.about}>
-          <strong>
-            <h2>Who we are...</h2>
-          </strong>
-          <div className={styles.rotatingImages}>
-            <a href={links[rotIndex]} target="_blank">
-              <img src={images[rotIndex]} alt={alts[rotIndex]} />
-            </a>
+        <div className={styles.beginning}>
+          <div className={styles.marqueeWrapper}>
+            <div className={styles.marqueeSection}>
+              {marqueePics.map((row, index) => (
+                <Marquee
+                  key={index}
+                  speed={40}
+                  gradient={false}
+                  direction={index % 2 === 1 ? "right" : "left"}
+                >
+                  {row.map((photo, i) => (
+                    <a
+                      key={i}
+                      href={photo.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <motion.img
+                        src={photo.src}
+                        alt={photo.alt}
+                        className={styles.pictures}
+                        initial={{ opacity: 0.5 }}
+                        whileInView={{ opacity: 0.5 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        whileHover={{ opacity: 1 }}
+                        animate={{}}
+                      />
+                    </a>
+                  ))}
+                </Marquee>
+              ))}
+            </div>
           </div>
-          <p>
-            UVA’s Taiwanese Student Association (TSA) is a student-run,
-            undergraduate community celebrating Taiwanese culture on Grounds.
-            Through cultural showcases, friendly socials, and service
-            projects—including Night Market and Taste of Taiwan—we deepen
-            appreciation for Taiwan and create a welcoming home for students of
-            every background.
-          </p>
+          <div className={styles.glass}>
+            <div className={styles.beginningText}>
+              <h1>
+                Welcome to
+                <br />
+                TSA@UVA
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div className={styles.content}>
+          <div className={styles.about}>
+            <strong>
+              <h2>Who we are...</h2>
+            </strong>
+            <div className={styles.rotatingImages}>
+              <a href={links[rotIndex]} target="_blank" rel="noreferrer">
+                <img src={images[rotIndex]} alt={alts[rotIndex]} />
+              </a>
+            </div>
+            <p>
+              UVA's Taiwanese Student Association (TSA) is a student-run,
+              undergraduate community celebrating Taiwanese culture on Grounds.
+              Through cultural showcases, friendly socials, and service
+              projects—including Night Market and Taste of Taiwan—we deepen
+              appreciation for Taiwan and create a welcoming home for students
+              of every background.
+            </p>
+          </div>
 
           <div className={styles.social}>
             <h3>Follow us on our Socials!</h3>
             <a
               href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
+              rel="noreferrer"
               onMouseOver={() => setInstagramImg(IGhover)}
               onMouseOut={() => setInstagramImg(IG)}
             >
@@ -138,6 +125,7 @@ const Home = () => {
             <a
               href="https://www.facebook.com/groups/tsaatuva"
               target="_blank"
+              rel="noreferrer"
               onMouseOver={() => setFacebookImg(FBhover)}
               onMouseOut={() => setFacebookImg(FB)}
             >
@@ -149,6 +137,7 @@ const Home = () => {
             <a
               href="https://www.linkedin.com/company/tsaatuva/"
               target="_blank"
+              rel="noreferrer"
               onMouseOver={() => setLinkedinImg(LIhover)}
               onMouseOut={() => setLinkedinImg(LI)}
             >
@@ -160,7 +149,11 @@ const Home = () => {
           </div>
           <div className={styles.forms}>
             <h3>Become a member today!</h3>
-            <a href="https://forms.office.com/r/4G44DqZ5qD" target="_blank">
+            <a
+              href="https://forms.office.com/r/4G44DqZ5qD"
+              target="_blank"
+              rel="noreferrer"
+            >
               <button>Member Form</button>
             </a>
           </div>
@@ -170,7 +163,7 @@ const Home = () => {
           <p>
             This year we are introducing our brand new TSA EasyCard! This card
             is your passport to exclusive perks, discounts, and EasyCard only
-            benefits all year long. For just $12, you’ll unlock over $50 in
+            benefits all year long. For just $12, you'll unlock over $50 in
             value through savings at local businesses, priority access at TSA
             events, and free extras made just for you!
           </p>
@@ -205,7 +198,7 @@ const Home = () => {
             <p>here is da dish of the week</p>
           </div>
           <div className={styles.pic}>
-            <img src={ezCard} />
+            <img src={ezCard} alt="placeholder" />
           </div>
           <div className={styles.ez}>
             <h3>
@@ -215,7 +208,6 @@ const Home = () => {
           </div>
           <div className={styles.signup}>
             <p>To read more, sign up for our newsletter!</p>
-            <SignUpBox />
           </div>
         </div>
         <div className={styles.current}>
@@ -231,9 +223,9 @@ const Home = () => {
                 </h3>
                 <p>
                   Some quick example text to build on the card title and make up
-                  the bulk of the card’s content.
+                  the bulk of the card's content.
                 </p>
-                <a href="#">Click here for more</a>
+                <a href="#" rel="noreferrer">Click here for more</a>
               </div>
             </div>
             <div className={styles.article}>
@@ -242,9 +234,9 @@ const Home = () => {
                 <h3>Article title</h3>
                 <p>
                   Some quick example text to build on the card title and make up
-                  the bulk of the card’s content.
+                  the bulk of the card's content.
                 </p>
-                <a href="#">Click here for more</a>
+                <a href="#" rel="noreferrer">Click here for more</a>
               </div>
             </div>
           </div>
