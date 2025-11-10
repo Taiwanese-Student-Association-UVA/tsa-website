@@ -126,7 +126,7 @@ const Home = () => {
             <h3>Follow us on our Socials!</h3>
             <a
               href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="blank"
+              target="_blank"
               onMouseOver={() => setInstagramImg(IGhover)}
               onMouseOut={() => setInstagramImg(IG)}
             >
@@ -137,7 +137,7 @@ const Home = () => {
             </a>
             <a
               href="https://www.facebook.com/groups/tsaatuva"
-              target="blank"
+              target="_blank"
               onMouseOver={() => setFacebookImg(FBhover)}
               onMouseOut={() => setFacebookImg(FB)}
             >
@@ -148,7 +148,7 @@ const Home = () => {
             </a>
             <a
               href="https://www.linkedin.com/company/tsaatuva/"
-              target="blank"
+              target="_blank"
               onMouseOver={() => setLinkedinImg(LIhover)}
               onMouseOut={() => setLinkedinImg(LI)}
             >
