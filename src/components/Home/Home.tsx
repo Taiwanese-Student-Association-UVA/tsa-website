@@ -100,50 +100,56 @@ const Home = () => {
             appreciation for Taiwan and create a welcoming home for students of
             every background.
           </p>
-        </div>
 
-        <div className={styles.social}>
-          <h3>Follow us on our Socials!</h3>
-          <a
-            href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank"
-            rel="noreferrer"
-            onMouseOver={() => setInstagramImg(IGhover)}
-            onMouseOut={() => setInstagramImg(IG)}
-          >
-            <img
-              src={instagramImg}
-              alt="Button for the TSA Instagram account"
-            />
-          </a>
-          <a
-            href="https://www.facebook.com/groups/tsaatuva"
-            target="_blank"
-            rel="noreferrer"
-            onMouseOver={() => setFacebookImg(FBhover)}
-            onMouseOut={() => setFacebookImg(FB)}
-          >
-            <img src={facebookImg} alt="Button for the TSA Facebook account" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/tsaatuva/"
-            target="_blank"
-            rel="noreferrer"
-            onMouseOver={() => setLinkedinImg(LIhover)}
-            onMouseOut={() => setLinkedinImg(LI)}
-          >
-            <img src={linkedinImg} alt="Button for the TSA LinkedIn account" />
-          </a>
-        </div>
-        <div className={styles.forms}>
-          <h3>Become a member today!</h3>
-          <a
-            href="https://forms.office.com/r/4G44DqZ5qD"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button>Member Form</button>
-          </a>
+          <div className={styles.social}>
+            <h3>Follow us on our Socials!</h3>
+            <a
+              href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noreferrer"
+              onMouseOver={() => setInstagramImg(IGhover)}
+              onMouseOut={() => setInstagramImg(IG)}
+            >
+              <img
+                src={instagramImg}
+                alt="Button for the TSA Instagram account"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/groups/tsaatuva"
+              target="_blank"
+              rel="noreferrer"
+              onMouseOver={() => setFacebookImg(FBhover)}
+              onMouseOut={() => setFacebookImg(FB)}
+            >
+              <img
+                src={facebookImg}
+                alt="Button for the TSA Facebook account"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/tsaatuva/"
+              target="_blank"
+              rel="noreferrer"
+              onMouseOver={() => setLinkedinImg(LIhover)}
+              onMouseOut={() => setLinkedinImg(LI)}
+            >
+              <img
+                src={linkedinImg}
+                alt="Button for the TSA LinkedIn account"
+              />
+            </a>
+          </div>
+          <div className={styles.forms}>
+            <h3>Become a member today!</h3>
+            <a
+              href="https://forms.office.com/r/4G44DqZ5qD"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button>Member Form</button>
+            </a>
+          </div>
         </div>
         <div className={styles.ezcard}>
           <h2>Our EZCards</h2>
