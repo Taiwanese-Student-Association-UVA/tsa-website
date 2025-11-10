@@ -22,27 +22,6 @@ const MobileHome = () => {
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdn96jdQ2YtCL9IUCi0q7ByZwIAdx5h10I7AgZHVX3YLhk51X-BrxFmQ8gg2t7MVvavM7l3AwrMaNa/pub?gid=0&single=true&output=csv"
   );
 
-  const SignUpBox = () => {
-    return (
-      <div className={styles.signupBox}>
-        <form
-          className={styles.signupForm}
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <input
-            type="email"
-            placeholder="Your Email"
-            className={styles.signupInput}
-            required
-          />
-          <button type="submit" className={styles.signupButton}>
-            Sign Up!
-          </button>
-        </form>
-      </div>
-    );
-  };
-
   return (
     <>
       <div className={styles.beginning}>
