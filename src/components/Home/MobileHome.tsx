@@ -35,7 +35,7 @@ const MobileHome = () => {
                 direction={index % 2 === 1 ? "right" : "left"}
               >
                 {row.map((photo, i) => (
-                  <a key={i} href={photo.link} target="_blank">
+                  <a key={i} href={photo.link} target="__blank">
                     <motion.img
                       src={photo.src}
                       alt={photo.alt}
@@ -85,7 +85,8 @@ const MobileHome = () => {
           <div className={styles.social}>
             <a
               href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="blank"
+              target="_blank"
+              rel="noreferrer"
               onMouseOver={() => setInstagramImg(IGhover)}
               onMouseOut={() => setInstagramImg(IG)}
             >
@@ -96,7 +97,8 @@ const MobileHome = () => {
             </a>
             <a
               href="https://www.facebook.com/groups/tsaatuva"
-              target="blank"
+              target="_blank"
+              rel="noreferrer"
               onMouseOver={() => setFacebookImg(FBhover)}
               onMouseOut={() => setFacebookImg(FB)}
             >
@@ -107,7 +109,8 @@ const MobileHome = () => {
             </a>
             <a
               href="https://www.linkedin.com/company/tsaatuva/"
-              target="blank"
+              target="_blank"
+              rel="noreferrer"
               onMouseOver={() => setLinkedinImg(LIhover)}
               onMouseOut={() => setLinkedinImg(LI)}
             >
@@ -120,7 +123,11 @@ const MobileHome = () => {
           <h3>
             <strong>Become a member today!</strong>
           </h3>
-          <a href="https://forms.office.com/r/4G44DqZ5qD" target="_blank">
+          <a
+            href="https://forms.office.com/r/4G44DqZ5qD"
+            target="_blank"
+            rel="noreferrer"
+          >
             <button>Member Form</button>
           </a>
         </div>
