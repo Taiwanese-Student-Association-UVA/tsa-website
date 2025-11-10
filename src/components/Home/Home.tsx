@@ -12,7 +12,6 @@ import {
 } from "../../assets/buttons/index";
 import { ezCard } from "../../assets/index";
 import usePhotos from "../photos/usePhotos";
-import ImageRotator from "../photos/ImageRotator";
 
 const Home = () => {
   const [instagramImg, setInstagramImg] = useState(IG);
