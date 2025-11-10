@@ -32,12 +32,17 @@ const Partners = () => {
           <h2>Our Current Partners</h2>
           <hr />
           <div className={styles.pictures}>
-            <a href="https://www.chapsicecream.com/" target="_blank">
+            <a
+              href="https://www.chapsicecream.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={Chaps} alt="Chaps Ice Cream logo" />
             </a>
             <a
               href="https://www.extremepizza.com/location/charlottesville-virginia/"
               target="_blank"
+              rel="noreferrer"
             >
               <img src={Extreme} alt="Extreme Pizza logo" />
             </a>
@@ -115,6 +120,7 @@ const Partners = () => {
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdus5kf130mc1cx7cntWze_9kLwXQc-exCCTYRY58_nLtwHoA/viewform"
                 target="_blank"
+                rel="noreferrer"
               >
                 <strong>
                   <em>this order form</em>
@@ -134,6 +140,7 @@ const Partners = () => {
               <a
                 href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
                 target="_blank"
+                rel="noreferrer"
               >
                 @tsaatuva!
               </a>
