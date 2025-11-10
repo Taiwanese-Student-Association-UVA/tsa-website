@@ -43,120 +43,107 @@ const Home = () => {
 
   return (
     <>
-      <div className={styles.content}>
-        <div className={styles.beginning}>
-          <div className={styles.marqueeWrapper}>
-            <div className={styles.marqueeSection}>
-              {marqueePics.map((row, index) => (
-                <Marquee
-                  key={index}
-                  speed={40}
-                  gradient={false}
-                  direction={index % 2 === 1 ? "right" : "left"}
-                >
-                  {row.map((photo, i) => (
-                    <a
-                      key={i}
-                      href={photo.link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <motion.img
-                        src={photo.src}
-                        alt={photo.alt}
-                        className={styles.pictures}
-                        initial={{ opacity: 0.5 }}
-                        whileInView={{ opacity: 0.5 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        whileHover={{ opacity: 1 }}
-                        animate={{}}
-                      />
-                    </a>
-                  ))}
-                </Marquee>
-              ))}
-            </div>
-          </div>
-          <div className={styles.glass}>
-            <div className={styles.beginningText}>
-              <h1>
-                Welcome to
-                <br />
-                TSA@UVA
-              </h1>
-            </div>
+      <div className={styles.beginning}>
+        <div className={styles.marqueeWrapper}>
+          <div className={styles.marqueeSection}>
+            {marqueePics.map((row, index) => (
+              <Marquee
+                key={index}
+                speed={40}
+                gradient={false}
+                direction={index % 2 === 1 ? "right" : "left"}
+              >
+                {row.map((photo, i) => (
+                  <a key={i} href={photo.link} target="_blank" rel="noreferrer">
+                    <motion.img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className={styles.pictures}
+                      initial={{ opacity: 0.5 }}
+                      whileInView={{ opacity: 0.5 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      whileHover={{ opacity: 1 }}
+                      animate={{}}
+                    />
+                  </a>
+                ))}
+              </Marquee>
+            ))}
           </div>
         </div>
-        <div className={styles.content}>
-          <div className={styles.about}>
-            <strong>
-              <h2>Who we are...</h2>
-            </strong>
-            <div className={styles.rotatingImages}>
-              <a href={links[rotIndex]} target="_blank" rel="noreferrer">
-                <img src={images[rotIndex]} alt={alts[rotIndex]} />
-              </a>
-            </div>
-            <p>
-              UVA's Taiwanese Student Association (TSA) is a student-run,
-              undergraduate community celebrating Taiwanese culture on Grounds.
-              Through cultural showcases, friendly socials, and service
-              projects—including Night Market and Taste of Taiwan—we deepen
-              appreciation for Taiwan and create a welcoming home for students
-              of every background.
-            </p>
+        <div className={styles.glass}>
+          <div className={styles.beginningText}>
+            <h1>
+              Welcome to
+              <br />
+              TSA@UVA
+            </h1>
           </div>
+        </div>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.about}>
+          <strong>
+            <h2>Who we are...</h2>
+          </strong>
+          <div className={styles.rotatingImages}>
+            <a href={links[rotIndex]} target="_blank" rel="noreferrer">
+              <img src={images[rotIndex]} alt={alts[rotIndex]} />
+            </a>
+          </div>
+          <p>
+            UVA's Taiwanese Student Association (TSA) is a student-run,
+            undergraduate community celebrating Taiwanese culture on Grounds.
+            Through cultural showcases, friendly socials, and service
+            projects—including Night Market and Taste of Taiwan—we deepen
+            appreciation for Taiwan and create a welcoming home for students of
+            every background.
+          </p>
+        </div>
 
-          <div className={styles.social}>
-            <h3>Follow us on our Socials!</h3>
-            <a
-              href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank"
-              rel="noreferrer"
-              onMouseOver={() => setInstagramImg(IGhover)}
-              onMouseOut={() => setInstagramImg(IG)}
-            >
-              <img
-                src={instagramImg}
-                alt="Button for the TSA Instagram account"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/groups/tsaatuva"
-              target="_blank"
-              rel="noreferrer"
-              onMouseOver={() => setFacebookImg(FBhover)}
-              onMouseOut={() => setFacebookImg(FB)}
-            >
-              <img
-                src={facebookImg}
-                alt="Button for the TSA Facebook account"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/tsaatuva/"
-              target="_blank"
-              rel="noreferrer"
-              onMouseOver={() => setLinkedinImg(LIhover)}
-              onMouseOut={() => setLinkedinImg(LI)}
-            >
-              <img
-                src={linkedinImg}
-                alt="Button for the TSA LinkedIn account"
-              />
-            </a>
-          </div>
-          <div className={styles.forms}>
-            <h3>Become a member today!</h3>
-            <a
-              href="https://forms.office.com/r/4G44DqZ5qD"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <button>Member Form</button>
-            </a>
-          </div>
+        <div className={styles.social}>
+          <h3>Follow us on our Socials!</h3>
+          <a
+            href="https://www.instagram.com/tsaatuva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noreferrer"
+            onMouseOver={() => setInstagramImg(IGhover)}
+            onMouseOut={() => setInstagramImg(IG)}
+          >
+            <img
+              src={instagramImg}
+              alt="Button for the TSA Instagram account"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/groups/tsaatuva"
+            target="_blank"
+            rel="noreferrer"
+            onMouseOver={() => setFacebookImg(FBhover)}
+            onMouseOut={() => setFacebookImg(FB)}
+          >
+            <img src={facebookImg} alt="Button for the TSA Facebook account" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/tsaatuva/"
+            target="_blank"
+            rel="noreferrer"
+            onMouseOver={() => setLinkedinImg(LIhover)}
+            onMouseOut={() => setLinkedinImg(LI)}
+          >
+            <img src={linkedinImg} alt="Button for the TSA LinkedIn account" />
+          </a>
+        </div>
+        <div className={styles.forms}>
+          <h3>Become a member today!</h3>
+          <a
+            href="https://forms.office.com/r/4G44DqZ5qD"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button>Member Form</button>
+          </a>
         </div>
         <div className={styles.ezcard}>
           <h2>Our EZCards</h2>
