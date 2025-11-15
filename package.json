@@ -12,6 +12,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "aos": "^2.3.4",
+    "bootstrap": "^5.3.8",
     "dayjs": "^1.11.18",
     "framer-motion": "^12.23.7",
     "papaparse": "^5.5.3",
