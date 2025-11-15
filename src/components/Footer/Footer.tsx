@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import './Footer.css'; // Plain CSS (no CSS Modules)
@@ -8,10 +8,24 @@ import insta from '../../assets/footer/icons8-instagram-48.png';
 import face from '../../assets/footer/icons8-facebook-48.png';
 import link from '../../assets/footer/icons8-linkedin-48.png';
 
-
-
-
 const Footer: React.FC = () => {
+    const [email, setEmail] = useState("");
+
+    const MAILCHIMP_SIGNUP =
+        "https://virginia.us14.list-manage.com/subscribe?u=45792a76bc10b7924d7ccb62e&id=53139167b0";
+
+    const handleSubscribe = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // If email is filled, add it as a query param
+        const url = email
+            ? `${MAILCHIMP_SIGNUP}&EMAIL=${encodeURIComponent(email)}`
+            : MAILCHIMP_SIGNUP;
+
+        window.open(url, "_blank", "noopener,noreferrer");
+    };
+
+
     return (
         <footer className="modern-footer pt-5">
             <div className="container footer-content">
@@ -68,10 +82,14 @@ const Footer: React.FC = () => {
                         <p className="text-muted mb-4">
                             Subscribe to our newsletter for the latest updates.
                         </p>
-                        <form className="mb-4">
+
+                        {/* Email input that opens Mailchimp with email pre-filled */}
+                        <form className="mb-4" onSubmit={handleSubscribe}>
                             <div className="mb-3">
                                 <input
                                     type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     className="form-control newsletter-input"
                                     placeholder="Your email address"
                                 />
@@ -80,6 +98,7 @@ const Footer: React.FC = () => {
                                 Subscribe Now
                             </button>
                         </form>
+
                         <div className="social-links">
                             <a href="https://www.facebook.com/groups/tsaatuva" className="social-icon" target="_blank"
                                rel="noreferrer">
@@ -107,7 +126,7 @@ const Footer: React.FC = () => {
                         </div>
                         <div className="col-md-6 text-center text-md-end">
                             <p>
-                            Made with love by TSA at UVA {/* add heart emoji*/}
+                                Made with ❤️ by TSA at UVA
                             </p>
                         </div>
                     </div>
