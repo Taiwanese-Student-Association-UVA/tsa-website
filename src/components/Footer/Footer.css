@@ -64,6 +64,18 @@
     width: 20px;
 }
 
+.contact-info a {
+    text-decoration: none;
+    color: #2d3436;
+    transition: all 0.25s ease;
+}
+
+.contact-info a:hover {
+    color: #6c5ce7;
+    transform: translateX(3px);
+    text-shadow: 0 1px 3px rgba(108, 92, 231, 0.25);
+}
+
 .quick-links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -73,14 +85,15 @@
 }
 
 .quick-links a {
-    color: #2d3436;
     text-decoration: none;
-    transition: all 0.3s ease;
+    color: #2d3436;
+    transition: all 0.25s ease;
 }
 
 .quick-links a:hover {
     color: #6c5ce7;
-    transform: translateX(5px);
+    transform: translateX(5px); /* keep your original slide */
+    text-shadow: 0 1px 3px rgba(108, 92, 231, 0.25);
 }
 
 .newsletter-input {
@@ -167,4 +180,19 @@
 .social-icon:hover img {
     transform: scale(1.1);
 }
+
+.modern-footer .quick-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #2d3436;
+    transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease;
+    will-change: transform, color;
+}
+
+.modern-footer .quick-links a:hover {
+    color: #6c5ce7;
+    transform: translateX(5px);
+    text-shadow: 0 1px 3px rgba(108, 92, 231, 0.25);
+}
+
 

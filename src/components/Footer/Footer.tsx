@@ -41,11 +41,17 @@ const Footer: React.FC = () => {
                         <ul className="contact-info mb-4">
                             <li>
                                 <img src={locationIcon} alt="Location" className="footer-icon me-2"/>
-                                <span>Charlottesville, VA</span>
+                                <a
+                                    href="https://www.google.com/maps/place/Charlottesville,+VA"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Charlottesville, VA
+                                </a>
                             </li>
                             <li>
                                 <img src={mail} alt="Email" className="footer-icon me-2"/>
-                                <span>gxu6vn@virginia.edu</span>
+                                <a href="mailto:gxu6vn@virginia.edu">gxu6vn@virginia.edu</a>
                             </li>
                         </ul>
                     </div>
