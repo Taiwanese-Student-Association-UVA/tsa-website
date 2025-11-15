@@ -32,9 +32,9 @@ const Footer: React.FC = () => {
                 <div className="row g-4 mb-5">
                     {/* Company Info */}
                     <div className="col-lg-4 col-md-6">
-                        <a href="#" className="footer-logo d-block mb-4">
+                        <Link to="/" className="footer-logo d-block mb-4">
                             TSA at UVA<span className="text-primary">.</span>
-                        </a>
+                        </Link>
                         <p className="text-muted mb-4">
                             Taiwanese Student Association at the University of Virginia
                         </p>
