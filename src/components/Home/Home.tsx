@@ -103,9 +103,10 @@ const Home = () => {
                   src={images[rotIndex]}
                   alt={alts[rotIndex]}
                   style={{
-                    width: "700px",
-                    height: "500px",
+                    width: "1000px",
+                    height: "700px",
                     objectFit: "contain",
+                    borderRadius: "15px",
                   }}
                 />
               </motion.a>
