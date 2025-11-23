@@ -96,7 +96,7 @@ const Home = () => {
                 rel="noreferrer"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0.125}}
                 transition={{ duration: 0.5 }}
               >
                 <img
