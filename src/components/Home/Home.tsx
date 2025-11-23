@@ -106,7 +106,7 @@ const Home = () => {
                     width: "1000px",
                     height: "700px",
                     objectFit: "contain",
-                    borderRadius: "15px",
+                    borderRadius: "20px",
                   }}
                 />
               </motion.a>
