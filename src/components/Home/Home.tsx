@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import styles from "./Home.module.css";
 import {
@@ -88,9 +88,29 @@ const Home = () => {
             <h2>Who we are...</h2>
           </strong>
           <div className={styles.rotatingImages}>
-            <a href={links[rotIndex]} target="_blank" rel="noreferrer">
-              <img src={images[rotIndex]} alt={alts[rotIndex]} />
-            </a>
+            <AnimatePresence mode="wait">
+              <motion.a
+                key={rotIndex}
+                href={links[rotIndex]}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0.125}}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src={images[rotIndex]}
+                  alt={alts[rotIndex]}
+                  style={{
+                    width: "1000px",
+                    height: "700px",
+                    objectFit: "cover",
+                    borderRadius: "20px",
+                  }}
+                />
+              </motion.a>
+            </AnimatePresence>
           </div>
           <p>
             UVA's Taiwanese Student Association (TSA) is a student-run,
