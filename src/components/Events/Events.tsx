@@ -6,8 +6,8 @@ import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 import styles from './Events.module.css';
 import SkyBackground from './SkyBackground';
 import defaultEventImage from '../../assets/logo.png';
+import noEventHeader from '../../assets/lanterns-9831440_1920.jpg';
 import { FaInstagram } from 'react-icons/fa';
-
 
 const InstagramIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = FaInstagram as any;
 dayjs.extend(isSameOrAfter);
@@ -22,7 +22,6 @@ interface Event {
     imageUrl?: string;
     instagramLink?: string;
     prCredit?: string;
-
 }
 
 const GOOGLE_SHEET_URL =
@@ -38,8 +37,6 @@ const SkeletonCard: React.FC = () => (
 );
 
 const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({ event, past = false, delay = 0 }) => {
-    console.log('Event Link:', event.instagramLink);
-
     return (
         <div
             className={`${styles.eventCard} ${past ? styles.pastEvent : ''} ${styles.fadeIn}`}
@@ -62,7 +59,8 @@ const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({
                         ? event.description.slice(0, 350) + "..."
                         : event.description}
                 </h3>
-                <div style={{marginTop: "auto"}}>
+
+                <div style={{ marginTop: "auto" }}>
                     <div className={styles.eventDivider}></div>
 
                     <div className={styles.eventFooter}>
@@ -73,16 +71,16 @@ const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({
                                 rel="noopener noreferrer"
                                 className={styles.instagramButton}
                             >
-                                <InstagramIcon size={24}/>
+                                <InstagramIcon size={24} />
                             </a>
                         ) : (
                             <button className={styles.instagramButton} disabled>
-                                <InstagramIcon size={24} style={{opacity: 0.3}}/>
+                                <InstagramIcon size={24} style={{ opacity: 0.3 }} />
                             </button>
                         )}
 
                         {event.prCredit && (
-                             <span className={styles.prCredit}>Credit: {event.prCredit}</span>
+                            <span className={styles.prCredit}>Credit: {event.prCredit}</span>
                         )}
                     </div>
                 </div>
@@ -91,11 +89,9 @@ const EventCard: React.FC<{ event: Event; past?: boolean; delay?: number }> = ({
     );
 };
 
-
 const EventsPage: React.FC = () => {
     const [currentEvents, setCurrentEvents] = useState<Event[]>([]);
     const [pastEvents, setPastEvents] = useState<Event[]>([]);
-    const [showPastEvents, setShowPastEvents] = useState(false);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -129,11 +125,14 @@ const EventsPage: React.FC = () => {
         <>
             <SkyBackground />
             <div className={styles.eventsContainer}>
+
+                {/* Header */}
                 <div className={styles.eventsHeader}>
                     <h1 className={styles.eventsTitle}>Events</h1>
                     <div className={styles.divider}></div>
                 </div>
 
+                {/* Current Events */}
                 <div className={styles.eventsGrid}>
                     {loading
                         ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
@@ -141,29 +140,38 @@ const EventsPage: React.FC = () => {
                             ? currentEvents.map((event, index) => (
                                 <EventCard key={event.id + '-current'} event={event} delay={index * 150} />
                             ))
-                            : <p>No current events found.</p>
+                            : (
+                                <div className={styles.emptyState}>
+                                    <div className={styles.emptyImage}></div>
+
+                                    <div className={styles.emptyOverlay}>
+                                        <h3>No Current Events</h3>
+                                        <p>Check back soon for more upcoming events!</p>
+                                    </div>
+                                </div>
+
+                            )
                     }
                 </div>
 
-                <button
-                    className={styles.toggleButton}
-                    onClick={() => setShowPastEvents(!showPastEvents)}
-                >
-                    {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
-                </button>
+                {/* Past Events Header */}
+                <div className={styles.pastEventsHeader}>
+                    <h2 className={styles.pastEventsTitle}>Past Events</h2>
+                    <div className={styles.pastDivider}></div>
+                </div>
 
-                {showPastEvents && (
-                    <div className={styles.eventsGrid}>
-                        {loading
-                            ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
-                            : pastEvents.length > 0
-                                ? pastEvents.map((event, index) => (
-                                    <EventCard key={event.id + '-past'} event={event} past delay={index * 150} />
-                                ))
-                                : <p>No past events found.</p>
-                        }
-                    </div>
-                )}
+                {/* Past Events */}
+                <div className={styles.eventsGrid}>
+                    {loading
+                        ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
+                        : pastEvents.length > 0
+                            ? pastEvents.map((event, index) => (
+                                <EventCard key={event.id + '-past'} event={event} past delay={index * 150} />
+                            ))
+                            : <p>No past events found.</p>
+                    }
+                </div>
+
             </div>
         </>
     );

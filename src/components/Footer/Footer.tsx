@@ -60,25 +60,25 @@ const Footer: React.FC = () => {
                     <div className="col-lg-4 col-md-6">
                         <h3 className="footer-title">Quick Links</h3>
                         <ul className="quick-links">
-                            <li><Link to="/about">About TSA</Link></li>
+                            <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About TSA</Link>
                             <li>
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSftSERM8_jiPzLZRzk6YRDPmnori-rrAtH-p7Octp12DV666Q/viewform?usp=dialog" target="_blank" rel="noreferrer">
                                     Feedback/Reporting
                                 </a>
                             </li>
-                            <li><Link to="/events">Events</Link></li>
+                            <Link to="/events" onClick={() => window.scrollTo(0, 0)}>Events</Link>
                             <li>
                                 <a href="https://docs.google.com/forms/d/1Es_WPwxx0FnvEDfbVy6pwEMEBuU39NpTwWwzkUNMaFA/edit?usp=drivesdk" target="_blank" rel="noreferrer">
                                     EZ Card Eats
                                 </a>
                             </li>
-                            <li><Link to="/partners">Partners</Link></li>
+                            <Link to="/partners" onClick={() => window.scrollTo(0, 0)}>Partners</Link>
                             <li>
                                 <a href="https://docs.google.com/forms/d/1uouf15PCENhuFF1DsOefIZFNq8-z2reEWTXgt0gUeYk/edit?usp=drivesdk" target="_blank" rel="noreferrer">
                                     Announcement Request
                                 </a>
                             </li>
-                            <li><Link to="/archive">Archive</Link></li>
+                            <Link to="/archive" onClick={() => window.scrollTo(0, 0)}>Archive</Link>
                         </ul>
                     </div>
 
