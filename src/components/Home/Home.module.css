@@ -98,8 +98,9 @@ body{
 
 /* Body */
 .content {
-  width: 60vw;
+  width: 55vw;
   margin: auto;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   color: var(--text-dark);
@@ -146,22 +147,19 @@ body{
 .rotatingImages img.fadeOut {
   opacity: 0;
 }
-.social {
-  display: inline;
+.social, .forms {
+  text-align: center;
+  margin: auto;
   width: 40vw;
   height: auto;
 }
 .social img {
-  text-align: left;
   width: 175px;
   margin: 1rem;
   transition: var(--transition);
 }
 .social img:hover{
   transform: scale(1.25);
-}
-.forms {
-  text-align: right;
 }
 .about button {
   width: 300px;
@@ -173,7 +171,7 @@ body{
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  
+  transition: var(--transition);  
 }
 .about button:hover {
   background: linear-gradient(135deg, #aeb4ff, #8d94f7);
@@ -190,6 +188,7 @@ body{
   justify-content: center;
   align-items: center;
   margin: 60px auto;
+  margin-top: 5rem;
 }
 .ezcard img{
   margin: auto;
@@ -203,99 +202,6 @@ body{
   box-shadow: 0 0 50px 10px rgb(255, 244, 184);
   transform-origin: center center;
 }
-
-/* Newsletter section */
-.newsletter{
-  width: 100%;
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "news dish"
-    "pic ez"
-    "signup signup";
-  grid-template-columns: 1fr 1fr;
-  margin: 50px auto;
-  justify-content: center;
-  align-items: center;
-}
-.newsletter  {
-  padding: 0 20px;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgb(243, 243, 243);
-}
-.newsletter > div.header {
-  grid-area: header;
-  box-shadow: none;
-  margin: 0;
-}
-.newsletter > div.news {
-  grid-area: news;
-}
-.newsletter > div.dish {
-  grid-area: dish;
-}
-.newsletter > div.pic {
-  grid-area: pic;
-}
-.newsletter > div.ez {
-  grid-area: ez;
-}
-.newsletter > div.signup{
-  grid-area: signup;
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-  box-shadow: none;
-}
-.newsletter img{
-  margin: 10px;
-  padding: 20px 0;
-  width: 600px;
-  object-fit: contain;
-  justify-content: center;
-}
-.signupBox {
-  align-items: center;
-  font-size: 15px;
-  border-radius: 15px;
-  padding: 10px;
-  width: 550px;
-  height: 60px;
-  margin: 10px auto;
-  text-align: center;
-}
-.signupForm {
-  display: flex;
-  gap: 0.5rem;
-}
-.signupInput {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 2.5px solid #ddd;
-  border-radius: 8px;
-  font-size: 1.3rem;
-}
-.signupInput:focus {
-  outline: none;
-  border-color: #8d94f7;
-  box-shadow: 0 0 5px 9px rgb(186, 182, 211);
-}
-.signupButton {
-  font-size: 1.3rem;
-  width: 150px;
-  background-color: var(--light-purple);
-  color: var(--dark-blue);
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.signupButton:hover {
-  background-color: var(--dark-blue);
-  color: white;
-}
-
 
 /* Current Events content */
 .current{

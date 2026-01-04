@@ -25,10 +25,18 @@ const Partners = () => {
           <p>
             This year we are introducing our brand new TSA EasyCard! This card
             is your passport to exclusive perks, discounts, and EasyCard only
-            benefits all year long. For just $12, you’ll unlock over $50 in
-            value through savings at local businesses, priority access at TSA
+            benefits all year long. For just{" "}
+            <strong>
+              <em>$12</em>
+            </strong>
+            , you’ll unlock over{" "}
+            <strong>
+              <em>$50</em>
+            </strong>{" "}
+            in value through savings at local businesses, priority access at TSA
             events, and free extras made just for you!
           </p>
+          <br />
           <h2>Our Current Partners</h2>
           <hr />
           <div className={styles.pictures}>
@@ -148,12 +156,11 @@ const Partners = () => {
           </div>
         </div>
         <div className={styles.Package}>
-          <h2>Become a Partner Today!</h2>
           <p>
             <strong>
-              <em>Interested in becoming a partner?</em>
+              Interested in becoming a <em>partner</em>?
             </strong>
-            <br />
+            <h2>Become One Today!</h2>
             Explore our partnership package below to take the next steps toward
             joining our community of partners.
           </p>

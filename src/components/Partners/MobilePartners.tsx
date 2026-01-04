@@ -148,12 +148,13 @@ const MobilePartners = () => {
           </div>
         </div>
         <div className={styles.Package}>
-          <h2>Become a Partner Today!</h2>
           <p>
             <strong>
               <em>Interested in becoming a partner?</em>
             </strong>
-            <br />
+          </p>
+          <h2>Become a Partner Today!</h2>
+          <p>
             Explore our partnership package below to take the next steps toward
             joining our community of partners.
           </p>
