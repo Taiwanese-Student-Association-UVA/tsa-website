@@ -76,11 +76,38 @@
   background-color: #420909; 
   border-radius: 40px; 
   display: flex;
-  overflow: hidden;
   scroll-snap-align: center; 
   box-shadow: 0 15px 45px rgba(0,0,0,0.15);
   align-items: center;
+  position: relative; 
+  overflow: hidden;
 }
+.background { 
+  object-fit: cover; 
+  z-index: 0;          
+  opacity: 0.1;        
+  pointer-events: none; 
+}
+
+.nm-background {
+  position: absolute; 
+  top: 50%;
+  left: 50%; /* Keep this centered to prevent side-cropping */
+  
+  /* Make it larger so you have room to move it up without gaps */
+  width: 150%; 
+  height: 150%; 
+  
+  /* -50% centers horizontally. 
+     -70% shifts it UP (shows more of the bottom of the photo) */
+  transform: translate(-50%, -60%);
+
+  object-fit: cover; 
+  z-index: 0;          
+  opacity: 0.1;        
+  pointer-events: none; 
+}
+
 
 /* MERCH CARD LEFT SIDE------------------------------------------ */
 .card-content {
@@ -141,6 +168,7 @@
   width: fit-content;
   margin: 40px auto 0 auto;
   transition: transform 0.2s ease;
+  z-index: 1;   
 }
 
 .buy-btn:hover {
@@ -151,13 +179,21 @@
 
 
 .card-image-wrapper { 
-  outline: 3px solid brown; 
+  outline: 3px solid #FFF5D4; 
+  background-color: #FFF5D4;
   width: 45%;
+  height: 95%; 
+  border-radius: 40px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
-.card-image-wrapper img { 
-  outline: 3px solid pink; 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover;
- }
 
+.card-image-wrapper img { 
+
+  width: 90%; 
+  height: 90%; 
+  object-fit: contain;
+  object-position: center center;
+}
