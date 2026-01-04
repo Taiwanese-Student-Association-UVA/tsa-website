@@ -75,6 +75,7 @@
 
 /* MERCH CARD ------------------------------------------ */
 .merch-card {
+  /* outline: 3px solid blue; */
   flex: 0 0 90vw;    
   min-height: 600px;
   background-color: #420909; 
@@ -83,28 +84,44 @@
   overflow: hidden;
   scroll-snap-align: center; 
   box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+  align-items: center;
 }
 
 .card-content {
-  flex: 1;
-  padding: 32px;
+  /* outline: 3px solid rgb(2, 2, 22); */
+  padding: 60px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.card-content h2 { font-size: 28px; color: white; margin: 10px 0; }
-.card-content span { font-size: 14px; color: #aaa; text-transform: uppercase; }
-
-.card-image-wrapper { width: 45%; }
-.card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+.card-content h2 { 
+  font-size: 60px;
+  color: white; 
+  margin: 10px 0; 
+  text-align: center;
+}
+.card-content span { 
+  font-size: 40px; 
+  color: #aaa; 
+  text-transform: uppercase; 
+  text-align: center;
+}
 
 .buy-btn {
   background-color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 50px;
+  padding: 12px 34px;
+  border-radius: 15px;
   font-weight: 600;
   cursor: pointer;
   width: fit-content;
+
+  /* ADD THIS */
+  margin: 0 auto; 
+  margin-top: 20px;
 }
+.card-image-wrapper { width: 45%; }
+.card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+

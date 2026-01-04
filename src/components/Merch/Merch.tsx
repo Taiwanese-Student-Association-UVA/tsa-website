@@ -32,11 +32,11 @@ const Merch = () => {
           transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
           viewport={{ once: false, amount: 0.1 }}
         >
-          {/* Card 1 */}
+          {/* NIGHT MARKET SHIRT */}
           <div className={styles['merch-card']}>
             <div className={styles['card-content']}>
               <span>2023-2024</span>
-              <h2>NM Shirt</h2>
+              <h2>Night Market Shirt</h2>
               <button className={styles['buy-btn']}>Buy Now</button>
             </div>
             <div className={styles['card-image-wrapper']}>
@@ -44,7 +44,7 @@ const Merch = () => {
             </div>
           </div>
           
-          {/* Card 2 */}
+          {/* GENERAL BODY SHIRT */}
           <div className={styles['merch-card']}>
             <div className={styles['card-content']}>
               <span>2023-2024</span>
@@ -55,6 +55,20 @@ const Merch = () => {
               <img src="Photos/hoodie1.jpg" alt="Merch" />
             </div>
           </div>
+
+          {/* YINGHUA SHIRT */}
+          <div className={styles['merch-card']}>
+            <div className={styles['card-content']}>
+              <span>2023-2024</span>
+              <h2>NM Hoodie</h2>
+              <button className={styles['buy-btn']}>Buy Now</button>
+            </div>
+            <div className={styles['card-image-wrapper']}>
+              <img src="Photos/hoodie1.jpg" alt="Merch" />
+            </div>
+          </div>
+
+          
         </motion.div>
       </section>  {/* ---- END OF CAROUSEL SECTION ---- */}
 
