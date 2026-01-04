@@ -33,7 +33,7 @@ const Merch = () => {
           viewport={{ once: false, amount: 0.1 }}
         >
           {/* NIGHT MARKET SHIRT */}
-          <div className={styles['merch-card']}>
+          <div className={styles['merch-card']} style={{ backgroundColor: '#FFF5D4' }}>
             <div className={styles['card-content']}>
               <span>2023-2024</span>
               <h2>Night Market Shirt</h2>
