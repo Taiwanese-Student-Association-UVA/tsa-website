@@ -7,271 +7,6 @@
   --transition: transform 0.6s ease, z-index 0.5s;
 }
 
-/* header section */
-/*
-.Header {
-  text-align: center;
-  width: 90%;
-  margin: 40px auto;
-}
-.Header h1 {
-  font-size: 2.7rem;
-  font-weight: 500;
-  line-height: 100%;
-  margin: 10px auto;
-}
-.Header h2 {
-  font-size: 2rem;
-}
-.Header p {
-  width: 100%;
-  margin: 15px auto;
-  line-height: 1.6;
-}
-.Header hr {
-  width: 50%;
-  height: 3px;
-  background-color: white;
-  border: none;
-  margin: 0 auto;
-}
-.pictures {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-.pictures img {
-  width: 100%;
-  max-width: 250px;
-  object-fit: contain;
-  margin: 10px;
-  transition: var(--transition);
-}
-.pictures img:hover {
-  transform: scale(1.15);
-}
-  */
-
-/* information section */
-/*
-.information {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  justify-content: center;
-  margin: 40px auto;
-  align-items: start;
-}
-/* info subsections */
-/*
-.howto {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: 20px auto;
-  padding: 25px 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgb(243, 243, 243);
-  background-color: var(--medium-blue);
-  transition: var(--transition);
-  align-items: center;
-  justify-content: center;
-}
-.howto p {
-  font-size: .8rem;
-  margin: 10px;
-  line-height: 1.6;
-  text-align: left;
-}
-.howto h2 {
-  font-size: 1.8rem;
-  margin: auto;
-  text-align: center;
-}
-.howto:hover {
-  color: var(--primary-color);
-  background-color: #c5c8f7;
-  box-shadow: 0 0 15px 5px rgb(201, 201, 201);
-  transform: scale(1.03);
-}
-
-/* package section */
-/*
-.Package {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  width: 90%;
-  margin: 30px auto;
-}
-.Package h2 {
-  font-size: 2rem;
-  margin: auto;
-}
-.Package p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.Package iframe, 
-.Package embed {
-  margin: 1.5rem auto;
-  width: 100%;
-  height: 300px;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 5px #c5c9f765;
-}
-
-/* tablet styles */
-/*
-@media (min-width: 768px) {
-  .floatingImage {
-    width: 60%;
-    max-width: 400px;
-  }
-  
-  .Header {
-    width: 80%;
-  }
-  .Header h1 {
-    font-size: 3.5rem;
-  }
-  .Header h2 {
-    font-size: 2.4rem;
-  }
-  .Header p {
-    width: 80%;
-  }
-  .Header hr {
-    width: 30%;
-  }
-  .pictures {
-    flex-direction: row;
-    gap: 40px;
-  }
-  .pictures img {
-    width: 100%;
-    max-width: 20vw;
-    margin: 20px 20px;
-  }
-  
-  .information {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 35px auto;
-  }
-  .howto {
-    width: 40%;
-    margin: 20px;
-    padding: 15px 20px;
-  }
-  .howto h2 {
-    font-size: 2.4rem;
-  }
-
-  .Package {
-    width: 80%;
-    margin-top: 40px;
-  }
-  .Package h2 {
-    font-size: 2.5rem;
-  }
-  .Package iframe, 
-  .Package embed {
-    height: auto;
-  }
-}
-
-/* desktop styles */
-/*
-@media (min-width: 1024px) {
-  .floatingImage {
-    width: 500px;
-    max-width: none;
-  }
-  .Header {
-    width: 70vw;
-    margin: 80px auto;
-  }
-  .Header h1 {
-    font-size: 80px;
-  }
-  .Header h2 {
-    font-size: 40px;
-  }
-  .Header p {
-    width: 45vw;
-    font-size: large;
-  }
-  .Header hr {
-    width: 15vw;
-  }
-  .pictures {
-    flex-direction: row;
-  }
-  .pictures img {
-    width: 100%;
-    max-width: 15vw;
-    margin: 60px 20px;
-  }
-  .pictures img:hover {
-    transform: scale(1.25);
-  }
-  
-  .information {
-    flex-direction: row;
-    height: 800px;
-    margin: 70px auto;
-  }
-  .howto {
-    width: 25vw;
-    margin: 30px;
-    padding: 30px 15px;
-  }
-  .howto p {
-    font-size: medium;
-  }
-  .howto h2 {
-    font-size: 45px;
-  }
-  .howto:hover {
-    transform: scale(1.05);
-  }
-  
-  .Package {
-    width: 60vw;
-    margin: 50px auto;
-  }
-  .Package h2 {
-    font-size: 50px;
-  }
-  .Package p {
-    font-size: 1.2rem;
-  }
-  .Package iframe, 
-  .Package embed {
-    height: 600px;
-  }
-}
-
-/* large desktop styles */
-/*
-@media (min-width: 1440px) {
-  .Header {
-    width: 60vw;
-  }
-  
-  .Package {
-    width: 50vw;
-  }
-}
-*/
-
 p {
   font-size: 1.1rem;
 }
@@ -309,13 +44,13 @@ p {
     margin: 80px auto;
 }
 .Header h1{
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 500;
     line-height: 100%;
     margin: 10px auto;
 }
 .Header h2{
-    font-size: 40px;
+    font-size: 3rem;
 }
 .Header p{
     width: 50vw;
@@ -332,15 +67,30 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .pictures img {
-    width: 15vw;
+    width: 250px;
     object-fit: contain;
-    margin: 60px 20px;
+    margin: 20px;
     transition: var(--transition);
 }
 .pictures img:hover {
     transform: scale(1.25);
+}
+@media(max-width: 720px) {
+  .Header h1 {
+    font-size: 4rem;
+  }
+  .pictures {
+    flex-direction: column;
+  }
+  .pictures img{
+    width: 50vw;
+  }
+  .pictures img:hover {
+    transform: scale(1.1);
+}
 }
 
 /* information section */
@@ -350,35 +100,7 @@ p {
     height: auto;
     justify-content: center;
     margin: 70px auto;
-    align-items: start;
-}
-/* info subsections */
-.howto {
-    display: flex;
-    flex-direction: column;
-    width: 25vw;
-    margin: 30px;
-    padding: 30px 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px 5px rgb(243, 243, 243);
-    background-color: var(--medium-blue);
-    transition: var(--transition);
-    align-items: center;
-    justify-content: center;
-}
-.howto p{
-    font-size: medium;
-    margin: 10px;
-}
-.howto h2{
-    font-size: 45px;
-    margin: auto;
-}
-.howto:hover{
-    color: var(--primary-color);
-    background-color: #c5c8f7;
-    box-shadow: 0 0 15px 5px rgb(201, 201, 201);
-    transform: scale(1.05);
+    flex-wrap: wrap;
 }
 
 /* package section */
@@ -389,7 +111,7 @@ p {
     text-align: center;
     justify-content: center;
     width: 60vw;
-    margin: 40px auto;
+    margin: 60px auto;
 }
 .Package h2{
     font-size: 50px;
