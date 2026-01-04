@@ -9,7 +9,9 @@
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  scroll-behavior: auto; 
+  /* MAGNETIC PULL: This forces the automatic snap */
+  /*scroll-snap-type: y mandatory; */
+  scroll-behavior: smooth;
   scrollbar-width: none; 
   -ms-overflow-style: none; 
 }
@@ -27,7 +29,9 @@
   justify-content: center;
   text-align: center;
   color: white;
-  overflow: hidden;
+  /* SNAP POINT */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .merch-hero::before {
@@ -41,12 +45,39 @@
   z-index: -1;
 }
 
+.carousel-viewport {
+  width: 100%;
+  height: 100vh; /* Changed to exactly 100vh for perfect centering */
+  background-color: white; 
+  position: relative; 
+  z-index: 2;
+  display: flex;
+  align-items: center; /* Centers the track vertically */
+  
+  /* SNAP POINT */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  
+  /* Horizontal card scrolling */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  padding: 0 5vw; 
+  gap: 10vw; 
+}
+
 .merch-card {
-  margin-top: 20px;
-  margin-bottom: 20px;
   flex: 0 0 90vw;    
-  flex-shrink: 0;
-  min-height: 700px; 
+  min-height: 600px; /* Reduced slightly to ensure it fits comfortably in view */
   background-color: #420909; 
   border-radius: 40px; 
   display: flex;
@@ -63,52 +94,18 @@
   justify-content: center;
 }
 
-.card-content span { font-size: 14px; font-weight: 800; text-transform: uppercase; color: #666; }
-.card-content h2 { font-size: 28px; font-weight: 700; margin: 8px 0 20px 0; color: white; }
+.card-content h2 { font-size: 28px; color: white; margin: 10px 0; }
+.card-content span { font-size: 14px; color: #aaa; text-transform: uppercase; }
 
-.card-image-wrapper { width: 45%; height: 100%; }
-
-.card-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-top-left-radius: 40px; 
-  border-bottom-left-radius: 40px;
-}
+.card-image-wrapper { width: 45%; }
+.card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
 .buy-btn {
-  background-color: #ffffff;
-  color: #1a1a1a;
+  background-color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 999px;
-  width: fit-content;
-  cursor: pointer;
+  border-radius: 50px;
   font-weight: 600;
-}
-
-.carousel-viewport {
-  width: 100%;
-  position: relative; 
-  z-index: 2;       
-  background-color: white; 
-  min-height: 100vh;
-  margin-top: -10vh;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
-}
-
-.carousel-viewport::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-track {
-  display: flex;
-  background-color: #ffffff; 
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  padding: 0 5vw; 
-  gap: 10vw; 
+  cursor: pointer;
+  width: fit-content;
 }
