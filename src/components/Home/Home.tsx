@@ -72,7 +72,6 @@ const Home = () => {
             value through savings at local businesses, priority access at TSA
             events, and free extras made just for you!
           </p>
-          <br />
           <p>
             To learn how to use our EZCards or read up on all of the perks you
             can get, click on the EZCard below!

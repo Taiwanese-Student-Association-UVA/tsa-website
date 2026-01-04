@@ -45,10 +45,23 @@ body{
     color: black;
   }
   .beginning h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   .beginningText {
     padding: 2.5rem 2.5rem;
+  }
+}
+@media (max-width: 393px) {
+  .beginning {
+    margin: auto;
+    color: black;
+  }
+  .beginning h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+  .beginningText {
+    padding: 1.5rem 1rem;
   }
 }
 /* glass effect component */
@@ -118,22 +131,20 @@ body{
   color: var(--text-dark);
 }
 .content p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   text-indent: 40px;
 }
 .content h2 {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   font-weight: 400;
-  margin-bottom: 0;
 }
 .content h3 {
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 450;
 }
 @media (max-width: 720px) {
   .content {
     width: 100%;
-    padding: 1rem;
   }
 }
 
@@ -180,10 +191,9 @@ body{
   transform: scale(1.25);
 }
 .about button {
-  width: 300px;
-  height: 90px;
-  font-size: 25px;
+  font-size: 1.3rem;
   margin: 10px 20px;
+  padding: 25px 45px;
   color: white;
   background-color: var(--primary-color);
   border: none;
@@ -209,6 +219,12 @@ body{
   }
   .social img {
     width: 20vw;
+    display: inline-block;
+  }
+}
+@media (max-width: 393px) {
+  .social img {
+    width: 30vw;
     display: inline-block;
   }
 }
