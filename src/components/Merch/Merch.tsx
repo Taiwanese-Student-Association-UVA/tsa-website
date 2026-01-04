@@ -35,12 +35,17 @@ const Merch = () => {
           {/* NIGHT MARKET SHIRT */}
           <div className={styles['merch-card']} style={{ backgroundColor: '#FFF5D4' }}>
             <div className={styles['card-content']}>
-              <span>2023-2024</span>
-              <h2>Night Market Shirt</h2>
-              <button className={styles['buy-btn']}>Buy Now</button>
+
+                <img 
+                src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_FRONT.PNG" 
+                className={styles.logo} 
+                />
+
+                <h2>Night Market</h2>
+                <button className={styles['buy-btn']}>Buy Now</button>
             </div>
             <div className={styles['card-image-wrapper']}>
-              <img src="Photos/shirt1.jpg" alt="Merch" />
+                <img src="Photos/shirt1.jpg" alt="Merch" />
             </div>
           </div>
           

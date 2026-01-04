@@ -32,7 +32,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('Photos/Front_Placeholder.JPG') center/cover;
+  background: url('../../../public/MerchPhotos/Front_Placeholder.JPG') center/cover;
   z-index: -1;
 }
 
@@ -82,23 +82,28 @@
   align-items: center;
 }
 
+/* MERCH CARD LEFT SIDE------------------------------------------ */
 .card-content {
   /* outline: 3px solid rgb(2, 2, 22); */
   padding: 60px;
+  padding-left: 10%;
+  padding-right: 10%;
   margin: 30px;
+  
   /* margin-top used to push down the card headers */
-  margin-top: 100px;
+  /* margin-top: 50px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
-.card-content h2 { 
-  /* min: 32px, preferred: 5vw, max: 60px */
-  font-size: clamp(32px, 5vw, 60px);
-  margin-bottom: 4vh; /* Use viewport height for vertical spacing */
-  text-align: center;
-  color: #4e4e4e;
+.card-content img.logo { 
+  /* min: 120px, preferred: 15vw, max: 250px */
+  /* outline: 2px solid red;  */
+  width: clamp(120px, 20vw, 400px); 
+  height: auto;           
+  display: block;          
+  margin: 0 auto 0 auto;  
+  object-fit: contain;     
 }
 
 .card-content span { 
@@ -110,6 +115,15 @@
   margin-bottom: 1vh;
   color: #4e4e4e;
 }
+
+.card-content h2 { 
+  /* min: 32px, preferred: 5vw, max: 60px */
+  font-size: clamp(32px, 5vw, 60px);
+  margin-bottom: 4vh; /* Use viewport height for vertical spacing */
+  text-align: center;
+  color: #4e4e4e;
+}
+
 
 .buy-btn {
   background-color: #4e4e4e;
@@ -125,7 +139,7 @@
   font-weight: 700;
   cursor: pointer;
   width: fit-content;
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
   transition: transform 0.2s ease;
 }
 
