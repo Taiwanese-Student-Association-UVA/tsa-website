@@ -1,0 +1,28 @@
+
+/* Hero */
+.merch-hero {
+  height: 500px;
+  background: url('Photos/Front_Placeholder.JPG') center/cover;
+  border-radius: 0px; /* rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 68px;    
+  font-weight: 400px;
+  margin-bottom: 8px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+}
+
+.hero-content p {
+  font-size: 38px;     
+  font-weight: 400px;
+  opacity: 0.9;         
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
