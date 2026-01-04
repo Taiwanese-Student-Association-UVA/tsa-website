@@ -8,21 +8,25 @@ const Merch = () => {
   }, []);
 
   return (
-    <div className={styles['merch-container']}>
-      
-      {/* SNAP POINT 1 */}
-      <section className={styles['merch-hero']}>
+
+    <div className={styles['merch-container']}> {/* ---- START OF MERCH PAGE ---- */}
+       
+      {/* HERO SECTION -------------------------------------------------------*/}
+
+      <section className={styles['merch-hero']}> {/* ---- START OF HERO SECTION ---- */}
         <div className={styles['hero-content']}>
           <h1>TSA Merchandise</h1>
           <p>TSA is Cool</p>
         </div>
-      </section>
+      </section> {/* ---- END OF HERO SECTION ---- */}
 
-      {/* SNAP POINT 2 */}
-      <section className={styles['carousel-viewport']}>
+
+
+      {/* CAROUSEL SECTION -------------------------------------------------------*/}
+
+      <section className={styles['carousel-viewport']}> {/* ---- START OF CAROUSEL SECTION ---- */}
         <motion.div 
           className={styles['carousel-track']}
-          /* We animate the internal track instead of the viewport container */
           initial={{ y: "20vh", opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
@@ -52,8 +56,11 @@ const Merch = () => {
             </div>
           </div>
         </motion.div>
-      </section>
-    </div>
+      </section>  {/* ---- END OF CAROUSEL SECTION ---- */}
+
+
+
+    </div> /* ---- END OF MERCH PAGE ---- */
   );
 };
 
