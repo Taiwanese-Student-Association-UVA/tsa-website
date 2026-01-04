@@ -10,7 +10,6 @@ const Merch = () => {
   return (
 
     <div className={styles['merch-container']}> {/* ---- START OF MERCH PAGE ---- */}
-       
       {/* HERO SECTION -------------------------------------------------------*/}
 
       <section className={styles['merch-hero']}> {/* ---- START OF HERO SECTION ---- */}
@@ -31,6 +30,14 @@ const Merch = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
           viewport={{ once: false, amount: 0.1 }}
+          // Lock scroll when animation begins
+          onAnimationStart={() => {
+            document.body.style.overflow = "visible";
+          }}
+          // Unlock scroll when animation ends
+          onAnimationComplete={() => {
+            document.body.style.overflow = "unset";
+          }}
         >
           {/* NIGHT MARKET SHIRT */}
           <div className={styles['merch-card']} style={{ backgroundColor: '#FFF5D4' }}>

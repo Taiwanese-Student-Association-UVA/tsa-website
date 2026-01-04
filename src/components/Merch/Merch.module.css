@@ -38,6 +38,10 @@
 
 /* CAROUSEL ------------------------------------------ */
 .carousel-viewport {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+  
   width: 100%;
   height: 100vh; 
   background-color: white; 
@@ -81,7 +85,14 @@
   align-items: center;
   position: relative; 
   overflow: hidden;
+  transition: all 0.5s ease-out;
 }
+
+/* .merch-card:hover {
+  transform: scale(1.05); 
+  transition: all 0.25s ease-in;
+} */
+
 .background { 
   object-fit: cover; 
   z-index: 0;          
