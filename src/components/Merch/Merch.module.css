@@ -10,7 +10,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   /* MAGNETIC PULL: This forces the automatic snap */
-  /*scroll-snap-type: y mandatory; */
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none; 
   -ms-overflow-style: none; 

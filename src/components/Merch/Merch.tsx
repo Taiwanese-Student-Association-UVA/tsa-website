@@ -8,30 +8,27 @@ const Merch = () => {
   }, []);
 
   return (
-        <div className={styles['merch-container']}>
-
-        <section className={styles['merch-hero']}>
+    <div className={styles['merch-container']}>
+      
+      {/* SNAP POINT 1 */}
+      <section className={styles['merch-hero']}>
         <div className={styles['hero-content']}>
-            <h1>TSA Merchandise</h1>
-            <p>TSA is Cool</p>
+          <h1>TSA Merchandise</h1>
+          <p>TSA is Cool</p>
         </div>
-        </section>
+      </section>
 
-        <motion.section 
-        className={styles['carousel-viewport']}
-        /* CHANGE: Start from 40vh (nearly half-way up) instead of 100vh */
-        initial={{ y: "40vh" }} 
-        whileInView={{ y: 0 }}
-        transition={{ 
-            duration: 2, 
-            ease: [0.45, 0, 0.55, 1],
-        }}
-
-        
-        /* CHANGE: Increase negative margin to -800px so it triggers instantly */
-        viewport={{ once: false, amount: 0, margin: "0px 0px -800px 0px" }}
+      {/* SNAP POINT 2 */}
+      <section className={styles['carousel-viewport']}>
+        <motion.div 
+          className={styles['carousel-track']}
+          /* We animate the internal track instead of the viewport container */
+          initial={{ y: "20vh", opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
+          viewport={{ once: false, amount: 0.1 }}
         >
-        <div className={styles['carousel-track']}>
+          {/* Card 1 */}
           <div className={styles['merch-card']}>
             <div className={styles['card-content']}>
               <span>2023-2024</span>
@@ -43,6 +40,7 @@ const Merch = () => {
             </div>
           </div>
           
+          {/* Card 2 */}
           <div className={styles['merch-card']}>
             <div className={styles['card-content']}>
               <span>2023-2024</span>
@@ -53,8 +51,8 @@ const Merch = () => {
               <img src="Photos/hoodie1.jpg" alt="Merch" />
             </div>
           </div>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
     </div>
   );
 };
