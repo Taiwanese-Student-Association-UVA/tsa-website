@@ -8,25 +8,29 @@ const Merch = () => {
   }, []);
 
   return (
-    <div className={styles['merch-container']}>
-      
-      <section className={styles['merch-hero']}>
-        <div className={styles['hero-content']}>
-          <h1>TSA Merchandise</h1>
-          <p>TSA is Cool</p>
-        </div>
-      </section>
+        <div className={styles['merch-container']}>
 
-      <motion.section 
+        <section className={styles['merch-hero']}>
+        <div className={styles['hero-content']}>
+            <h1>TSA Merchandise</h1>
+            <p>TSA is Cool</p>
+        </div>
+        </section>
+
+        <motion.section 
         className={styles['carousel-viewport']}
-        initial={{ y: "100vh" }}
+        /* CHANGE: Start from 40vh (nearly half-way up) instead of 100vh */
+        initial={{ y: "40vh" }} 
         whileInView={{ y: 0 }}
         transition={{ 
-          duration: 2.5, 
-          ease: [0.45, 0, 0.55, 1],
+            duration: 2, 
+            ease: [0.45, 0, 0.55, 1],
         }}
-        viewport={{ once: false, amount: 0, margin: "0px 0px -100px 0px" }}
-      >
+
+        
+        /* CHANGE: Increase negative margin to -800px so it triggers instantly */
+        viewport={{ once: false, amount: 0, margin: "0px 0px -800px 0px" }}
+        >
         <div className={styles['carousel-track']}>
           <div className={styles['merch-card']}>
             <div className={styles['card-content']}>
