@@ -24,6 +24,13 @@ body{
   justify-content: center;
   position: relative;
 }
+@media (max-width: 720px) {
+  .beginning {
+    margin: 15rem auto;
+    padding: 40px 50px;
+    color: black;
+  }
+}
 .beginning h1{
   font-size: 128px;
   font-weight: 500;
@@ -106,7 +113,7 @@ body{
   color: var(--text-dark);
 }
 .content p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-indent: 40px;
 }
 .content h2 {
@@ -201,48 +208,4 @@ body{
   transform: rotate3d(-5, .5, .5, 30deg) scale(1.25);
   box-shadow: 0 0 50px 10px rgb(255, 244, 184);
   transform-origin: center center;
-}
-
-/* Current Events content */
-.current{
-    text-align: center;
-}
-.news{
-  display: block;
-  align-content: center;
-}
-.article{
-  background-color: var(--dark-blue);
-  box-shadow: 0 0 5px 9px rgba(229, 226, 255, 0.2);
-  color: white;
-  border-radius: 15px;
-  width: 70vw;
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.article h3{
-  font-size: 2.75rem;
-  font-weight: 400;
-}
-.article p{
-  font-size: 1.5rem;
-  margin: 20px;
-  text-align: left;
-}
-.article a{
-  font-size: 15px;
-  margin: 20px;
-  padding: 10px;
-  background-color: aliceblue;
-  border-radius: 10px;
-  width: 8em;
-}
-.article img{
-  border-radius: 10px;
-  margin: 15px;
-  width: 600px;
-  object-fit: contain;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.336);
 }

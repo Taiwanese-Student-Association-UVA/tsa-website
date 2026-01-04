@@ -72,9 +72,10 @@ const Home = () => {
             value through savings at local businesses, priority access at TSA
             events, and free extras made just for you!
           </p>
+          <br />
           <p>
             To learn how to use our EZCards or read up on all of the perks you
-            can get, click on the EZCard to the right!
+            can get, click on the EZCard below!
           </p>
           <div className={styles.pic}>
             <a href="partners">
@@ -82,39 +83,6 @@ const Home = () => {
             </a>
           </div>
         </div>
-        {/*
-        <div className={styles.current}>
-          <h2>
-            Current Events
-          </h2>
-          <div className={styles.news}>
-            <div className={styles.article}>
-              <img src={ezCard} alt="..." />
-              <div>
-                <h3>
-                  <em>Article title</em>
-                </h3>
-                <p>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" rel="noreferrer">Click here for more</a>
-              </div>
-            </div>
-            <div className={styles.article}>
-              <img src={ezCard} alt="..." />
-              <div>
-                <h3>Article title</h3>
-                <p>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" rel="noreferrer">Click here for more</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        */}
       </div>
     </>
   );
