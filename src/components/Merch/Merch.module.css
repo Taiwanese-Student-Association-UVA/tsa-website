@@ -24,6 +24,7 @@
   text-align: center;
   color: white;
   scroll-snap-align: start;
+  z-index: -1;
 }
 
 .merch-hero::before {
@@ -34,7 +35,7 @@
   width: 100%;
   height: 100%;
   background: url('../../../public/MerchPhotos/Front_Placeholder.JPG') center/cover;
-  z-index: -1;
+  z-index: -2;
 }
 
 /* CAROUSEL ------------------------------------------ */
@@ -98,7 +99,7 @@
 /* MERCH CARD ------------------------------------------ */
 .merch-card {
   flex: 0 0 90vw;    
-  min-height: 600px;
+  min-height: 90vh;
   background-color: #420909; 
   border-radius: 40px; 
   display: flex;
@@ -124,16 +125,40 @@
   pointer-events: none; 
 }
 
+/* change to fixed? */
+.yinghua-background {
+  position: absolute; 
+  top: 27.5%;
+  left: -5%; 
+  width: 80%; 
+  height: auto;
+  scale: 1.7;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.genbod-background {
+  position: absolute; 
+  top: -50%;
+  left: -25%; 
+  width: 80%; 
+  height: auto;
+  scale: 1.6;
+  opacity: 1;
+  z-index: 1;
+}
+
+
 /* LEFT SIDE (TEXT) ------------------------------- */
 .card-content {
-  flex: 1;                 /* Takes up all remaining space on the left */
+  flex: 1;              
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;     /* Centers text within the left area */
+  align-items: center;    
   z-index: 1;
-  min-width: 0;            /* Prevents text from breaking layout */
+  min-width: 0;           
 }
 
 .card-content img.logo { 
@@ -161,7 +186,11 @@
   cursor: pointer;
   width: fit-content;
   margin: 0 auto;
+  margin-top: 1%; 
   transition: transform 0.2s ease;
+}
+.buy-btn:hover{
+  transform: scale(1.05);
 }
 
 /* RIGHT SIDE (IMAGE) ----------------------------- */

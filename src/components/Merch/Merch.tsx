@@ -70,7 +70,7 @@ const Merch = () => {
               />
               <div className={styles['card-content']}>
                   <img src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_FRONT.PNG" className={styles.logo} alt="logo"/>
-                  <h2>Night Market</h2>
+                  <h2>Night Market Shirts</h2>
                   <button className={styles['buy-btn']}>Buy Now</button>
               </div>
               <div className={styles['card-image-wrapper']}>
@@ -78,30 +78,61 @@ const Merch = () => {
               </div>
             </div>
             
-            {/* GENERAL BODY SHIRT */}
-            <div className={styles['merch-card']} style ={{backgroundColor: '#6746C1'}}>
+            {/* YINGHUA SHIRT */}
+            <div className={styles['merch-card']} style={{ backgroundColor: '#6746C1' }}>
+              <img 
+                  src="/MerchPhotos/Yinghua/2024-2025/yinghua_back.PNG" 
+                  className={styles['yinghua-background']} 
+                  alt="Background"
+              />
               <div className={styles['card-content']}>
-                <span></span>
-                <h2> Yinghua</h2>
-                <button className={styles['buy-btn']}>Buy Now</button>
+                <img 
+                  src="/MerchPhotos/Yinghua/2024-2025/PurpleLogo.png" 
+                  className={styles.logo} 
+                  alt="logo"
+                />
+                <h2 style={{ color: '#282828' }}>Yinghua Shirts</h2>
+                <button 
+                  className={styles['buy-btn']} 
+                  style={{ backgroundColor: '#414141' }}
+                >
+                  Buy Now
+                </button>
               </div>
-              <div className={styles['card-image-wrapper']}>
+
+              {/* Wrap the image so it anchors to the right correctly */}
+              <div 
+                className={styles['card-image-wrapper']} 
+                style={{ 
+                  background: 'linear-gradient(to bottom, #E7DEFF 0%, #CAB6FF 50%, #9578E6 100%)' 
+                }}
+              >
                 <img src="Mer.jpg" alt="Merch" />
               </div>
             </div>
 
 
-            {/* YINGHUA SHIRT */}
-            <div className={styles['merch-card']}>
+
+
+            {/* GENBOD SHIRT */}
+            <div className={styles['merch-card']} style ={{backgroundColor: '#FEFCC5'} }>
+              <img 
+                  src="\MerchPhotos\GenBod\2024-2025\Background.png" 
+                  className={styles['genbod-background']} 
+                  alt="Background"
+              />
               <div className={styles['card-content']}>
-                <span>2023-2024</span>
-                <h2>NM Hoodie</h2>
-                <button className={styles['buy-btn']}>Buy Now</button>
+                <img src="/MerchPhotos/GenBod/2024-2025/GoldLogo.png" className={styles.logo} alt="logo"/>
+                <h2 style={{ color: '#444343ff' }}>Genbod Shirts</h2>
+                <button className={styles['buy-btn']} style={{backgroundColor: '#444343ff' }}>Buy Now</button>
               </div>
-              <div className={styles['card-image-wrapper']}>
-                <img src="Photos/hoodie1.jpg" alt="Merch" />
+              <div className={styles['card-image-wrapper']} style={{backgroundColor: '#FFFEEC'}}>
+                <img src="Mer.jpg" alt="Merch" />
               </div>
             </div>
+
+
+
           </motion.div>
         </div>
       </section>
