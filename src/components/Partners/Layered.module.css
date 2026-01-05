@@ -14,7 +14,7 @@
   min-height: 380px;
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(240, 240, 240, 0.473);
+  box-shadow: 0 10px 30px rgba(240, 240, 240, 0.164);
   transform-origin: center center;
 }
 
@@ -60,7 +60,7 @@
 
 @media (max-width: 768px) {
   .card {
-    width: 100%;
-    max-width: 400px;
+    width: 85%;
+    max-width: 80vw;
   }
 }

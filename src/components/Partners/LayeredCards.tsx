@@ -16,8 +16,8 @@ const LayeredCards = () => {
             <li>
               <strong>Get Your Card</strong> - Purchase your EasyCard at TSA
               GBMs, exec office hours (TBD), or at our major events with cash,
-              Venmo (@tsaatuva) or Zelle
-              (uvataiwanesestudentassociation@gmail.com)
+              Venmo (@tsaatuva) or Zelle (
+              uvataiwanesestudentassociation@gmail.com)
             </li>
             <li>
               <strong>Show & Save</strong> - Simply show your EasyCard at
