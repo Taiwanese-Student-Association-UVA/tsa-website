@@ -1,99 +1,114 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Merch.module.css';
 
 const Merch = () => {
+  // 1. Create a reference to the scrollable viewport
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
+      
+      // Determine the new target position
+      let targetScroll = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+
+      // LOOP LOGIC:
+      // 1. If we go past the right end, loop to start
+      if (targetScroll >= scrollWidth - 5) { // -5 is a small buffer for browser rounding
+        targetScroll = 0;
+      } 
+      // 2. If we go past the left start, loop to the end
+      else if (targetScroll < 0) {
+        targetScroll = scrollWidth - clientWidth;
+      }
+
+      scrollRef.current.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+  
+
+
   return (
-
-    <div className={styles['merch-container']}> {/* ---- START OF MERCH PAGE ---- */}
-      {/* HERO SECTION -------------------------------------------------------*/}
-
-      <section className={styles['merch-hero']}> {/* ---- START OF HERO SECTION ---- */}
+    <div className={styles['merch-container']}>
+      {/* HERO SECTION */}
+      <section className={styles['merch-hero']}>
         <div className={styles['hero-content']}>
           <h1>TSA Merchandise</h1>
           <p>TSA is Cool</p>
         </div>
-      </section> {/* ---- END OF HERO SECTION ---- */}
+      </section>
 
+      {/* CAROUSEL SECTION */}
+      <section className={styles['carousel-wrapper']}>
+        
+        {/* 3. Navigation Arrows */}
+        <button className={`${styles['nav-btn']} ${styles.left}`} onClick={() => scroll('left')}>
+          &#10094;
+        </button>
+        <button className={`${styles['nav-btn']} ${styles.right}`} onClick={() => scroll('right')}>
+          &#10095;
+        </button>
 
-
-      {/* CAROUSEL SECTION -------------------------------------------------------*/}
-
-      <section className={styles['carousel-viewport']}> {/* ---- START OF CAROUSEL SECTION ---- */}
-        <motion.div 
-          className={styles['carousel-track']}
-          initial={{ y: "20vh", opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
-          viewport={{ once: false, amount: 0.1 }}
-          // Lock scroll when animation begins
-          onAnimationStart={() => {
-            document.body.style.overflow = "visible";
-          }}
-          // Unlock scroll when animation ends
-          onAnimationComplete={() => {
-            document.body.style.overflow = "unset";
-          }}
-        >
-          {/* NIGHT MARKET SHIRT */}
-          <div className={styles['merch-card']} style={{ backgroundColor: '#FFF5D4' }}>
-            <img 
-                src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_BACK.PNG" 
-                className={`${styles['nm-background']}`} 
-            />
-                
-            <div className={styles['card-content']}>
-
-                <img 
-                src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_FRONT.PNG" 
-                className={styles.logo} 
-                />
-
-                <h2>Night Market</h2>
+        <div className={styles['carousel-viewport']} ref={scrollRef}>
+          <motion.div 
+            className={styles['carousel-track']}
+            initial={{ y: "10vh", opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
+            viewport={{ once: false, amount: 0.1 }}
+          >
+            {/* NIGHT MARKET SHIRT */}
+            <div className={styles['merch-card']} style={{ backgroundColor: '#FFF5D4' }}>
+              <img 
+                  src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_BACK.PNG" 
+                  className={styles['nm-background']} 
+                  alt="Background"
+              />
+              <div className={styles['card-content']}>
+                  <img src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_FRONT.PNG" className={styles.logo} alt="logo"/>
+                  <h2>Night Market</h2>
+                  <button className={styles['buy-btn']}>Buy Now</button>
+              </div>
+              <div className={styles['card-image-wrapper']}>
+                  <img src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_BACK.PNG" alt="Product"/>
+              </div>
+            </div>
+            
+            {/* GENERAL BODY SHIRT */}
+            <div className={styles['merch-card']}>
+              <div className={styles['card-content']}>
+                <span>2023-2024</span>
+                <h2>NM Hoodie</h2>
                 <button className={styles['buy-btn']}>Buy Now</button>
+              </div>
+              <div className={styles['card-image-wrapper']}>
+                <img src="Mer.jpg" alt="Merch" />
+              </div>
             </div>
 
-
-            <div className={styles['card-image-wrapper']}>
-                <img src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_BACK.PNG" />
+            {/* YINGHUA SHIRT */}
+            <div className={styles['merch-card']}>
+              <div className={styles['card-content']}>
+                <span>2023-2024</span>
+                <h2>NM Hoodie</h2>
+                <button className={styles['buy-btn']}>Buy Now</button>
+              </div>
+              <div className={styles['card-image-wrapper']}>
+                <img src="Photos/hoodie1.jpg" alt="Merch" />
+              </div>
             </div>
-          </div>
-          
-          {/* GENERAL BODY SHIRT */}
-          <div className={styles['merch-card']}>
-            <div className={styles['card-content']}>
-              <span>2023-2024</span>
-              <h2>NM Hoodie</h2>
-              <button className={styles['buy-btn']}>Buy Now</button>
-            </div>
-            <div className={styles['card-image-wrapper']}>
-              <img src="Mer.jpg" alt="Merch" />
-            </div>
-          </div>
-
-          {/* YINGHUA SHIRT */}
-          <div className={styles['merch-card']}>
-            <div className={styles['card-content']}>
-              <span>2023-2024</span>
-              <h2>NM Hoodie</h2>
-              <button className={styles['buy-btn']}>Buy Now</button>
-            </div>
-            <div className={styles['card-image-wrapper']}>
-              <img src="Photos/hoodie1.jpg" alt="Merch" />
-            </div>
-          </div>
-
-          
-        </motion.div>
-      </section>  {/* ---- END OF CAROUSEL SECTION ---- */}
-
-
-
-    </div> /* ---- END OF MERCH PAGE ---- */
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 };
 
