@@ -229,15 +229,17 @@
 
 
 .card-image-wrapper { 
-  outline: 3px solid #FFF5D4; 
+  width: 45vw; 
+  height: 80vh; 
+  
+  /* outline: 3px solid #71653c;  */
   background-color: #FFF5D4;
-  width: 45%;
-  height: 95%; 
   border-radius: 40px;
-  z-index: 1;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center; 
+  margin: 20px;
+  z-index: 1;
 }
 
 .card-image-wrapper img { 
