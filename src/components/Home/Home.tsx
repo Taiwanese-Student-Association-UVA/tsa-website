@@ -43,15 +43,11 @@ const Home = () => {
           </p>
 
           <div className={styles.social}>
-            <h3>
-              <strong>Follow us on our Socials!</strong>
-            </h3>
+            <h3>Follow us on our socials!</h3>
             <Socials />
           </div>
           <div className={styles.forms}>
-            <h3>
-              <strong>Become a member today!</strong>
-            </h3>
+            <h3>Become a member today!</h3>
             <a
               href="https://forms.office.com/r/4G44DqZ5qD"
               target="_blank"
