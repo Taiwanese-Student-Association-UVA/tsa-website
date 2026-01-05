@@ -3,28 +3,25 @@ import { motion } from 'framer-motion';
 import styles from './Merch.module.css';
 
 const Merch = () => {
-  // 1. Create a reference to the scrollable viewport
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  //left right scrolling on carousel
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
-      
-      // Determine the new target position
-      let targetScroll = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 10;
+      const isAtStart = scrollLeft <= 10;
 
-      // LOOP LOGIC:
-      // 1. If we go past the right end, loop to start
-      if (targetScroll >= scrollWidth - 5) { // -5 is a small buffer for browser rounding
-        targetScroll = 0;
-      } 
-      // 2. If we go past the left start, loop to the end
-      else if (targetScroll < 0) {
-        targetScroll = scrollWidth - clientWidth;
+      let targetScroll;
+
+      if (direction === 'right') {
+        targetScroll = isAtEnd ? 0 : scrollLeft + clientWidth;
+      } else {
+        targetScroll = isAtStart ? scrollWidth - clientWidth : scrollLeft - clientWidth;
       }
 
       scrollRef.current.scrollTo({
@@ -33,7 +30,6 @@ const Merch = () => {
       });
     }
   };
-  
 
 
   return (
@@ -83,16 +79,17 @@ const Merch = () => {
             </div>
             
             {/* GENERAL BODY SHIRT */}
-            <div className={styles['merch-card']}>
+            <div className={styles['merch-card']} style ={{backgroundColor: '#6746C1'}}>
               <div className={styles['card-content']}>
-                <span>2023-2024</span>
-                <h2>NM Hoodie</h2>
+                <span></span>
+                <h2> Yinghua</h2>
                 <button className={styles['buy-btn']}>Buy Now</button>
               </div>
               <div className={styles['card-image-wrapper']}>
                 <img src="Mer.jpg" alt="Merch" />
               </div>
             </div>
+
 
             {/* YINGHUA SHIRT */}
             <div className={styles['merch-card']}>
