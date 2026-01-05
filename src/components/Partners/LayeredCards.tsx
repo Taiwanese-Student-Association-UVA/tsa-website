@@ -125,7 +125,7 @@ const LayeredCards = () => {
         const rotationAngle = (index - middleIndex) * 6;
 
         // Calculate horizontal offset to create fan effect
-        const offsetX = (index - middleIndex) * 350;
+        const offsetX = (index - middleIndex) * 400;
 
         // Calculate z-index: middle cards on top
         const distanceFromMiddle = Math.abs(index - middleIndex);
