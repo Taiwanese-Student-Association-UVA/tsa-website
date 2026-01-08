@@ -139,12 +139,12 @@
 
 .genbod-background {
   position: absolute; 
-  top: -50%;
-  left: -25%; 
-  width: 80%; 
+  top: -88%;
+  left: -5%; 
+  width: 100%; 
   height: auto;
   scale: 1.6;
-  opacity: 1;
+  opacity: .15;
   z-index: 1;
 }
 
