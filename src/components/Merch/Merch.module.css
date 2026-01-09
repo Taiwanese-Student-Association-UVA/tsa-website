@@ -7,6 +7,7 @@
   scrollbar-width: none; 
   -ms-overflow-style: none;
   scrollbar-gutter: stable;
+  scroll-snap-type: y proximity;
 }
 
 .merch-container::-webkit-scrollbar {
@@ -114,36 +115,40 @@
 
 .nm-background {
   position: absolute; 
-  top: 50%;
-  left: 50%;
-  width: 150%; 
-  height: 150%; 
-  transform: translate(-50%, -60%);
+  top: -500px;
+  left: -150px;
+  width: 2100px; 
+  height: 1200px; 
+  transform: none;
   object-fit: cover; 
+  scale: .9;
   z-index: 0;          
   opacity: 0.1;        
   pointer-events: none; 
+  will-change: transform;
 }
 
 /* change to fixed? */
 .yinghua-background {
   position: absolute; 
-  top: 27.5%;
-  left: -5%; 
-  width: 80%; 
+  top: 180px;
+  left: -50px; 
+  width: 1050px; 
   height: auto;
   scale: 1.7;
+  will-change: transform;
+  
   opacity: 0.2;
   z-index: 0;
 }
 
 .genbod-background {
   position: absolute; 
-  top: -88%;
-  left: -5%; 
-  width: 100%; 
+  top: -700px;
+  left: -60px; 
+  width: 1400px; 
   height: auto;
-  scale: 1.6;
+  scale: 1.6; 
   opacity: .15;
   z-index: 1;
 }
@@ -162,9 +167,9 @@
 }
 
 .card-content img.logo { 
-  width: clamp(120px, 20vw, 400px); 
+  width: clamp(120px, 20vw, 600px); 
   height: auto;           
-  margin: 0 auto 20px auto;  
+  margin: -20px auto 15px auto;  
   object-fit: contain;     
 }
 
@@ -196,19 +201,87 @@
 /* RIGHT SIDE (IMAGE) ----------------------------- */
 .card-image-wrapper { 
   width: 45vw; 
-  height: 80vh; 
-  flex-shrink: 0;          /* Won't let the text squish the image */
+  height: 82.5vh; 
+  flex-shrink: 0;         
   background-color: #FFF5D4;
   border-radius: 40px;
   display: flex;
   justify-content: center;
   align-items: center; 
   z-index: 1;
-  margin: 2%;
+  margin-right: 2vw;
 }
 
 .card-image-wrapper img { 
-  width: 90%; 
+  width: 95%; 
   height: 90%; 
   object-fit: contain;
+}
+
+/* GALLERY */
+.gallery-section {
+  padding: 80px 5vw;
+  background-color: #ffffff;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gallery-header span {
+  color: #aea8ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.gallery-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.gallery-grid {
+  display: grid;
+  /* This makes it 1 column on mobile, 3 on desktop automatically */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+.item-image-box {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Makes them perfect squares */
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.item-image-box img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.gallery-item h3 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.gallery-item p {
+  color: #666;
+  font-weight: 600;
 }

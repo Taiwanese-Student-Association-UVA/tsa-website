@@ -1,15 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react'; // Added useState
 import { motion } from 'framer-motion';
 import styles from './Merch.module.css';
 
 const Merch = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false); // New state to pause on hover
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  //left right scrolling on carousel
+  // Left right scrolling logic
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth, scrollWidth } = scrollRef.current;
@@ -31,6 +32,16 @@ const Merch = () => {
     }
   };
 
+  // AUTO-SCROLL EFFECT
+  useEffect(() => {
+    if (isPaused) return; // Stop timer if user is hovering
+
+    const interval = setInterval(() => {
+      scroll('right');
+    }, 5000); // Scrolls every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [isPaused]);
 
   return (
     <div className={styles['merch-container']}>
@@ -43,7 +54,11 @@ const Merch = () => {
       </section>
 
       {/* CAROUSEL SECTION */}
-      <section className={styles['carousel-wrapper']}>
+      <section 
+        className={styles['carousel-wrapper']}
+        onMouseEnter={() => setIsPaused(true)} // Pause when mouse enters
+        onMouseLeave={() => setIsPaused(false)} // Resume when mouse leaves
+      >
         
         {/* 3. Navigation Arrows */}
         <button className={`${styles['nav-btn']} ${styles.left}`} onClick={() => scroll('left')}>
@@ -53,7 +68,11 @@ const Merch = () => {
           &#10095;
         </button>
 
+
+
+
         <div className={styles['carousel-viewport']} ref={scrollRef}>
+
           <motion.div 
             className={styles['carousel-track']}
             initial={{ y: "10vh", opacity: 0 }}
@@ -73,7 +92,7 @@ const Merch = () => {
 
               {/* HEADERS */}
               <div className={styles['card-content']}>
-                  <img src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_FRONT.PNG" className={styles.logo} alt="logo"/>
+                  <img src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_FRONT.PNG" className={styles.logo} alt="logo" style={{width: 'clamp(120px, 20vw, 400px)'}}/>
                   <h2>Night Market Shirts</h2>
                   <button className={styles['buy-btn']}>Buy Now</button>
               </div>
@@ -94,7 +113,8 @@ const Merch = () => {
               />
               <div className={styles['card-content']}>
                 <img 
-                  src="/MerchPhotos/Yinghua/2024-2025/PurpleLogo.png" 
+                  style={{opacity: .7}}
+                  src="/MerchPhotos/Yinghua/2024-2025/yinghua_front.png" 
                   className={styles.logo} 
                   alt="logo"
                 />
@@ -130,32 +150,104 @@ const Merch = () => {
               />
 
               <div className={styles['card-content']}>
-                <img src="/MerchPhotos/GenBod/2024-2025/Logo.png" className={styles.logo} alt="logo"/>
+                <img src="/MerchPhotos/GenBod/2024-2025/Logo.png" className={styles.logo} alt="logo" style={{ width: 'clamp(120px, 20vw, 250px)'}}/>
                 <h2 style={{ color: '#444343ff' }}>Genbod Shirts</h2>
                 <button className={styles['buy-btn']} style={{backgroundColor: '#444343ff' }}>Buy Now</button>
               </div>
               <div className={styles['card-image-wrapper']} style={
                   {
-                    // backgroundColor: '#bfcefaff',
-                    
                     backgroundColor: '#c6d4ffe1', 
                     backgroundImage: `
-                      /* Using #cddbff for a brighter, crisper blue line */
                       repeating-linear-gradient(0deg, #cddbff21, #cddbff21 35px, transparent 35px, transparent 70px),
                       repeating-linear-gradient(90deg, #cddbff25, #cddbff25 35px, transparent 35px, transparent 70px)
                     `,
                     backgroundBlendMode: 'screen'
+                    
                   }
                 }>
                 <img src="\MerchPhotos\GenBod\2024-2025\Genbod_Back.png" alt="Merch" style={{filter: 'brightness(0) invert(1)', zIndex: 2}} />
               </div>
             </div>
 
-
-
           </motion.div>
         </div>
       </section>
+
+
+
+
+
+
+
+      {/* GALLERY GRID SECTION */}
+      <section className={styles['gallery-section']}>
+        <div className={styles['gallery-header']}>
+          <span>Our Collection</span>
+          <h2>All Merchandise</h2>
+        </div>
+        <div className={styles['gallery-grid']}>
+
+          {/* 2025-2026 Genbod Shirt*/}
+          <div className={styles['gallery-item']}>
+            <div className={styles['item-image-box']} style={{ backgroundColor: '#faf8c0ff' }}>
+              <img src="/MerchPhotos/GenBod/2025-2026/Genbod_Back.png" alt="GenBod" />
+            </div>
+            <h3>Yellow General Body Tee</h3> 
+            <p>$25.00</p>
+          </div>
+
+          {/* 2024-2025 Genbod Shirt*/}
+          <div className={styles['gallery-item']}>
+            <div className={styles['item-image-box']} style={{ backgroundColor: '#A8BFFF' }}>
+              <img src="/MerchPhotos/GenBod/2024-2025/Genbod_Back.png" alt="2024-2025 General Body Tee" />
+            </div>
+            <h3>Blue General Body Tee</h3>
+            <p>$25.00</p>
+          </div>
+
+          {/* 2024-2025 NM Tote Bag*/}
+          <div className={styles['gallery-item']}>
+            <div className={styles['item-image-box']} style={{ backgroundColor: '#FFF5D4' }}>
+              <img style={{right: '7%'}}src="/MerchPhotos/NightMarket/2025-2026/Tote.png" alt="2025-2026 General Body Tee" />
+            </div>
+            <h3> Bear Tote Bag </h3>
+            <p>$25.00</p>
+          </div>
+
+          {/* 2024-2025 Yinghua Shirt */}
+          <div className={styles['gallery-item']}>
+            <div className={styles['item-image-box']} style={{ backgroundColor: '#6746C1'}}>
+              <img style={{width: '90%'}} src="/MerchPhotos/Yinghua/2024-2025/yinghua_back.png" alt=" 2024-2025 Yinghua" />
+            </div>
+            <h3>Purple Yinghua Tee</h3>
+            <p>$25.00</p>
+          </div>
+
+          {/* 2023-2024 Night Market Shirt*/}
+          <div className={styles['gallery-item']}>
+            <div className={styles['item-image-box']} style={{ backgroundColor: '#FFF5D4' }}>
+              <img src="/MerchPhotos/NightMarket/2023-2024/NM_23-24_BACK.PNG" alt="2023-2024 Night Market Tee" />
+            </div>
+            <h3>Beige Night Market Tee</h3>
+            <p>$25.00</p>
+          </div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+      </section>      
     </div>
   );
 };
