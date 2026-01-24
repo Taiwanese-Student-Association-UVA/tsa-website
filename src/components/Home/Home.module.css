@@ -25,7 +25,7 @@ body{
   position: relative;
 }
 .beginning h1{
-  font-size: 128px;
+  font-size: 6.5rem;
   font-weight: 500;
   line-height: 100%;
   margin: auto;
@@ -35,9 +35,34 @@ body{
   justify-content: center;
   align-items: center;
   display: block;
-  padding: 50px 80px;
+  padding: 50px 60px;
   z-index: 60;
   text-align: center;
+}
+@media (max-width: 720px) {
+  .beginning {
+    margin: auto;
+    color: black;
+  }
+  .beginning h1 {
+    font-size: 3.2rem;
+  }
+  .beginningText {
+    padding: 2.5rem 2.5rem;
+  }
+}
+@media (max-width: 393px) {
+  .beginning {
+    margin: auto;
+    color: black;
+  }
+  .beginning h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+  .beginningText {
+    padding: 1.5rem 1rem;
+  }
 }
 /* glass effect component */
 .glass {
@@ -72,7 +97,7 @@ body{
   left: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1;
 }
 .marqueeSection{
@@ -88,34 +113,51 @@ body{
   margin: 0;
   padding: 0;
   box-shadow: var(--shadow-medium);
-  transition: var(--transition);
+  transition: transform 0.25s cubic-bezier(0.7, -0.55, 0.25, 1.55);
 }
 .pictures:hover{
-  transform: scale(1.1) translateY(-5%);
+  transform: scale(1.1);
   transform-origin: center center;
-  z-index: 49;
+  z-index: 100;
 }
 
 /* Body */
 .content {
-  width: 60vw;
+  width: 55vw;
   margin: auto;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   color: var(--text-dark);
 }
 .content p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-indent: 40px;
 }
 .content h2 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 400;
-  margin-bottom: 0;
 }
 .content h3 {
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+@media (max-width: 720px) {
+  .content {
+    width: 100%;
+  }
+  .content p {
+    font-size: 1.1rem;
+    text-indent: 40px;
+  }
+  .content h2 {
+    font-size: 2.75rem;
+    font-weight: 400;
+  }
+  .content h3 {
+    font-size: 2rem;
+    font-weight: 450;
+  }
 }
 
 /* About section */
@@ -146,13 +188,13 @@ body{
 .rotatingImages img.fadeOut {
   opacity: 0;
 }
-.social {
-  display: inline;
+.social, .forms {
+  text-align: center;
+  margin: auto;
   width: 40vw;
   height: auto;
 }
 .social img {
-  text-align: left;
   width: 175px;
   margin: 1rem;
   transition: var(--transition);
@@ -160,26 +202,43 @@ body{
 .social img:hover{
   transform: scale(1.25);
 }
-.forms {
-  text-align: right;
-}
 .about button {
-  width: 300px;
-  height: 90px;
-  font-size: 25px;
-  margin: 0 20px;
+  font-size: 1.3rem;
+  margin: 10px 20px;
+  padding: 25px 45px;
   color: white;
   background-color: var(--primary-color);
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  
+  transition: var(--transition);  
 }
 .about button:hover {
   background: linear-gradient(135deg, #aeb4ff, #8d94f7);
   color: var(--primary-color);
   transform: scale(1.03);
   box-shadow: 0 3px 10px rgba(140, 150, 255, 0.55);
+}
+@media (max-width: 720px) {
+  .about {
+    width: 80%;
+  }
+  .rotatingImages {
+    width: 50%;
+  }
+  .social, .forms {
+    width: 100%;
+  }
+  .social img {
+    width: 20vw;
+    display: inline-block;
+  }
+}
+@media (max-width: 393px) {
+  .social img {
+    width: 30vw;
+    display: inline-block;
+  }
 }
 
 /* EZCard section */
@@ -190,6 +249,7 @@ body{
   justify-content: center;
   align-items: center;
   margin: 60px auto;
+  margin-top: 5rem;
 }
 .ezcard img{
   margin: auto;
@@ -203,140 +263,11 @@ body{
   box-shadow: 0 0 50px 10px rgb(255, 244, 184);
   transform-origin: center center;
 }
-
-/* Newsletter section */
-.newsletter{
-  width: 100%;
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "news dish"
-    "pic ez"
-    "signup signup";
-  grid-template-columns: 1fr 1fr;
-  margin: 50px auto;
-  justify-content: center;
-  align-items: center;
-}
-.newsletter  {
-  padding: 0 20px;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgb(243, 243, 243);
-}
-.newsletter > div.header {
-  grid-area: header;
-  box-shadow: none;
-  margin: 0;
-}
-.newsletter > div.news {
-  grid-area: news;
-}
-.newsletter > div.dish {
-  grid-area: dish;
-}
-.newsletter > div.pic {
-  grid-area: pic;
-}
-.newsletter > div.ez {
-  grid-area: ez;
-}
-.newsletter > div.signup{
-  grid-area: signup;
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-  box-shadow: none;
-}
-.newsletter img{
-  margin: 10px;
-  padding: 20px 0;
-  width: 600px;
-  object-fit: contain;
-  justify-content: center;
-}
-.signupBox {
-  align-items: center;
-  font-size: 15px;
-  border-radius: 15px;
-  padding: 10px;
-  width: 550px;
-  height: 60px;
-  margin: 10px auto;
-  text-align: center;
-}
-.signupForm {
-  display: flex;
-  gap: 0.5rem;
-}
-.signupInput {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 2.5px solid #ddd;
-  border-radius: 8px;
-  font-size: 1.3rem;
-}
-.signupInput:focus {
-  outline: none;
-  border-color: #8d94f7;
-  box-shadow: 0 0 5px 9px rgb(186, 182, 211);
-}
-.signupButton {
-  font-size: 1.3rem;
-  width: 150px;
-  background-color: var(--light-purple);
-  color: var(--dark-blue);
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.signupButton:hover {
-  background-color: var(--dark-blue);
-  color: white;
-}
-
-
-/* Current Events content */
-.current{
-    text-align: center;
-}
-.news{
-  display: block;
-  align-content: center;
-}
-.article{
-  background-color: var(--dark-blue);
-  box-shadow: 0 0 5px 9px rgba(229, 226, 255, 0.2);
-  color: white;
-  border-radius: 15px;
-  width: 70vw;
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.article h3{
-  font-size: 2.75rem;
-  font-weight: 400;
-}
-.article p{
-  font-size: 1.5rem;
-  margin: 20px;
-  text-align: left;
-}
-.article a{
-  font-size: 15px;
-  margin: 20px;
-  padding: 10px;
-  background-color: aliceblue;
-  border-radius: 10px;
-  width: 8em;
-}
-.article img{
-  border-radius: 10px;
-  margin: 15px;
-  width: 600px;
-  object-fit: contain;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.336);
+@media (max-width: 720px) {
+  .ezcard {
+    width: 80%;
+  }
+  .ezcard img {
+    width: 70vw;
+  }
 }
