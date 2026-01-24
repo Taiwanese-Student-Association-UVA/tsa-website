@@ -4,10 +4,13 @@ import nightMarketIcon from "../../assets/nightmarket.png";
 
 interface EventPopupProps {
     targetDate: Date;
-    eventLink: string; // URL to navigate to
+    eventLink: string;
 }
 
-export const EventPopup: React.FC<EventPopupProps> = ({ targetDate, eventLink }) => {
+export const EventPopup: React.FC<EventPopupProps> = ({
+                                                          targetDate,
+                                                          eventLink,
+                                                      }) => {
     const [isOpen, setIsOpen] = useState(true);
 
     if (!isOpen) return null;
@@ -18,7 +21,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ targetDate, eventLink })
                 position: "fixed",
                 bottom: "20px",
                 right: "20px",
-                zIndex: 9999,
+                zIndex: 2147483647,
                 width: "240px",
                 height: "240px",
                 cursor: "pointer",
@@ -27,57 +30,58 @@ export const EventPopup: React.FC<EventPopupProps> = ({ targetDate, eventLink })
             {/* Close button */}
             <button
                 onClick={(e) => {
-                    e.stopPropagation(); // prevent click from triggering link
+                    e.stopPropagation();
                     setIsOpen(false);
                 }}
                 style={{
                     position: "absolute",
-                    top: "-4px",       // slightly closer
-                    right: "-4px",     // slightly closer
-                    background: "white", // circular white background
+                    top: "-4px",
+                    right: "-4px",
+                    background: "white",
                     border: "none",
-                    color: "black",    // black X
+                    color: "black",
                     fontSize: "16px",
                     fontWeight: "bold",
                     cursor: "pointer",
                     zIndex: 10,
                     width: "24px",
                     height: "24px",
-                    borderRadius: "50%", // makes it circular
+                    borderRadius: "50%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    boxShadow: "0 1px 3px rgba(0,0,0,0.3)", // subtle shadow for depth
+                    boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
                     padding: 0,
                 }}
             >
                 ×
             </button>
 
-
             {/* Main clickable area */}
-            <div
-                onClick={() => window.open(eventLink, "_blank")}
+            <a
+                href={eventLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                     position: "relative",
                     width: "100%",
                     height: "100%",
-                    borderRadius: "50%", // circular container
-                    overflow: "hidden", // ensures image stays inside circle
+                    borderRadius: "50%",
+                    overflow: "hidden",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    textDecoration: "none",
                 }}
             >
-                {/* Night market image - auto-fit */}
+                {/* Night market image */}
                 <img
                     src={nightMarketIcon}
                     alt="Night Market Icon"
                     style={{
                         width: "110%",
                         height: "110%",
-                        objectFit: "contain", // ensures full image fits without cropping
-
+                        objectFit: "contain",
                     }}
                 />
 
@@ -100,7 +104,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({ targetDate, eventLink })
                 >
                     <CountdownTimer targetDate={targetDate} />
                 </div>
-            </div>
+            </a>
         </div>
     );
 };
