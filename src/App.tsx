@@ -17,7 +17,7 @@ import "./App.css";
 
 const App = () => {
   const isMobile = useIsMobile();
-  const eventDate = new Date("2026-04-04T12:00:00");
+    const eventDate = new Date("2026-04-04T12:00:00-04:00");
 
 
   return (
