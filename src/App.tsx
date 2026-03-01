@@ -24,10 +24,10 @@ const App = () => {
     <Router>
       {!isMobile && <Header />}
       {isMobile && <MobileHeader />}
-      <EventPopup
-          targetDate={eventDate}
-          eventLink="https://your-event-page.com" // change link to NM site
-      />
+      {/*<EventPopup*/}
+      {/*    targetDate={eventDate}*/}
+      {/*    eventLink="https://your-event-page.com" // change link to NM site*/}
+      {/*/>*/}
 
       <div className={isMobile ? "contentWithMobileHeader" : "content"}>
         <Routes>
