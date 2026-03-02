@@ -6,7 +6,7 @@ import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
 import styles from './Events.module.css';
 import SkyBackground from './SkyBackground';
 import defaultEventImage from '../../assets/logo.png';
-import noEventHeader from '../../assets/lanterns-9831440_1920.jpg';
+// import noEventHeader from '../../assets/lanterns-9831440_1920.jpg';
 import { FaInstagram } from 'react-icons/fa';
 
 const InstagramIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = FaInstagram as any;
