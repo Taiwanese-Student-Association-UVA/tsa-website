@@ -97,11 +97,6 @@ p {
     background: #f8f8f8;
 }
 
-.arrowIcon {
-    width: 18px;
-    height: 18px;
-}
-
 .trusted {
     margin-top: 3rem;
     color: #777;
@@ -116,7 +111,6 @@ p {
 
 .sliderTrack {
     display: flex;
-    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .slide {
@@ -125,11 +119,31 @@ p {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-    filter: grayscale(10%);
+    filter: grayscale(50%);
     opacity: 0.8;
 }
 
-.slide img {
+.sponsorLink {
+    display: inline-block;
+    border-radius: 16px;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sponsorLink img {
     height: 100px;
     object-fit: contain;
+    transition: inherit;
+}
+
+.sponsorLink:hover {
+    transform: translateY(-1px);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.sponsorLink:active {
+    transform: translateY(-2px) scale(0.95);
 }

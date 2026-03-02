@@ -19,7 +19,6 @@ import logo from "../../assets/logo.png";
 const Sponsors: React.FC = () => {
     const [isReady, setIsReady] = useState(false);
     const [page, setPage] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(true);
     const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
@@ -37,31 +36,51 @@ const Sponsors: React.FC = () => {
     }, []);
 
     const sponsorPages = [
-        [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5],
-        [sponsor10, sponsor11, sponsor12],
-        [sponsor6, sponsor7],
-        [sponsor8, sponsor9],
+        [
+            { src: sponsor1, url: "https://yunhai.shop/" },
+            { src: sponsor2, url: "https://www.raggedmountainrunning.com/" },
+            { src: sponsor3, url: "https://teasnyou.com/" },
+            { src: sponsor4, url: "https://www.hawaiianfoodcville.com/" },
+            { src: sponsor5, url: "https://www.boylanheights.co/" },
+        ],
+        [
+            { src: sponsor10, url: "https://upc.virginia.edu/" },
+            { src: sponsor11, url: "https://uvaclasscouncils.org/" },
+            { src: sponsor12, url: "https://ujc.virginia.edu/" },
+        ],
+        [
+            { src: sponsor6, url: "https://giving.virginia.edu/where-to-give/parents-fund/" },
+            { src: sponsor7, url: "https://honor.virginia.edu/" },
+        ],
+        [
+            { src: sponsor8, url: "https://www.taiwanembassy.org/us_en/index.html" },
+            { src: sponsor9, url: "https://sites.google.com/view/wmacs/home" },
+        ],
     ];
 
+    // Auto-rotate with safe modulo
     useEffect(() => {
         if (isPaused) return;
 
         const interval = setInterval(() => {
-            setPage((prev) => prev + 1);
-        }, 2500); // change auto scroll speed
+            setPage((prev) => (prev + 1) % sponsorPages.length);
+        }, 3000);
 
         return () => clearInterval(interval);
-    }, [isPaused]);
+    }, [isPaused, sponsorPages.length]);
 
+    // Pause when tab is hidden (prevents timer drift)
     useEffect(() => {
-        if (!isTransitioning) {
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    setIsTransitioning(true);
-                });
-            });
-        }
-    }, [isTransitioning]);
+        const handleVisibility = () => {
+            setIsPaused(document.hidden);
+        };
+
+        document.addEventListener("visibilitychange", handleVisibility);
+
+        return () => {
+            document.removeEventListener("visibilitychange", handleVisibility);
+        };
+    }, []);
 
     return (
         <div className={`${styles.container} ${isReady ? styles.ready : ""}`}>
@@ -110,20 +129,6 @@ const Sponsors: React.FC = () => {
                             rel="noopener noreferrer"
                         >
                             View Sponsorship Packet
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={2}
-                                stroke="currentColor"
-                                className={styles.arrowIcon}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
                         </a>
                     </div>
                 </div>
@@ -131,7 +136,7 @@ const Sponsors: React.FC = () => {
 
             <div
                 className={styles.fadeItem}
-                style={{"--order": 5} as React.CSSProperties}
+                style={{ "--order": 5 } as React.CSSProperties}
             >
                 <div
                     className={styles.trusted}
@@ -145,21 +150,25 @@ const Sponsors: React.FC = () => {
                             className={styles.sliderTrack}
                             style={{
                                 transform: `translateX(-${page * 100}%)`,
-                                transition: isTransitioning
-                                    ? "transform 1s cubic-bezier(0.65, 0, 0.35, 1)"
-                                    : "none",
-                            }}
-                            onTransitionEnd={() => {
-                                if (page === sponsorPages.length) {
-                                    setIsTransitioning(false);
-                                    setPage(0);
-                                }
+                                transition:
+                                    "transform 1s cubic-bezier(0.65, 0, 0.35, 1)",
                             }}
                         >
-                            {[...sponsorPages, sponsorPages[0]].map((group, groupIndex) => (
+                            {sponsorPages.map((group, groupIndex) => (
                                 <div key={groupIndex} className={styles.slide}>
-                                    {group.map((logo, index) => (
-                                        <img key={index} src={logo} alt={`Sponsor ${index}`}/>
+                                    {group.map((sponsor, index) => (
+                                        <a
+                                            key={index}
+                                            href={sponsor.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.sponsorLink}
+                                        >
+                                            <img
+                                                src={sponsor.src}
+                                                alt={`Sponsor ${index}`}
+                                            />
+                                        </a>
                                     ))}
                                 </div>
                             ))}
