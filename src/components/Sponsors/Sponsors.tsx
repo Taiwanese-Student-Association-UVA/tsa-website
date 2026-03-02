@@ -6,11 +6,21 @@ import sponsor2 from "../../assets/sponsors/run.png";
 import sponsor3 from "../../assets/sponsors/teas.png";
 import sponsor4 from "../../assets/sponsors/mochiko.png";
 import sponsor5 from "../../assets/sponsors/boylan.png";
+import sponsor6 from "../../assets/sponsors/11.png";
+import sponsor7 from "../../assets/sponsors/12.png";
+import sponsor8 from "../../assets/sponsors/13.png";
+import sponsor9 from "../../assets/sponsors/14.png";
+import sponsor10 from "../../assets/sponsors/21.png";
+import sponsor11 from "../../assets/sponsors/22.png";
+import sponsor12 from "../../assets/sponsors/23.png";
 
 import logo from "../../assets/logo.png";
 
 const Sponsors: React.FC = () => {
     const [isReady, setIsReady] = useState(false);
+    const [page, setPage] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(true);
+    const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
         if ("scrollRestoration" in window.history) {
@@ -19,13 +29,39 @@ const Sponsors: React.FC = () => {
 
         window.scrollTo(0, 0);
 
-        // Small delay ensures browser paints initial hidden state
         const timer = setTimeout(() => {
             setIsReady(true);
         }, 50);
 
         return () => clearTimeout(timer);
     }, []);
+
+    const sponsorPages = [
+        [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5],
+        [sponsor10, sponsor11, sponsor12],
+        [sponsor6, sponsor7],
+        [sponsor8, sponsor9],
+    ];
+
+    useEffect(() => {
+        if (isPaused) return;
+
+        const interval = setInterval(() => {
+            setPage((prev) => prev + 1);
+        }, 2500); // change auto scroll speed
+
+        return () => clearInterval(interval);
+    }, [isPaused]);
+
+    useEffect(() => {
+        if (!isTransitioning) {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    setIsTransitioning(true);
+                });
+            });
+        }
+    }, [isTransitioning]);
 
     return (
         <div className={`${styles.container} ${isReady ? styles.ready : ""}`}>
@@ -95,17 +131,39 @@ const Sponsors: React.FC = () => {
 
             <div
                 className={styles.fadeItem}
-                style={{ "--order": 5 } as React.CSSProperties}
+                style={{"--order": 5} as React.CSSProperties}
             >
-                <div className={styles.trusted}>
+                <div
+                    className={styles.trusted}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                >
                     <p>Trusted by sponsors such as</p>
 
-                    <div className={styles.logos}>
-                        <img src={sponsor1} alt="yunhai" />
-                        <img src={sponsor2} alt="ragged mountain running shop" />
-                        <img src={sponsor3} alt="teas n you" />
-                        <img src={sponsor4} alt="mochiko" />
-                        <img src={sponsor5} alt="boylan heights" />
+                    <div className={styles.sliderWrapper}>
+                        <div
+                            className={styles.sliderTrack}
+                            style={{
+                                transform: `translateX(-${page * 100}%)`,
+                                transition: isTransitioning
+                                    ? "transform 1s cubic-bezier(0.65, 0, 0.35, 1)"
+                                    : "none",
+                            }}
+                            onTransitionEnd={() => {
+                                if (page === sponsorPages.length) {
+                                    setIsTransitioning(false);
+                                    setPage(0);
+                                }
+                            }}
+                        >
+                            {[...sponsorPages, sponsorPages[0]].map((group, groupIndex) => (
+                                <div key={groupIndex} className={styles.slide}>
+                                    {group.map((logo, index) => (
+                                        <img key={index} src={logo} alt={`Sponsor ${index}`}/>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
