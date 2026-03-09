@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
 import styles from "./Header.module.css";
+
 const logo = require("../../assets/logo.png");
 
 const Header = () => {
@@ -10,16 +13,66 @@ const Header = () => {
     "partners",
     "sponsors",
     "archive",
-    // "merch",
-    // "games",
   ];
+
+  const controls = useAnimation();
+  const hasHovered = useRef(false);
+
+  const playAnimation = async () => {
+    await controls.start({
+      rotate: [0, -14, 14, -10, 10, -6, 6, -4, 4, -2, 2, 0],
+      filter: [
+        "drop-shadow(0 0 0px rgba(0,0,0,0))",
+        "drop-shadow(0 0 14px rgba(0,0,0,0.6))",
+        "drop-shadow(0 0 14px rgba(0,0,0,0.6))",
+        "drop-shadow(0 0 14px rgba(0,0,0,0.6))",
+        "drop-shadow(0 0 0px rgba(0,0,0,0))",
+      ],
+      transition: {
+        duration: 2,
+        ease: "easeInOut",
+      },
+    });
+
+    controls.set({ rotate: 0 });
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!hasHovered.current) {
+        playAnimation();
+      }
+    }, 1800);
+
+    const interval = setInterval(() => {
+      if (!hasHovered.current) {
+        playAnimation();
+      }
+    }, 12000);
+
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
       <header className={styles.outerHeader}>
-        <div className={styles.hoverWrapper}>
+        <div
+            className={styles.hoverWrapper}
+            onMouseEnter={() => {
+              hasHovered.current = true;
+            }}
+        >
           <div className={styles.logoContainer}>
             <Link to="/">
-              <img src={logo} alt="TSA Logo" className={styles.logoImage} />
+              <motion.div animate={controls}>
+                <img
+                    src={logo}
+                    alt="TSA Logo"
+                    className={styles.logoImage}
+                />
+              </motion.div>
             </Link>
           </div>
 

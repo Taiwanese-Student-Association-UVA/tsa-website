@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                     <div className="col-lg-4 col-md-6">
                         <h3 className="footer-title">Quick Links</h3>
                         <ul className="quick-links">
-                            <Link to="/home" onClick={() => window.scrollTo(0, 0)}>Home</Link>
+                            <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
                             <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About TSA</Link>
                             <Link to="/events" onClick={() => window.scrollTo(0, 0)}>Events</Link>
                             <Link to="/partners" onClick={() => window.scrollTo(0, 0)}>Partners</Link>
