@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import styles from "./Header.module.css";
 
 const logo = require("../../assets/logo.png");
@@ -18,7 +18,7 @@ const Header = () => {
   const controls = useAnimation();
   const hasHovered = useRef(false);
 
-  const playAnimation = async () => {
+  const playAnimation = useCallback(async () => {
     await controls.start({
       rotate: [0, -14, 14, -10, 10, -6, 6, -4, 4, -2, 2, 0],
       filter: [
@@ -33,9 +33,7 @@ const Header = () => {
         ease: "easeInOut",
       },
     });
-
-    controls.set({ rotate: 0 });
-  };
+  }, [controls]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
