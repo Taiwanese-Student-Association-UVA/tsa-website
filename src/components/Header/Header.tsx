@@ -37,6 +37,7 @@ const Header = () => {
     controls.set({ rotate: 0 });
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (!hasHovered.current) {
