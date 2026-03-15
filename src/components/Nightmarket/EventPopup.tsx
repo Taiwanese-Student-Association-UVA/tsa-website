@@ -22,8 +22,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({
                 bottom: "20px",
                 right: "20px",
                 zIndex: 2147483647,
-                width: "240px",
-                height: "240px",
+                width: "200px",
+                height: "300px",
                 cursor: "pointer",
             }}
         >
@@ -35,8 +35,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({
                 }}
                 style={{
                     position: "absolute",
-                    top: "-4px",
-                    right: "-4px",
+                    top: "-10px",
+                    right: "8px",
                     background: "white",
                     border: "none",
                     color: "black",
@@ -66,7 +66,7 @@ export const EventPopup: React.FC<EventPopupProps> = ({
                     position: "relative",
                     width: "100%",
                     height: "100%",
-                    borderRadius: "50%",
+                    // borderRadius: "50%",
                     overflow: "hidden",
                     display: "flex",
                     justifyContent: "center",
@@ -79,8 +79,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({
                     src={nightMarketIcon}
                     alt="Night Market Icon"
                     style={{
-                        width: "110%",
-                        height: "110%",
+                        width: "100%",
+                        height: "100%",
                         objectFit: "contain",
                     }}
                 />
@@ -89,8 +89,8 @@ export const EventPopup: React.FC<EventPopupProps> = ({
                 <div
                     style={{
                         position: "absolute",
-                        top: "50%",
-                        left: "50%",
+                        top: "91%",
+                        left: "48%",
                         transform: "translate(-45%, -50%)",
                         color: "white",
                         fontWeight: 700,
