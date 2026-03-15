@@ -26,7 +26,7 @@ const App = () => {
       {isMobile && <MobileHeader />}
       <EventPopup
           targetDate={eventDate}
-          eventLink="https://your-event-page.com" // change link to NM site
+          eventLink="https://www.instagram.com/p/DV0pzFRgP_u/?img_index=1" // change link to NM site
       />
 
       <div className={isMobile ? "contentWithMobileHeader" : "content"}>
