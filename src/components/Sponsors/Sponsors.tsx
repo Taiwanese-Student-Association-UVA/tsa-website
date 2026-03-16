@@ -116,8 +116,10 @@ const Sponsors: React.FC = () => {
                 >
                     <div className={styles.buttons}>
                         <a
-                            href="mailto:gxu6vn@virginia.edu?subject=Become%20a%20Sponsor"
+                            href="https://forms.office.com/r/kujkK0q2a2"
                             className={styles.primaryBtn}
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             Become a Sponsor
                         </a>
