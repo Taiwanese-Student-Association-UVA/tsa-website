@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Events from "./components/Events/Events";
 import Partners from "./components/Partners/Partners";
 import Sponsors from "./components/Sponsors/Sponsors";
+import SortingQuiz from "./components/SortingQuiz/SortingQuiz";
 import Archive from "./components/Archive/Archive";
 import Newsletters from "./components/Archive/Newsletters/Newsletters";
 import Merch from "./components/Merch/Merch";
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/sorting-quiz" element={<SortingQuiz />} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/archive/newsletters" element={<Newsletters />} />
           <Route path="/merch" element={<Merch />} />
