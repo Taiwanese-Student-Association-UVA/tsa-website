@@ -74,7 +74,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className={`${styles.headerContainer} ${styles.hidden}`}>
+          <div className={styles.headerContainer}>
             <nav className={styles.navGroup}>
               {navItems.map((item) => (
                   <Link
