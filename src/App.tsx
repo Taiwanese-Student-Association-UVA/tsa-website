@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Events from "./components/Events/Events";
 import Partners from "./components/Partners/Partners";
 import Sponsors from "./components/Sponsors/Sponsors";
+import SortingQuiz from "./components/SortingQuiz/SortingQuiz";
 import Archive from "./components/Archive/Archive";
 import Newsletters from "./components/Archive/Newsletters/Newsletters";
 import Merch from "./components/Merch/Merch";
@@ -13,21 +14,18 @@ import { EventPopup } from "./components/Nightmarket/EventPopup";
 import Games from "./components/Games/Games";
 import MobileHeader from "./components/Header/MobileHeader";
 import useIsMobile from "./utils/useIsMobile";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 const App = () => {
   const isMobile = useIsMobile();
-    const eventDate = new Date("2026-04-04T12:00:00-04:00");
-
 
   return (
     <Router>
+      <ScrollToTop />
       {!isMobile && <Header />}
       {isMobile && <MobileHeader />}
-      <EventPopup
-          targetDate={eventDate}
-          eventLink="https://www.instagram.com/p/DV0pzFRgP_u/?img_index=1" // change link to NM site
-      />
+      <EventPopup />
 
       <div className={isMobile ? "contentWithMobileHeader" : "content"}>
         <Routes>
@@ -36,6 +34,7 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/sorting-quiz" element={<SortingQuiz />} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/archive/newsletters" element={<Newsletters />} />
           <Route path="/merch" element={<Merch />} />
