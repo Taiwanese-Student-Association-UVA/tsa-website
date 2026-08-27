@@ -14,6 +14,7 @@ import { EventPopup } from "./components/Nightmarket/EventPopup";
 import Games from "./components/Games/Games";
 import MobileHeader from "./components/Header/MobileHeader";
 import useIsMobile from "./utils/useIsMobile";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       {!isMobile && <Header />}
       {isMobile && <MobileHeader />}
       <EventPopup />

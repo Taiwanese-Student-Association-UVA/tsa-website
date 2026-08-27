@@ -1,5 +1,10 @@
+import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import { ezCard } from "../../assets/index";
+
+import taipeiIcon from "../../assets/fams/taipei.png";
+import tainanIcon from "../../assets/fams/tainan.png";
+import taichungIcon from "../../assets/fams/taichung.png";
+
 import MarqueePics from "./MarqueePics";
 import RotatingPics from "./RotatingPics";
 import Socials from "./Socials";
@@ -13,6 +18,7 @@ const Home = () => {
             <MarqueePics />
           </div>
         </div>
+
         <div className={styles.glass}>
           <div className={styles.beginningText}>
             <h1>
@@ -23,6 +29,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <div className={styles.content}>
         <div className={styles.about}>
           <strong>
@@ -30,9 +37,11 @@ const Home = () => {
               <strong>Who we are...</strong>
             </h2>
           </strong>
+
           <div className={styles.rotatingImages}>
             <RotatingPics />
           </div>
+
           <p>
             UVA's Taiwanese Student Association (TSA) is a student-run,
             undergraduate community celebrating Taiwanese culture on Grounds.
@@ -46,8 +55,10 @@ const Home = () => {
             <h3>Follow us on our socials!</h3>
             <Socials />
           </div>
+
           <div className={styles.forms}>
             <h3>Become a member today!</h3>
+
             <a
               href="https://forms.office.com/r/4G44DqZ5qD"
               target="_blank"
@@ -57,27 +68,44 @@ const Home = () => {
             </a>
           </div>
         </div>
-        <div className={styles.ezcard}>
-          <h2>
-            <strong>Our EZCards</strong>
-          </h2>
-          <p>
-            This year we are introducing our brand new TSA EasyCard! This card
-            is your passport to exclusive perks, discounts, and EasyCard only
-            benefits all year long. For just $12, you'll unlock over $50 in
-            value through savings at local businesses, priority access at TSA
-            events, and free extras made just for you!
+
+        {/* SORTING QUIZ PROMO */}
+        <section className={styles.sortingPromo}>
+          <p className={styles.sortingEyebrow}>FIND YOUR FAM</p>
+
+          <h2>Which TSA Fam Are You?</h2>
+
+          <p className={styles.sortingIntro}>
+            Are you energetic like Taipei, warm and sentimental like Tainan,
+            or curious and independent like Taichung?
           </p>
-          <p>
-            To learn how to use our EZCards or read up on all of the perks you
-            can get, click on the EZCard below!
-          </p>
-          <div className={styles.pic}>
-            <a href="partners">
-              <img src={ezCard} alt="TSA EzCard" />
-            </a>
+
+          <div className={styles.sortingFamPreview}>
+            <div className={styles.sortingFam}>
+              <img src={taipeiIcon} alt="Taipei Fam" />
+              <span>Taipei</span>
+            </div>
+
+            <div className={styles.sortingFam}>
+              <img src={tainanIcon} alt="Tainan Fam" />
+              <span>Tainan</span>
+            </div>
+
+            <div className={styles.sortingFam}>
+              <img src={taichungIcon} alt="Taichung Fam" />
+              <span>Taichung</span>
+            </div>
           </div>
-        </div>
+
+          <p className={styles.sortingDescription}>
+            Take our 9-question sorting quiz and discover which TSA fam matches
+            your vibe best.
+          </p>
+
+          <Link to="/sorting-quiz" className={styles.sortingButton}>
+            Take the Quiz →
+          </Link>
+        </section>
       </div>
     </>
   );

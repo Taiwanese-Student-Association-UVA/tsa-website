@@ -333,6 +333,11 @@ const SortingQuiz = () => {
     setCurrentQuestionIndex(0);
     setAnswers(Array(questions.length).fill(null));
     setResult(null);
+
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+    });
   };
 
     // -------------------------
