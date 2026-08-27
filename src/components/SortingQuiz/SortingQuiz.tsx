@@ -2,6 +2,10 @@
 import { useState } from "react";
 import "./SortingQuiz.css";
 
+import taipeiIcon from "../../assets/fams/taipei.png";
+import tainanIcon from "../../assets/fams/tainan.png";
+import taichungIcon from "../../assets/fams/taichung.png";
+
 // possible fams
 type Fam = "taipei" | "tainan" | "taichung";
 
@@ -331,7 +335,7 @@ const SortingQuiz = () => {
     setResult(null);
   };
 
-  // -------------------------
+    // -------------------------
   // RESULT SCREENS
   // -------------------------
 
@@ -339,17 +343,26 @@ const SortingQuiz = () => {
     return (
       <div className="sorting-page result-page taipei-result">
         <div className="result-card">
-          <p className="result-eyebrow">YOUR TSA FAM IS...</p>
 
-          <div className="result-icon">🌃</div>
+          {/* RESULT HEADER */}
+          <div className="result-header">
+            <p className="result-eyebrow">YOUR TSA FAM IS...</p>
 
-          <h1 className="result-title">Taipei</h1>
+            <img
+              src={taipeiIcon}
+              alt="Taipei Fam"
+              className="result-fam-image"
+            />
 
-          <p className="result-tagline">
-            Energetic • Social • Always Moving
-          </p>
+            <h1 className="result-title">Taipei</h1>
 
-          <div className="result-description">
+            <p className="result-tagline">
+              Energetic • Social • Always Moving
+            </p>
+          </div>
+
+          {/* MAIN PERSONALITY DESCRIPTION */}
+          <div className="result-intro">
             <p>
               You thrive on movement, energy, and possibility. You’re naturally
               drawn to new experiences, spontaneous plans, and environments where
@@ -361,27 +374,73 @@ const SortingQuiz = () => {
               making the plan, bringing people together, or somehow ending up with
               an unexpectedly packed schedule.
             </p>
+          </div>
 
-            <p>
-              Potential Hogwarts House: Gryffindor or Slytherin (you’re a mix of both, but you’re definitely not a Hufflepuff).
+          {/* HOGWARTS + MBTI */}
+          <div className="result-personality-grid">
+            <div className="result-info-card">
+              <span className="result-card-icon">🏰</span>
+              <p className="result-card-label">HOGWARTS HOUSE</p>
+              <h3>Gryffindor / Slytherin</h3>
+              <p>
+                Bold, ambitious, energetic, and always ready to make something
+                happen.
+              </p>
+            </div>
+
+            <div className="result-info-card">
+              <span className="result-card-icon">✨</span>
+              <p className="result-card-label">POTENTIAL MBTI</p>
+              <h3>ENTJ • ENFJ • ESTJ • ESTP • ESFP</h3>
+              <p>
+                Extroverted, energetic, decisive, and spontaneous.
+              </p>
+            </div>
+          </div>
+
+          {/* STRENGTHS */}
+          <div className="result-detail-card">
+            <div className="result-detail-heading">
+              <span>⚡</span>
+              <h2>Your Strengths</h2>
+            </div>
+
+            <div className="result-tags">
+              <span>Takes Initiative</span>
+              <span>Adaptable</span>
+              <span>Spontaneous</span>
+              <span>Confident</span>
+              <span>Gets Things Done</span>
+              <span>Adventurous</span>
+            </div>
+          </div>
+
+          {/* WEAKNESSES */}
+          <div className="result-detail-card">
+            <div className="result-detail-heading">
+              <span>👀</span>
+              <h2>Watch Out For</h2>
+            </div>
+
+            <p className="result-detail-text">
+              Impulsiveness, overcommitting, impatience when things move slowly,
+              taking on too much responsibility, and a serious case of FOMO.
             </p>
-              
-            <p> 
-              Potential MBTI Type: ENTJ, ENFJ, ESTJ, ESTP, and ESFP (you're an extroverted, energetic, and spontaneous personality type).
-            </p> 
+          </div>
 
-            <p>
-              Strengths: Takes initiative, adaptable, spontaneous, confident, gets things done, and willing to try new experiences.
-            </p>
+          {/* HOBBIES */}
+          <div className="result-hobbies">
+            <p className="result-section-label">YOU MIGHT ENJOY</p>
 
-            <p>
-              Weaknesses: Can be impulsive, may overcommit, impatient when things move slowly, sometimes takes on too much responsibility, and prone to FOMO.
-            </p>
-
-            <p>
-              Potential Hobbies: Concerts, pickleball, traveling, photography, thrifting, exploring nightlife, and joining way too many UVA CIOs.
-            </p>
-
+            <div className="result-tags hobby-tags">
+              <span>🎵 Concerts</span>
+              <span>🏓 Pickleball</span>
+              <span>✈️ Traveling</span>
+              <span>📷 Photography</span>
+              <span>🛍️ Thrifting</span>
+              <span>🌃 Nightlife</span>
+              <span>🎓 Joining too many UVA CIOs</span>
+            </div>
           </div>
 
           <button className="restart-button" onClick={handleRestart}>
@@ -396,17 +455,26 @@ const SortingQuiz = () => {
     return (
       <div className="sorting-page result-page tainan-result">
         <div className="result-card">
-          <p className="result-eyebrow">YOUR TSA FAM IS...</p>
 
-          <div className="result-icon">🏮</div>
+          {/* RESULT HEADER */}
+          <div className="result-header">
+            <p className="result-eyebrow">YOUR TSA FAM IS...</p>
 
-          <h1 className="result-title">Tainan</h1>
+            <img
+              src={tainanIcon}
+              alt="Tainan Fam"
+              className="result-fam-image"
+            />
 
-          <p className="result-tagline">
-            Warm • Sentimental • Grounded
-          </p>
+            <h1 className="result-title">Tainan</h1>
 
-          <div className="result-description">
+            <p className="result-tagline">
+              Warm • Sentimental • Grounded
+            </p>
+          </div>
+
+          {/* MAIN PERSONALITY DESCRIPTION */}
+          <div className="result-intro">
             <p>
               You value comfort, connection, and the little things that make
               experiences meaningful. You’re sentimental, thoughtful, and probably
@@ -419,27 +487,77 @@ const SortingQuiz = () => {
               themselves, and you appreciate relationships, traditions, and
               memories that deepen over time.
             </p>
+          </div>
 
-            <p>
-              Potential Hogwarts House: Hufflepuff or Gryffindor (you’re loyal, kind, and brave, but you also have a strong sense of justice).
+          {/* HOGWARTS + MBTI */}
+          <div className="result-personality-grid">
+            <div className="result-info-card">
+              <span className="result-card-icon">🏰</span>
+              <p className="result-card-label">HOGWARTS HOUSE</p>
+              <h3>Hufflepuff / Gryffindor</h3>
+              <p>
+                Loyal, caring, dependable, and willing to stand up for the people
+                you care about.
+              </p>
+            </div>
+
+            <div className="result-info-card">
+              <span className="result-card-icon">✨</span>
+              <p className="result-card-label">POTENTIAL MBTI</p>
+              <h3>ISFJ • ESFJ • INFJ • INFP • ISTJ</h3>
+              <p>
+                Caring, empathetic, thoughtful, and deeply connection-oriented.
+              </p>
+            </div>
+          </div>
+
+          {/* STRENGTHS */}
+          <div className="result-detail-card">
+            <div className="result-detail-heading">
+              <span>💛</span>
+              <h2>Your Strengths</h2>
+            </div>
+
+            <div className="result-tags">
+              <span>Loyal</span>
+              <span>Thoughtful</span>
+              <span>Dependable</span>
+              <span>Good Listener</span>
+              <span>Sentimental</span>
+              <span>Caring</span>
+            </div>
+          </div>
+
+          {/* WEAKNESSES */}
+          <div className="result-detail-card">
+            <div className="result-detail-heading">
+              <span>👀</span>
+              <h2>Watch Out For</h2>
+            </div>
+
+            <p className="result-detail-text">
+              Holding onto things for too long, avoiding conflict, putting other
+              people's needs before your own, and resisting change once you’ve
+              gotten comfortable.
             </p>
-              
-            <p> 
-              Potential MBTI Type: ISFJ, ESFJ, INFJ, INFP, or ISTJ (you're a caring, empathetic, and thoughtful personality type).
-            </p> 
+          </div>
 
-            <p>
-              Strengths: Loyal, thoughtful, dependable, good listener, remembers the little things, and values deep connections.
-            </p>
+          {/* HOBBIES */}
+          <div className="result-hobbies">
+            <p className="result-section-label">YOU MIGHT ENJOY</p>
 
-            <p>
-              Weaknesses: Can be overly sentimental, may have difficulty lettings things go, avoids conflict, puts other people's needs first, and can resist change when comfortable.
-            </p>
-
-            <p>
-              Potential Hobbies: Baking, cooking, reading, journaling, scrapbooking, crotcheting/knitting, puzzles, movie nights, making playlists, and gardening.
-            </p>
-
+            <div className="result-tags hobby-tags">
+              <span>🍰 Baking</span>
+              <span>🍳 Cooking</span>
+              <span>📚 Reading</span>
+              <span>📓 Journaling</span>
+              <span>✂️ Scrapbooking</span>
+              <span>🧶 Crocheting</span>
+              <span>🧩 Puzzles</span>
+              <span>🎬 Movie Nights</span>
+              <span>🎵 Making Playlists</span>
+              <span>🌱 Gardening</span>
+            </div>
           </div>
 
           <button className="restart-button" onClick={handleRestart}>
@@ -454,17 +572,26 @@ const SortingQuiz = () => {
     return (
       <div className="sorting-page result-page taichung-result">
         <div className="result-card">
-          <p className="result-eyebrow">YOUR TSA FAM IS...</p>
 
-          <div className="result-icon">🌿</div>
+          {/* RESULT HEADER */}
+          <div className="result-header">
+            <p className="result-eyebrow">YOUR TSA FAM IS...</p>
 
-          <h1 className="result-title">Taichung</h1>
+            <img
+              src={taichungIcon}
+              alt="Taichung Fam"
+              className="result-fam-image"
+            />
 
-          <p className="result-tagline">
-            Curious • Independent • Unexpected
-          </p>
+            <h1 className="result-title">Taichung</h1>
 
-          <div className="result-description">
+            <p className="result-tagline">
+              Curious • Independent • Unexpected
+            </p>
+          </div>
+
+          {/* MAIN PERSONALITY DESCRIPTION */}
+          <div className="result-intro">
             <p>
               You’re curious, independent, and a little unpredictable. You like
               discovering things for yourself, whether that’s a niche restaurant,
@@ -476,26 +603,77 @@ const SortingQuiz = () => {
               like. You don’t necessarily need to be at the center of everything,
               but you usually manage to find the most interesting part of it.
             </p>
+          </div>
 
-            <p>
-              Potential Hogwarts House: Ravenclaw or Slytherin (you’re curious, independent, and a little unpredictable, but you also have a strong sense of what you like).
-            </p>
-              
-            <p> 
-              Potential MBTI Type: ENTP, ENFP, INTP, ISTP, ISFP, or INTJ (you're unpredictable socially but value independence, individuality, and experimentation).
-            </p> 
+          {/* HOGWARTS + MBTI */}
+          <div className="result-personality-grid">
+            <div className="result-info-card">
+              <span className="result-card-icon">🏰</span>
+              <p className="result-card-label">HOGWARTS HOUSE</p>
+              <h3>Ravenclaw / Slytherin</h3>
+              <p>
+                Curious, independent, resourceful, and comfortable following your
+                own interests.
+              </p>
+            </div>
 
-            <p>
-              Strengths: Curious, independent, creative, open-minded, resourceful, strong sense of individuality, good at seeing things differently, and comfortable exploring unusual ideas.
-            </p>
+            <div className="result-info-card">
+              <span className="result-card-icon">✨</span>
+              <p className="result-card-label">POTENTIAL MBTI</p>
+              <h3>ENTP • ENFP • INTP • ISTP • ISFP • INTJ</h3>
+              <p>
+                Independent, experimental, creative, and a little unpredictable
+                socially.
+              </p>
+            </div>
+          </div>
 
-            <p>
-              Weaknesses: Can get bored easily, prone to hyperfixiating and then moving on, can seem detached, may overthink, can be stubborn about personal preferences, and starts projects without always finishing them.
-            </p>
+          {/* STRENGTHS */}
+          <div className="result-detail-card">
+            <div className="result-detail-heading">
+              <span>💡</span>
+              <h2>Your Strengths</h2>
+            </div>
 
-            <p>
-              Potential Hobbies: Thrifting, used bookstores, drawing/design, gaming, ceramics, fashion, collecting, creative writing, and going down internet rabbit holes.
+            <div className="result-tags">
+              <span>Curious</span>
+              <span>Independent</span>
+              <span>Creative</span>
+              <span>Open-Minded</span>
+              <span>Resourceful</span>
+              <span>Individualistic</span>
+            </div>
+          </div>
+
+          {/* WEAKNESSES */}
+          <div className="result-detail-card">
+            <div className="result-detail-heading">
+              <span>👀</span>
+              <h2>Watch Out For</h2>
+            </div>
+
+            <p className="result-detail-text">
+              Getting bored easily, hyperfixating and moving on, overthinking,
+              seeming detached, being stubborn about your preferences, and starting
+              projects without always finishing them.
             </p>
+          </div>
+
+          {/* HOBBIES */}
+          <div className="result-hobbies">
+            <p className="result-section-label">YOU MIGHT ENJOY</p>
+
+            <div className="result-tags hobby-tags">
+              <span>🛍️ Thrifting</span>
+              <span>📚 Used Bookstores</span>
+              <span>🎨 Drawing & Design</span>
+              <span>🎮 Gaming</span>
+              <span>🏺 Ceramics</span>
+              <span>👗 Fashion</span>
+              <span>🧸 Collecting</span>
+              <span>✍️ Creative Writing</span>
+              <span>🕳️ Internet Rabbit Holes</span>
+            </div>
           </div>
 
           <button className="restart-button" onClick={handleRestart}>
@@ -516,21 +694,73 @@ const SortingQuiz = () => {
   return (
     <div className="sorting-page">
       <div className="quiz-card">
+
+        {/* =========================
+            QUIZ HEADER
+            ========================= */}
         <div className="quiz-header">
-          <p className="quiz-eyebrow">TSA at UVA</p>
-          <h1 className="quiz-title">Find Your Fam</h1>
+
+          <p className="quiz-eyebrow">TSA AT UVA</p>
+
+          <h1 className="quiz-title">
+            Find Your Fam
+          </h1>
+
           <p className="quiz-subtitle">
-            Answer a few questions and find out which TSA fam fits you best.
+            Answer a few questions and we'll match you with the TSA fam
+            that fits your vibe best!!
           </p>
+
+          {/* Fam preview */}
+          <div className="fam-preview">
+            <div className="fam-preview-item">
+              <img
+                src={taipeiIcon}
+                alt="Taipei Fam"
+                className="fam-preview-image"
+              />
+              <span>Taipei</span>
+            </div>
+
+            <div className="fam-preview-item">
+              <img
+                src={tainanIcon}
+                alt="Tainan Fam"
+                className="fam-preview-image"
+              />
+              <span>Tainan</span>
+            </div>
+
+            <div className="fam-preview-item">
+              <img
+                src={taichungIcon}
+                alt="Taichung Fam"
+                className="fam-preview-image"
+              />
+              <span>Taichung</span>
+            </div>
+          </div>
+
+          <p className="quiz-hint">
+            Disclaimer: This sorting quiz is solely for fun and does NOT determine which TSA Fam you are sorted into.
+          </p>
+
         </div>
 
+
+        {/* =========================
+            PROGRESS
+            ========================= */}
         <div className="progress-section">
+
           <div className="progress-info">
             <span>
               Question {currentQuestionIndex + 1} of {questions.length}
             </span>
 
-            <span>{Math.round(progress)}%</span>
+            <span>
+              {Math.round(progress)}% complete
+            </span>
           </div>
 
           <div className="progress-bar">
@@ -539,15 +769,27 @@ const SortingQuiz = () => {
               style={{ width: `${progress}%` }}
             />
           </div>
+
         </div>
 
+
+        {/* =========================
+            QUESTION
+            ========================= */}
         <div className="question-section">
+
+          <div className="question-number">
+            QUESTION {currentQuestionIndex + 1}
+          </div>
+
           <h2 className="question-text">
             {currentQuestion.question}
           </h2>
 
           <div className="answers-container">
+
             {currentQuestion.answers.map((answer, answerIndex) => {
+
               const isSelected =
                 answers[currentQuestionIndex] === answerIndex;
 
@@ -558,6 +800,7 @@ const SortingQuiz = () => {
                     isSelected ? "selected" : ""
                   }`}
                 >
+
                   <input
                     className="answer-radio"
                     type="radio"
@@ -579,13 +822,20 @@ const SortingQuiz = () => {
                   <span className="selection-circle">
                     {isSelected && "✓"}
                   </span>
+
                 </label>
               );
             })}
+
           </div>
         </div>
 
+
+        {/* =========================
+            NAVIGATION
+            ========================= */}
         <div className="quiz-navigation">
+
           <button
             className="nav-button back-button"
             onClick={handleBack}
@@ -603,10 +853,18 @@ const SortingQuiz = () => {
           >
             {currentQuestionIndex ===
             questions.length - 1
-              ? "See My Fam"
+              ? "Reveal My Fam ✨"
               : "Next →"}
           </button>
+
         </div>
+
+
+        {/* small footer */}
+        <p className="quiz-footer-note">
+          Your answers aren't saved. This is just for fun!
+        </p>
+
       </div>
     </div>
   );
