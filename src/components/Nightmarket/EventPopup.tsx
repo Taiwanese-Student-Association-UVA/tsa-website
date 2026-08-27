@@ -1,49 +1,52 @@
 import React, { useState } from "react";
-import { CountdownTimer } from "./CountdownTimer";
-import nightMarketIcon from "../../assets/nightmarket.png";
+import { Link } from "react-router-dom";
+
+import taipeiIcon from "../../assets/fams/taipei.png";
+import tainanIcon from "../../assets/fams/tainan.png";
+import taichungIcon from "../../assets/fams/taichung.png";
+
 import "./EventPopup.css";
 
-interface EventPopupProps {
-    targetDate: Date;
-    eventLink: string;
-}
+export const EventPopup: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(true);
 
-export const EventPopup: React.FC<EventPopupProps> = ({
-                                                          targetDate,
-                                                          eventLink,
-                                                      }) => {
-    const [isOpen, setIsOpen] = useState(true);
+  if (!isOpen) return null;
 
-    if (!isOpen) return null;
+  return (
+    <div className="eventPopup">
+      <button
+        className="closeButton"
+        aria-label="Close sorting quiz popup"
+        onClick={() => setIsOpen(false)}
+      >
+        ×
+      </button>
 
-    return (
-        <div className="eventPopup">
-            <button
-                className="closeButton"
-                onClick={(e) => {
-                    e.stopPropagation();
-                    setIsOpen(false);
-                }}
-            >
-                ×
-            </button>
+      <div className="popupContent">
+        <p className="popupEyebrow">TSA AT UVA</p>
 
-            <a
-                href={eventLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="popupLink"
-            >
-                <img
-                    src={nightMarketIcon}
-                    alt="Night Market Icon"
-                    className="nightMarketImage"
-                />
+        <h2 className="popupTitle">
+          Which TSA Fam Are You?
+        </h2>
 
-                <div className="countdownOverlay">
-                    <CountdownTimer targetDate={targetDate} />
-                </div>
-            </a>
+        <div className="popupFamImages">
+          <img src={taipeiIcon} alt="Taipei Fam" />
+          <img src={tainanIcon} alt="Tainan Fam" />
+          <img src={taichungIcon} alt="Taichung Fam" />
         </div>
-    );
+
+        <p className="popupDescription">
+          Take our sorting quiz and find out which fam matches your vibe.
+        </p>
+
+        <Link
+          to="/sorting-quiz"
+          className="popupButton"
+          onClick={() => setIsOpen(false)}
+        >
+          Find Your Fam →
+        </Link>
+      </div>
+    </div>
+  );
 };

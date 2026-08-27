@@ -1,68 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
-
 .eventPopup {
-    position: fixed;
-    bottom: 5px;
-    right: 2px;
-    z-index: 2147483647;
-    width: 200px;
-    height: 350px;
-    cursor: pointer;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  width: 320px;
+  box-sizing: border-box;
+
+  padding: 26px 22px 22px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(211, 190, 227, 0.28),
+      transparent 38%
+    ),
+    #ffffff;
+
+  border: 1px solid rgba(104, 70, 127, 0.12);
+  border-radius: 24px;
+
+  box-shadow:
+    0 18px 48px rgba(49, 35, 58, 0.18);
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
+
+
+/* close button */
 
 .closeButton {
-    position: absolute;
-    top: -5px;
-    right: 4px;
-    background: white;
-    border: none;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 10;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    padding: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  background: #f5f0f7;
+
+  border: none;
+  border-radius: 50%;
+
+  color: #655b69;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.popupLink {
-    position: relative;
+.closeButton:hover {
+  background: #ece2f0;
+  transform: scale(1.05);
+}
+
+
+/* content */
+
+.popupContent {
+  text-align: center;
+}
+
+.popupEyebrow {
+  margin: 0 0 8px;
+
+  color: #80629a;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.popupTitle {
+  margin: 0;
+
+  color: #382c42;
+
+  font-size: 1.55rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+
+/* fam images */
+
+.popupFamImages {
+  display: flex;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin: 20px 0 16px;
+}
+
+.popupFamImages img {
+  width: 72px;
+  height: 72px;
+
+  object-fit: cover;
+
+  border: 3px solid #ffffff;
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 14px rgba(55, 39, 64, 0.12);
+}
+
+
+/* description */
+
+.popupDescription {
+  margin: 0 auto 18px;
+
+  max-width: 250px;
+
+  color: #716a75;
+
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+
+/* CTA */
+
+.popupButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 11px 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #68467f,
+      #80569a
+    );
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-size: 0.86rem;
+  font-weight: 750;
+  text-decoration: none;
+
+  box-shadow:
+    0 6px 16px rgba(104, 70, 127, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.popupButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(104, 70, 127, 0.24);
+}
+
+
+/* ===============================
+   MOBILE
+   =============================== */
+
+@media (max-width: 650px) {
+  .eventPopup {
+    right: 12px;
+    bottom: 12px;
+
+    width: calc(100% - 24px);
+    max-width: 340px;
+
+    padding: 24px 18px 20px;
+  }
+
+  .popupTitle {
+    font-size: 1.4rem;
+  }
+
+  .popupFamImages img {
+    width: 62px;
+    height: 62px;
+
+    border-radius: 14px;
+  }
+
+  .popupDescription {
+    font-size: 0.84rem;
+  }
+
+  .popupButton {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-.nightMarketImage {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.countdownOverlay {
-    position: absolute;
-    top: 91%;
-    left: 48%;
-    transform: translate(-45%, -50%);
-    color: white;
-    text-align: center;
-    font-size: 23px;
-    pointer-events: none;
-    background-color: rgba(28, 38, 79);
-    padding: 4px 4px;
-    border-radius: 8px;
-    -webkit-font-smoothing: none;
-    font-family: 'Silkscreen', monospace;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    min-width: 95px;
+  }
 }

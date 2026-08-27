@@ -18,17 +18,12 @@ import "./App.css";
 
 const App = () => {
   const isMobile = useIsMobile();
-    const eventDate = new Date("2026-04-04T12:00:00-04:00");
-
 
   return (
     <Router>
       {!isMobile && <Header />}
       {isMobile && <MobileHeader />}
-      <EventPopup
-          targetDate={eventDate}
-          eventLink="https://www.instagram.com/p/DV0pzFRgP_u/?img_index=1" // change link to NM site
-      />
+      <EventPopup />
 
       <div className={isMobile ? "contentWithMobileHeader" : "content"}>
         <Routes>
