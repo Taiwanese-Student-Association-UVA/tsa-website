@@ -10,7 +10,7 @@ const MobileHeader = () => {
         "home",
         "about",
         "events",
-        "partners",
+        //"partners",
         "sponsors",
         "archive",
         // "merch",
