@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                             </li>
                             <li>
                                 <img src={mail} alt="Email" className="footer-icon me-2"/>
-                                <a href="mailto:gxu6vn@virginia.edu">gxu6vn@virginia.edu</a>
+                                <a href="mailto:wpv5sg@virginia.edu">wpv5sg@virginia.edu</a>
                             </li>
                         </ul>
                     </div>
@@ -65,13 +65,13 @@ const Footer: React.FC = () => {
                             <Link to="/events" onClick={() => window.scrollTo(0, 0)}>Events</Link>
                             <Link to="/sponsors" onClick={() => window.scrollTo(0, 0)}>Sponsors</Link>
                             <Link to="/archive" onClick={() => window.scrollTo(0, 0)}>Archive</Link>
-                            <li>
+                            {/*<li>
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSftSERM8_jiPzLZRzk6YRDPmnori-rrAtH-p7Octp12DV666Q/viewform?usp=dialog" target="_blank" rel="noreferrer">
                                     Feedback/Reporting
                                 </a>
-                            </li>
+                            </li>*/}
                             <li>
-                                <a href="https://docs.google.com/forms/d/1uouf15PCENhuFF1DsOefIZFNq8-z2reEWTXgt0gUeYk/edit?usp=drivesdk" target="_blank" rel="noreferrer">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4IVRczWQrg3PI3cbYAlGTTUQxXvyZUmfxSJ5q3UEe1pGiPA/viewform" target="_blank" rel="noreferrer">
                                     Announcement Request
                                 </a>
                             </li>
