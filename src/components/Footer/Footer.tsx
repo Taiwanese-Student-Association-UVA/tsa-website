@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     const [email, setEmail] = useState("");
 
     const MAILCHIMP_SIGNUP =
-        "https://virginia.us14.list-manage.com/subscribe?u=45792a76bc10b7924d7ccb62e&id=53139167b0";
+        "https://l.messenger.com/l.php?u=https%3A%2F%2Fvirginia.us14.list-manage.com%2Fsubscribe%3Fu%3D45792a76bc10b7924d7ccb62e%26id%3D53139167b0&h=AUDy7_5FYYs15FrWSfhz_aLFOZSfEHtx9_qxvG4-oJlJTGTpTffknhxzlRMZLDVVIi9iA2lep7CEXvUhcia6EVeRie7wR9-iySKgqXGzD6QMQ9t30tiwc2dqMQSNK4PRgXmHhfn__VnI2Os";
 
     const handleSubscribe = (e: React.FormEvent) => {
         e.preventDefault();
