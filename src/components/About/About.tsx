@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./about.css";
-import BoardSection from "./BoardSection";
+import BoardSection from "./BoardSection26_27";
 import ContactForm from "./ContactForm";
 import { IG, FB, LI, IGhover, FBhover, LIhover } from "../../assets/buttons/index";
 
