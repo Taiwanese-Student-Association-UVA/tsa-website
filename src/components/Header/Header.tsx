@@ -10,7 +10,6 @@ const Header = () => {
     "home",
     "about",
     "events",
-    "partners",
     "sponsors",
     "archive",
   ];

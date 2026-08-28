@@ -63,17 +63,11 @@ const Footer: React.FC = () => {
                             <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
                             <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About TSA</Link>
                             <Link to="/events" onClick={() => window.scrollTo(0, 0)}>Events</Link>
-                            <Link to="/partners" onClick={() => window.scrollTo(0, 0)}>Partners</Link>
                             <Link to="/sponsors" onClick={() => window.scrollTo(0, 0)}>Sponsors</Link>
                             <Link to="/archive" onClick={() => window.scrollTo(0, 0)}>Archive</Link>
                             <li>
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSftSERM8_jiPzLZRzk6YRDPmnori-rrAtH-p7Octp12DV666Q/viewform?usp=dialog" target="_blank" rel="noreferrer">
                                     Feedback/Reporting
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://docs.google.com/forms/d/1Es_WPwxx0FnvEDfbVy6pwEMEBuU39NpTwWwzkUNMaFA/edit?usp=drivesdk" target="_blank" rel="noreferrer">
-                                    EZ Card Eats
                                 </a>
                             </li>
                             <li>

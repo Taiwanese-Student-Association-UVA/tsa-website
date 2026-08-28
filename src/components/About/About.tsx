@@ -4,7 +4,7 @@ import BoardSection from "./BoardSection";
 import ContactForm from "./ContactForm";
 import { IG, FB, LI, IGhover, FBhover, LIhover } from "../../assets/buttons/index";
 
-const MEMBERSHIP_FORM = "https://forms.office.com/r/4G44DqZ5qD";
+const MEMBERSHIP_FORM = "https://l.messenger.com/l.php?u=https%3A%2F%2Fforms.cloud.microsoft%2Fpages%2Fresponsepage.aspx%3Fid%3Dx4A0ewc3c0iLd-IWczplrHWPOWb_dbpNm8rjwY0EiudUQ044VkcxR0hEMks0SUpCNko4U0RHVzEzSy4u%26origin%3DQRCode%26route%3Dshorturl&h=AUAbU6wjUhtkvkGZa4ZnW_Dvy5DS1wlmaMgXMW8YyaP8J2WPiP090oIDd0rxaCGLUPk4vKrTNAGmhrwHk8X0d8QgXyUBAdEw2aIWmr-XcWwyp3BDwsHLqBGQ6C38Eq3BAptpL8Y88YWcPcM";
 const MAILCHIMP_SIGNUP =
   "https://virginia.us14.list-manage.com/subscribe?u=45792a76bc10b7924d7ccb62e&id=53139167b0";
 

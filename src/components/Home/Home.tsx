@@ -60,7 +60,7 @@ const Home = () => {
             <h3>Become a member today!</h3>
 
             <a
-              href="https://forms.office.com/r/4G44DqZ5qD"
+              href="https://l.messenger.com/l.php?u=https%3A%2F%2Fforms.cloud.microsoft%2Fpages%2Fresponsepage.aspx%3Fid%3Dx4A0ewc3c0iLd-IWczplrHWPOWb_dbpNm8rjwY0EiudUQ044VkcxR0hEMks0SUpCNko4U0RHVzEzSy4u%26origin%3DQRCode%26route%3Dshorturl&h=AUAbU6wjUhtkvkGZa4ZnW_Dvy5DS1wlmaMgXMW8YyaP8J2WPiP090oIDd0rxaCGLUPk4vKrTNAGmhrwHk8X0d8QgXyUBAdEw2aIWmr-XcWwyp3BDwsHLqBGQ6C38Eq3BAptpL8Y88YWcPcM"
               target="_blank"
               rel="noreferrer"
             >
