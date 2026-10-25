@@ -24,7 +24,7 @@ const About: React.FC = () => {
           <article className="cardLike">
             <h2 className="sectionTitle">Mission</h2>
             <p className="muted">
-              Welcome to the Taiwanese Student Association at UVA! We bring Taiwan to UVA—celebrating culture, welcoming new students into a supportive family, and sharing Taiwan’s vibrant culture, civic life, and modern society with the wider university. Alongside our APISAA partners, we are committed to building strong community connections and giving back to Charlottesville through local outreach and fundraising. Whether you’re looking to connect with your roots or learn something new, there is always a seat for you at our table.
+              We bring Taiwan to UVA—celebrating culture, welcoming new students into a supportive family, and sharing Taiwan’s vibrant culture, civic life, and modern society with the wider university. Alongside our APISAA partners, we are committed to building strong community connections and giving back to Charlottesville through local outreach and fundraising. Whether you’re looking to connect with your roots or learn something new, there is always a seat for you at our table.
             </p>
           </article>
 
