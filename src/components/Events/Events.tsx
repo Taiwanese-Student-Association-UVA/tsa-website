@@ -3,6 +3,7 @@ import Papa from 'papaparse';
 import dayjs from 'dayjs';
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 import styles from './Events.module.css';
 import SkyBackground from './SkyBackground';
 import defaultEventImage from '../../assets/logo.png';
@@ -12,6 +13,7 @@ import { FaInstagram } from 'react-icons/fa';
 const InstagramIcon: React.FC<{ size?: number; style?: React.CSSProperties }> = FaInstagram as any;
 dayjs.extend(isSameOrAfter);
 dayjs.extend(isSameOrBefore);
+dayjs.extend(customParseFormat);
 
 interface Event {
     id: number;
@@ -99,7 +101,7 @@ const EventsPage: React.FC = () => {
             download: true,
             header: true,
             complete: (results: { data: Event[] }) => {
-                const events = results.data as Event[];
+                const events = (results.data as Event[]).filter(e => e.title && e.date);
                 const today = dayjs();
 
                 const current = events.filter(e =>
