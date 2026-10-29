@@ -12,7 +12,9 @@ const Footer: React.FC = () => {
     const [email, setEmail] = useState("");
 
     const MAILCHIMP_SIGNUP =
-        "https://l.messenger.com/l.php?u=https%3A%2F%2Fvirginia.us14.list-manage.com%2Fsubscribe%3Fu%3D45792a76bc10b7924d7ccb62e%26id%3D53139167b0&h=AUDy7_5FYYs15FrWSfhz_aLFOZSfEHtx9_qxvG4-oJlJTGTpTffknhxzlRMZLDVVIi9iA2lep7CEXvUhcia6EVeRie7wR9-iySKgqXGzD6QMQ9t30tiwc2dqMQSNK4PRgXmHhfn__VnI2Os";
+        "https://virginia.us14.list-manage.com/subscribe?u=45792a76bc10b7924d7ccb62e&id=53139167b0";
+    const EVENTS_CALENDAR =
+        "https://calendar.google.com/calendar/u/0/r?cid=ODFlNTZjZmEyMGRmODQ1YTUyOWM1MTNlYTdkZGU4MWI0NzAyNTU3ODVhNWFjM2JkYjA4NGMzYjQwY2RmZmIwOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t";
 
     const handleSubscribe = (e: React.FormEvent) => {
         e.preventDefault();
@@ -60,11 +62,11 @@ const Footer: React.FC = () => {
                     <div className="col-lg-4 col-md-6">
                         <h3 className="footer-title">Quick Links</h3>
                         <ul className="quick-links">
-                            <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
-                            <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About TSA</Link>
-                            <Link to="/events" onClick={() => window.scrollTo(0, 0)}>Events</Link>
-                            <Link to="/sponsors" onClick={() => window.scrollTo(0, 0)}>Sponsors</Link>
-                            <Link to="/archive" onClick={() => window.scrollTo(0, 0)}>Archive</Link>
+                            <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
+                            <li><Link to="/about" onClick={() => window.scrollTo(0, 0)}>About TSA</Link></li>
+                            <li><Link to="/events" onClick={() => window.scrollTo(0, 0)}>Events</Link></li>
+                            <li><Link to="/sponsors" onClick={() => window.scrollTo(0, 0)}>Sponsors</Link></li>
+                            <li><Link to="/archive" onClick={() => window.scrollTo(0, 0)}>Archive</Link></li>
                             {/*<li>
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSftSERM8_jiPzLZRzk6YRDPmnori-rrAtH-p7Octp12DV666Q/viewform?usp=dialog" target="_blank" rel="noreferrer">
                                     Feedback/Reporting
