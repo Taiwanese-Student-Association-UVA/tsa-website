@@ -57,6 +57,9 @@ const About: React.FC = () => {
             <a className="btnGhost" href={MAILCHIMP_SIGNUP} target="_blank" rel="noreferrer">
               Join our newsletter
             </a>
+            <a className="btnGhost" href={EVENTS_CALENDAR} target="_blank" rel="noreferrer">
+              Add our events calendar
+            </a>
           </div>
         </div>
       </section>
@@ -140,7 +143,7 @@ const About: React.FC = () => {
 
         <ul className="list">
           <li>
-            <a className="listCard" href="https://docs.google.com/forms/d/e/1FAIpQLSftSERM8_jiPzLZRzk6YRDPmnori-rrAtH-p7Octp12DV666Q/viewform?usp=dialog" target="_blank" rel="noreferrer">
+            <a className="listCard" href="https://forms.gle/9Pj9cRZAejCR8DSR9" target="_blank" rel="noreferrer">
               <div className="listThumb" />
               <div className="listBody">
                 <div className="listMeta">
@@ -154,7 +157,7 @@ const About: React.FC = () => {
           </li>
 
           <li>
-            <a className="listCard" href="https://docs.google.com/forms/d/1Es_WPwxx0FnvEDfbVy6pwEMEBuU39NpTwWwzkUNMaFA/edit?usp=drivesdk" target="_blank" rel="noreferrer">
+            <a className="listCard" href="https://docs.google.com/forms/d/1Es_WPwxx0FnvEDfbVy6pwEMEBuU39NpTwWwzkUNMaFA/viewform" target="_blank" rel="noreferrer">
               <div className="listThumb" />
               <div className="listBody">
                 <div className="listMeta">
@@ -168,7 +171,7 @@ const About: React.FC = () => {
           </li>
 
           <li>
-            <a className="listCard" href="https://docs.google.com/forms/d/1uouf15PCENhuFF1DsOefIZFNq8-z2reEWTXgt0gUeYk/edit?usp=drivesdk" target="_blank" rel="noreferrer">
+            <a className="listCard" href="https://docs.google.com/forms/d/e/1FAIpQLSf4IVRczWQrg3PI3cbYAlGTTUQxXvyZUmfxSJ5q3UEe1pGiPA/viewform" target="_blank" rel="noreferrer">
               <div className="listThumb" />
               <div className="listBody">
                 <div className="listMeta">
