@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 interface Props{
-  postUrl?: string; // e.g. "/api/contact"
+  postUrl?: string; // e.g. "https://formspree.io/f/xxxxxxxx"
 }
 
 const ContactForm:React.FC<Props> = ({postUrl="/api/contact"})=>{
@@ -13,12 +13,14 @@ const ContactForm:React.FC<Props> = ({postUrl="/api/contact"})=>{
     e.preventDefault();
     setLoading(true);
     setError(null);
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget; // currentTarget is null after the await
+    const data = new FormData(form);
     try{
-      const res = await fetch(postUrl,{method:"POST", body:data});
-      if(!res.ok) throw new Error("Network error");
+      // Accept header makes Formspree reply with JSON instead of redirecting
+      const res = await fetch(postUrl,{method:"POST", body:data, headers:{Accept:"application/json"}});
+      if(!res.ok) throw new Error("Something went wrong. Please try again or DM us on Instagram.");
       setSent(true);
-      e.currentTarget.reset();
+      form.reset();
       setTimeout(()=>setSent(false), 4000);
     }catch(err:any){
       setError(err.message);
@@ -33,7 +35,6 @@ const ContactForm:React.FC<Props> = ({postUrl="/api/contact"})=>{
         <input className="input" name="name" placeholder="Name" required/>
         <input className="input" name="email" type="email" placeholder="Email" required/>
         <textarea className="textarea" name="message" placeholder="Message" required/>
-        <input className="input" name="attachment" type="file" />
         <button className="btn" type="submit" disabled={loading}>{loading ? "Sending..." : "Submit"}</button>
       </form>
       {sent && <div className="toast" role="status">Thanks! We got your message.</div>}
