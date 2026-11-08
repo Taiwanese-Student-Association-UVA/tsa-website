@@ -1,5 +1,5 @@
+
 import styles from "./Home.module.css";
-import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import usePhotos from "../photos/usePhotos";
 
@@ -7,6 +7,7 @@ const MarqueePics = () => {
   const { grouped: marqueePics } = usePhotos(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdn96jdQ2YtCL9IUCi0q7ByZwIAdx5h10I7AgZHVX3YLhk51X-BrxFmQ8gg2t7MVvavM7l3AwrMaNa/pub?gid=0&single=true&output=csv"
   );
+
   return (
     <>
       {marqueePics.map((row, index) => (
@@ -15,19 +16,21 @@ const MarqueePics = () => {
           speed={40}
           gradient={false}
           direction={index % 2 === 1 ? "right" : "left"}
+          pauseOnHover={false}
         >
           {row.map((photo, i) => (
-            <a key={i} href={photo.link} target="_blank" rel="noreferrer">
-              <motion.img
+            <a
+              key={i}
+              href={photo.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
                 src={photo.src}
-                alt={photo.alt}
+                alt={photo.alt || "TSA event photo"}
                 className={styles.pictures}
-                initial={{ opacity: 0.5 }}
-                whileInView={{ opacity: 0.5 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.3 }}
-                whileHover={{ opacity: 1 }}
-                animate={{}}
+                loading={i < 3 ? "eager" : "lazy"}
+                decoding="async"
               />
             </a>
           ))}

@@ -1,53 +1,55 @@
+
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import usePhotos from "../photos/usePhotos";
+import styles from "./Home.module.css";
 
 const RotatingPics = () => {
   const { grouped: aboutPics } = usePhotos(
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vTdn96jdQ2YtCL9IUCi0q7ByZwIAdx5h10I7AgZHVX3YLhk51X-BrxFmQ8gg2t7MVvavM7l3AwrMaNa/pub?gid=76408374&single=true&output=csv"
   );
-  const merged = aboutPics.flat();
-  const images = merged.map((p) => p.src);
-  const alts = merged.map((p) => p.alt);
-  const links = merged.map((p) => p.link);
 
-  const [rotIndex, setRotIndex] = useState(0); // rot
+  const photos = aboutPics.flat();
+  const [rotIndex, setRotIndex] = useState(0);
 
   useEffect(() => {
-    if (images.length === 0) return;
+    if (photos.length <= 1) return;
 
-    const id = setInterval(() => {
-      setRotIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // rotate every 5s
+    const interval = setInterval(() => {
+      setRotIndex((prev) => (prev + 1) % photos.length);
+    }, 5000);
 
-    return () => clearInterval(id);
-  }, [images]);
+    return () => clearInterval(interval);
+  }, [photos.length]);
+
+  if (photos.length === 0) return null;
+
+  const currentIndex = rotIndex % photos.length;
+  const currentPhoto = photos[currentIndex];
+
   return (
-    <>
+    <div className={styles.rotatingPhotoContainer}>
       <AnimatePresence mode="wait">
         <motion.a
-          key={rotIndex}
-          href={links[rotIndex]}
+          key={currentIndex}
+          href={currentPhoto.link}
           target="_blank"
           rel="noreferrer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0.125 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
+          className={styles.rotatingPhotoLink}
         >
           <img
-            src={images[rotIndex]}
-            alt={alts[rotIndex]}
-            style={{
-              width: "900px",
-              height: "600px",
-              objectFit: "cover",
-              borderRadius: "20px",
-            }}
+            src={currentPhoto.src}
+            alt={currentPhoto.alt || "TSA event photo"}
+            className={styles.rotatingPhoto}
+            decoding="async"
           />
         </motion.a>
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
