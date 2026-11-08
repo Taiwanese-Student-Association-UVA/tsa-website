@@ -159,6 +159,7 @@ const About: React.FC = () => {
             </a>
           </li>
 
+          {/* EasyCard
           <li>
             <a className="listCard" href="https://docs.google.com/forms/d/1Es_WPwxx0FnvEDfbVy6pwEMEBuU39NpTwWwzkUNMaFA/viewform" target="_blank" rel="noreferrer">
               <div className="listThumb">
@@ -174,6 +175,7 @@ const About: React.FC = () => {
               </div>
             </a>
           </li>
+            */}
 
           <li>
             <a className="listCard" href="https://docs.google.com/forms/d/e/1FAIpQLSf4IVRczWQrg3PI3cbYAlGTTUQxXvyZUmfxSJ5q3UEe1pGiPA/viewform" target="_blank" rel="noreferrer">
