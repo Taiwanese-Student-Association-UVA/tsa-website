@@ -91,21 +91,29 @@ body{
   flex-direction: column;
   gap: 0;
 }
-.pictures{
+
+.pictures {
   object-fit: contain;
   overflow: visible;
   cursor: pointer;
   height: 33vh;
   margin: 0;
   padding: 0;
+  opacity: 0.6;
   box-shadow: var(--shadow-medium);
-  transition: transform 0.25s cubic-bezier(0.7, -0.55, 0.25, 1.55);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
-.pictures:hover{
-  transform: scale(1.1);
+
+.pictures:hover {
+  opacity: 1;
+  transform: scale(1.05);
   transform-origin: center center;
+  position: relative;
   z-index: 100;
 }
+
 
 /* Body */
 .content {
@@ -479,4 +487,41 @@ body{
   .sortingButton {
     width: 100%;
   }
+
+  
+.rotatingPhotoContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.rotatingPhotoLink {
+  display: block;
+  width: 100%;
+}
+
+.rotatingPhoto {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (max-width: 720px) {
+  .rotatingImages {
+    width: 100%;
+  }
+
+  .rotatingPhotoContainer {
+    max-width: 100%;
+  }
+}
+.rotatingImages img.rotatingPhoto {
+  margin: 0;
+}
+
 }
