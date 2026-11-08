@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./about.css";
 import BoardSection from "./BoardSection26_27";
 import ContactForm from "./ContactForm";
+import tsaLogo from "../../assets/logo.png";
 import { IG, FB, LI, IGhover, FBhover, LIhover } from "../../assets/buttons/index";
 
 const MEMBERSHIP_FORM = "https://forms.cloud.microsoft/pages/responsepage.aspx?id=x4A0ewc3c0iLd-IWczplrHWPOWb_dbpNm8rjwY0EiudUQ044VkcxR0hEMks0SUpCNko4U0RHVzEzSy4u&route=shorturl";
@@ -144,42 +145,48 @@ const About: React.FC = () => {
         <ul className="list">
           <li>
             <a className="listCard" href="https://forms.gle/9Pj9cRZAejCR8DSR9" target="_blank" rel="noreferrer">
-              <div className="listThumb" />
+              <div className="listThumb">
+                <img src={tsaLogo} alt="" />
+              </div>
               <div className="listBody">
                 <div className="listMeta">
                   <span className="listTitle">Anonymous Feedback/Reporting Form</span>
                   <span className="listDate">Open</span>
                 </div>
                 <p className="listExcerpt">Give us feedback on events and report misconduct anonymously here.</p>
-                <span className="listCTA">→</span>
+                <span className="listCTA">Fill out Form →</span>
               </div>
             </a>
           </li>
 
           <li>
             <a className="listCard" href="https://docs.google.com/forms/d/1Es_WPwxx0FnvEDfbVy6pwEMEBuU39NpTwWwzkUNMaFA/viewform" target="_blank" rel="noreferrer">
-              <div className="listThumb" />
+              <div className="listThumb">
+                <img src={tsaLogo} alt="" />
+              </div>
               <div className="listBody">
                 <div className="listMeta">
                   <span className="listTitle">EasyCard Eats Form</span>
                   <span className="listDate">Open</span>
                 </div>
                 <p className="listExcerpt">Got a fun moment you want to share in our newsletter? Fill out this quick form! We’d love to feature you!</p>
-                <span className="listCTA">→</span>
+                <span className="listCTA">Fill out Form →</span>
               </div>
             </a>
           </li>
 
           <li>
             <a className="listCard" href="https://docs.google.com/forms/d/e/1FAIpQLSf4IVRczWQrg3PI3cbYAlGTTUQxXvyZUmfxSJ5q3UEe1pGiPA/viewform" target="_blank" rel="noreferrer">
-              <div className="listThumb" />
+              <div className="listThumb">
+                <img src={tsaLogo} alt="" />
+              </div>
               <div className="listBody">
                 <div className="listMeta">
                   <span className="listTitle">Newsletter External Announcement Request Form</span>
                   <span className="listDate">Open</span>
                 </div>
                 <p className="listExcerpt">Fill out this form if you have any announcements/events/other fun items you'd like to share in the TSA newsletter!</p>
-                <span className="listCTA">→</span>
+                <span className="listCTA">Fill out Form →</span>
               </div>
             </a>
           </li>

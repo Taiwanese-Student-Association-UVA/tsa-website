@@ -234,13 +234,16 @@
   height: 88px;
   border-radius: 12px;
   background: linear-gradient(135deg, #d9e8ff, #e9f9f0);
+  display: grid;
+  place-items: center;
 }
+.listThumb img { height: 56px; width: auto; display: block; }
 .listBody { display: grid; gap: 6px; }
 .listMeta { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
 .listTitle { font-weight: 700; }
 .listDate { color: var(--muted); font-size: 12px; }
 .listExcerpt { color: var(--muted); margin: 0; }
-.listCTA { margin-top: 2px; font-size: 13px; color: #000; }
+.listCTA { margin-top: 2px; font-size: 13px; font-weight: 600; color: #000; }
 
 /* ——— Utilities ——— */
 .muted { color: var(--muted); }
